@@ -7,5 +7,5 @@
     "format": "parquet",
     "notes": "Includes unit tests and code snippets. Extensive dataset useful for automated code evaluation systems.",
     "companion": "Not available",
-    "tags": ["code", "competition", "2021", "tag4"]
+    "tags": ["code", "competition", "2021", "tag4", "to_clean"]
 }

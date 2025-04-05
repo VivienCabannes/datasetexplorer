@@ -13,10 +13,16 @@ def load_datasets():
     return all_data
 
 
+def load_tags():
+    with open("tags.json", "r") as f:
+        return json.load(f)
+
+
 @app.route("/")
 def index():
     datasets = load_datasets()
-    return render_template("index.html", datasets=datasets)
+    tags = load_tags()
+    return render_template("index.html", datasets=datasets, tags=tags)
 
 
 if __name__ == "__main__":

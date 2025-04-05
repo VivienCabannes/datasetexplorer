@@ -7,5 +7,5 @@
     "format": "Not specified",
     "notes": "Used as a filtering round for more advanced competitions. Historical data is beneficial for practice and analysis.",
     "companion": "Not available",
-    "tags": ["math", "competition", "2020", "tag1", "tag2"]
+    "tags": ["math", "competition", "2020", "tag1", "tag2", "to_clean"]
 }

@@ -65,24 +65,14 @@
   </div>
 
   <script>
-    // Retrieve the dataset specifications passed from Flask via Jinja2.
-    // let datasets = {{ datasets | tojson }};
+    // Retrieve dataset and tag specifications passed from Flask via Jinja2.
     let datasets = JSON.parse('{{ datasets | tojson | safe }}');
+    let tagData = JSON.parse('{{ tags | tojson | safe }}');
 
-    // Compute the set of unique tags from the datasets
-    let availableTags = [];
-    datasets.forEach(ds => {
-      if (ds.tags) {
-        ds.tags.forEach(tag => {
-          let lowerTag = tag.toLowerCase();
-          if (!availableTags.includes(lowerTag)) {
-            availableTags.push(lowerTag);
-          }
-        });
-      }
-    });
+    // Create an array of available tag names from the tagData.
+    let availableTags = Object.keys(tagData);
 
-    // Function to render tags.
+    // Render the tags using tagData (with description as tooltip).
     function renderTags() {
       const tagsContainer = document.getElementById("tags-container");
       tagsContainer.innerHTML = "";
@@ -90,6 +80,8 @@
         const tagElem = document.createElement("span");
         tagElem.classList.add("tag");
         tagElem.textContent = tag;
+        // Tooltip with the tag's description.
+        tagElem.title = tagData[tag];
         tagElem.addEventListener("click", () => {
           tagElem.classList.toggle("selected");
           filterDatasets();
@@ -98,7 +90,7 @@
       });
     }
 
-    // Function to retrieve the currently selected tags.
+    // Retrieve the currently selected tags.
     function getSelectedTags() {
       return Array.from(document.getElementsByClassName("tag"))
         .filter(tagElem => tagElem.classList.contains("selected"))
@@ -112,24 +104,25 @@
       const datasetsContainer = document.getElementById("datasets-container");
       datasetsContainer.innerHTML = "";
 
-      // Filter datasets by checking search term and tags.
+      // Filter datasets by checking search term and tag match.
       const filtered = datasets.filter(ds => {
+        // Basic search match in name, summary, or notes.
         const matchesSearch = ds.name.toLowerCase().includes(searchTerm) ||
                               ds.summary.toLowerCase().includes(searchTerm) ||
                               ds.notes.toLowerCase().includes(searchTerm);
+        // For tag matching, check the ds.tags field if available, or fallback to text search.
         const matchesTags = selectedTags.length === 0 ||
           selectedTags.every(tag => {
-            // Check in ds.tags array if exists
-            let inTags = ds.tags ? ds.tags.map(t => t.toLowerCase()).includes(tag) : false;
-            // Fallback: also check in name, summary, or notes
-            let inText = ds.name.toLowerCase().includes(tag) ||
-                        ds.summary.toLowerCase().includes(tag) ||
-                        ds.notes.toLowerCase().includes(tag);
+            const inTags = ds.tags ? ds.tags.map(t => t.toLowerCase()).includes(tag) : false;
+            const inText = ds.name.toLowerCase().includes(tag) ||
+                           ds.summary.toLowerCase().includes(tag) ||
+                           ds.notes.toLowerCase().includes(tag);
             return inTags || inText;
           });
         return matchesSearch && matchesTags;
       });
 
+      // Render each filtered dataset.
       filtered.forEach(ds => {
         const dsElem = document.createElement("div");
         dsElem.classList.add("dataset");
@@ -153,7 +146,7 @@
             }</div>
           </div>
         `;
-        // Toggle full details on click.
+        // Toggle the display of the full details on click.
         dsElem.addEventListener("click", function() {
           const details = dsElem.querySelector(".dataset-full");
           details.style.display = (details.style.display === "block") ? "none" : "block";
@@ -162,7 +155,7 @@
       });
     }
 
-    // Listen for input changes in the search bar.
+    // Listen for changes in the search input.
     document.getElementById("search-input").addEventListener("input", filterDatasets);
 
     // Initial render.

@@ -7,5 +7,5 @@
     "format": "jsonl.zst",
     "notes": "Valuable for training models on high-level mathematical and scientific content. Data collected in a snapshot taken in 2023 by RedPajama.",
     "companion": "Not available",
-    "tags": ["math", "competition", "2022", "tag3"]
+    "tags": ["math", "competition", "2022", "tag3", "to_clean"]
 }
