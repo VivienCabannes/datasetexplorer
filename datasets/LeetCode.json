@@ -1,0 +1,7 @@
+{
+    "name": "LeetCode",
+    "Size": "2,000 samples, 7 MB (for the small version I found on HuggingFace)",
+    "Where to find it": "https://huggingface.co/datasets/greengerong/leetcode",
+    "Notes": "Unclear how the dataset was collected, comes with no unit tests",
+    "summary": "Website with programming puzzles, typically used to prepare coding interviews."
+}

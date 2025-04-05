@@ -25,6 +25,21 @@ Simply run the build script. You will need to have git working with access right
 python build.py
 ```
 
+## Scripts
+
+### Check Tags
+
+The `check_tags.py` script examines all JSON files in the `datasets/` folder to extract tags used by each dataset (using the dataset filename without the `.json` extension) and compares them with the tags defined in `tags.json`. The script will report:
+- Any datasets that use tags not defined in `tags.json`.
+- Any tags defined in `tags.json` that are never used in any dataset.
+
+You can run the script with:
+
+```bash
+python scripts/check_tags.py
+```
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

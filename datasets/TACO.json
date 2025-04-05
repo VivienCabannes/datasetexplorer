@@ -1,0 +1,7 @@
+{
+    "name": "TACO",
+    "Size": "26,000 problems with 1.5M solutions, .",
+    "Where to find it": "https://huggingface.co/datasets/BAAI/TACO",
+    "Companion paper": "https://arxiv.org/abs/2312.14852",
+    "summary": "Algorithmic problems collected from various platforms such as CodeChef, CodeForces, HackerRank, and GeeksforGeeks, as well as existing datasets such as APPS, CodeContest, and Description2code. Each problems come with unit tests that allows to test for correctness. # Filtered Sources Data that come from filtering a bigger dataset."
+}

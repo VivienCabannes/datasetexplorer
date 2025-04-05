@@ -1,0 +1,7 @@
+{
+    "name": "MATH",
+    "Size": "12,500 samples",
+    "Where to find it": "https://github.com/hendrycks/math (was taken down from HuggingFace due to copyright issue filled by the art of problem solving).",
+    "Companion paper": "https://arxiv.org/abs/2103.03874",
+    "summary": "Classical evaluation datasets, created by Dan Hendrycks, by collecting various US high-school competition problems with solution."
+}

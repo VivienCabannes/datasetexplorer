@@ -1,0 +1,7 @@
+{
+    "name": "Algebraic Stack",
+    "Size": "3,000,000, 11MB.",
+    "Where to find it": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
+    "Companion paper": "https://arxiv.org/abs/2310.10631",
+    "summary": "Subset of ProofPile-2. Obtained by filtering GitHub for Coq, Isabelle, Lean and Matlab, extracting data from Mathlib 4 (the Lean library), building a dataset of Isabelle proofs, and filtering the Stack."
+}

@@ -1,0 +1,6 @@
+{
+    "name": "Natural Reasoning",
+    "Where to find it": "https://huggingface.co/datasets/facebook/natural_reasoning",
+    "Companion paper": "https://arxiv.org/abs/2502.13124",
+    "summary": "From Fair RAM group, questions filtered from DCLM and FineMath, with answers provided by Llama."
+}

@@ -1,0 +1,7 @@
+{
+    "name": "OpenWebMath",
+    "Size": "6,300,000 samples, 27 GB.",
+    "Where to find it": "https://huggingface.co/datasets/open-web-math/open-web-math",
+    "Companion paper": "https://arxiv.org/abs/2310.06786",
+    "summary": "Filtering of CommonCrawl done in 2023, that is considered good quality. Not donwloaded, as FineMath is more recent."
+}

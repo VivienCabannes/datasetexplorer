@@ -1,0 +1,8 @@
+{
+    "name": "MBPP (Mostly Basic Python Problems)",
+    "Current location": "`/checkpoint/amaia/explore/datasets/evals`.",
+    "Size": "1,000 samples",
+    "Where to find it": "https://github.com/google-research/google-research/tree/master/mbpp",
+    "Companion paper": "https://arxiv.org/abs/2108.07732",
+    "summary": "Crowd-sourced datasets of small Python problems A dataset consisting of 1,000 Python programming problems aimed at entry-level programmers."
+}
