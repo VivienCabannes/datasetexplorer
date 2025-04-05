@@ -2,7 +2,8 @@ import json
 from pathlib import Path
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static", static_folder="static")
+app.config["FREEZER_RELATIVE_URLS"] = True
 
 
 def load_datasets():
