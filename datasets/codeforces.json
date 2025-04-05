@@ -1,0 +1,11 @@
+{
+    "name": "CodeForces",
+    "summary": "A dataset derived from CodeForces, featuring competitive programming submissions that provide a comprehensive resource for studying coding challenges and algorithmic problem solving.",
+    "size": "700,000 samples (~1.7 GB)",
+    "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions",
+    "location": "/checkpoint/amaia/explore/datasets/reasoning/raw",
+    "format": "parquet",
+    "notes": "Includes unit tests and code snippets. Extensive dataset useful for automated code evaluation systems.",
+    "companion": "Not available",
+    "tags": ["code", "competition", "2021", "tag4"]
+}

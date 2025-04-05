@@ -1,0 +1,11 @@
+{
+    "name": "AIME",
+    "summary": "A collection of historical questions from the American Invitational Mathematics Examination, a prestigious high-school competition that challenges advanced problem-solving skills.",
+    "size": "15 questions per year",
+    "download": "https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024",
+    "location": "/checkpoint/amaia/explore/datasets/reasoning/raw",
+    "format": "parquet",
+    "notes": "New questions become available annually. Note that some questions may already be present on the internet and could be included in pretraining corpora.",
+    "companion": "Not available",
+    "tags": ["math", "competition", "2020", "benchmark", "question:human"]
+}

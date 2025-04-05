@@ -1,0 +1,11 @@
+{
+    "name": "ArXiv",
+    "summary": "A vast dataset consisting of research papers scraped from the ArXiv website, capturing a wide array of scientific literature and advanced mathematical concepts.",
+    "size": "29 billion tokens",
+    "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
+    "location": "/checkpoint/amaia/explore/datasets/reasoning/raw",
+    "format": "jsonl.zst",
+    "notes": "Valuable for training models on high-level mathematical and scientific content. Data collected in a snapshot taken in 2023 by RedPajama.",
+    "companion": "Not available",
+    "tags": ["math", "competition", "2022", "tag3"]
+}
