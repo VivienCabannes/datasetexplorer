@@ -1,7 +1,7 @@
 {
     "name": "Isabelle Premise Selection",
-    "Size": "4,000,000 samples",
-    "Where to find it": "https://huggingface.co/datasets/Simontwice/premise_selection_in_isabelle",
-    "Companion paper": "none, but the datasets was key to https://arxiv.org/abs/2303.04488",
+    "size": "4,000,000 samples",
+    "download": "https://huggingface.co/datasets/Simontwice/premise_selection_in_isabelle",
+    "companion": "none, but the datasets was key to https://arxiv.org/abs/2303.04488",
     "summary": "Datasets of proofs in Isabelle collected from the Archive of Formal Proofs (https://www.isa-afp.org/). Useful to study premise selection (i.e. selecting potential lemmas to apply mid-proof)."
 }

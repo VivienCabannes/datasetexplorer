@@ -1,7 +1,7 @@
 {
     "name": "Still long format",
-    "Size": "5,000 samples, 20 MB.",
-    "Where to find it": "https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k",
-    "Companion paper": "https://arxiv.org/abs/2412.09413",
+    "size": "5,000 samples, 20 MB.",
+    "download": "https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k",
+    "companion": "https://arxiv.org/abs/2412.09413",
     "summary": "Similar to Still, with a focus on long answer, questions come from NuminaMath, Aime, Leetcode, OpenCoder, Camel, Gaokao (Chinese A-level) and RiddleSense. # Formal Math"
 }

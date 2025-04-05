@@ -1,8 +1,8 @@
 {
     "name": "Nemotron Post-Training Dataset v1",
-    "Size": "15,000,000 samples, 6 GB.",
-    "Where to find it": "https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1",
-    "Companion paper": "https://arxiv.org/abs/2502.00203",
-    "Notes": "Developed to fine-tune models for improved accuracy and reliability.",
+    "size": "15,000,000 samples, 6 GB.",
+    "download": "https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1",
+    "companion": "https://arxiv.org/abs/2502.00203",
+    "notes": "Developed to fine-tune models for improved accuracy and reliability.",
     "summary": "We do not have too many details on this datasets, it seems to have been curated from Llama, Qwen and DeepSeek answers."
 }

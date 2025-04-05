@@ -1,7 +1,7 @@
 {
     "name": "OmniMath",
-    "Size": "4,000, 7 MB.",
-    "Where to find it": "https://huggingface.co/datasets/KbsdJames/Omni-MATH",
-    "Companion paper": "https://arxiv.org/abs/2410.07985",
+    "size": "4,000, 7 MB.",
+    "download": "https://huggingface.co/datasets/KbsdJames/Omni-MATH",
+    "companion": "https://arxiv.org/abs/2410.07985",
     "summary": "Data obtained from regional to international Olympiads, from the art-of-problem solving."
 }

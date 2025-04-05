@@ -1,7 +1,7 @@
 {
     "name": "OpenMathInstruct-v2",
-    "Size": "22,000,000 samples, 12 GB",
-    "Where to find it": "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2",
-    "Companion paper": "https://arxiv.org/abs/2410.01560",
+    "size": "22,000,000 samples, 12 GB",
+    "download": "https://huggingface.co/datasets/nvidia/OpenMathInstruct-2",
+    "companion": "https://arxiv.org/abs/2410.01560",
     "summary": "Augmentation of MATH and GSM8K from LLM (rephrase questions, provide answers)."
 }

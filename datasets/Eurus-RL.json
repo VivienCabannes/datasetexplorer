@@ -1,8 +1,7 @@
 {
     "name": "Eurus-RL",
-    "Example": "Various datasets related to reinforcement learning tasks.",
-    "Size": "500,000 samples, 2 GB",
-    "Where to find it": "https://huggingface.co/datasets/PRIME-RL/Eurus-2-RL-Data",
-    "Notes": "Includes multiple datasets with corresponding training recipes.",
+    "size": "500,000 samples, 2 GB",
+    "download": "https://huggingface.co/datasets/PRIME-RL/Eurus-2-RL-Data",
+    "notes": "Includes multiple datasets with corresponding training recipes.",
     "summary": "Collection of question with verifiable answer extracted from Numina, Apps, CodeContests, Taco and Codeforces. https://arxiv.org/abs/2502.01456"
 }

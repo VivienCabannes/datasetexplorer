@@ -1,7 +1,7 @@
 {
     "name": "Lean-Workbook",
-    "Size": "25,000 samples, 5MB",
-    "Where to find it": "https://huggingface.co/datasets/internlm/Lean-Workbook",
-    "Companion paper": "https://arxiv.org/abs/2411.18872",
+    "size": "25,000 samples, 5MB",
+    "download": "https://huggingface.co/datasets/internlm/Lean-Workbook",
+    "companion": "https://arxiv.org/abs/2411.18872",
     "summary": "DOWNLOADED IN `/checkpoint/amaia/explore/datasets/reasoning/raw` Tens of thousands of math problems formalized in Lean4"
 }

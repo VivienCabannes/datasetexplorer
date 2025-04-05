@@ -1,9 +1,8 @@
 {
     "name": "APPS",
-    "Example": "Problem about binary words with test inputs/outputs and a Python solution.",
-    "Size": "10,000 problems",
-    "Where to find it": "https://huggingface.co/datasets/codeparrot/apps",
-    "Companion paper": "https://arxiv.org/pdf/2105.09938",
-    "Notes": "AlphaCode mentions that test coverage was insufficient, leading to false positive.",
+    "size": "10,000 problems",
+    "download": "https://huggingface.co/datasets/codeparrot/apps",
+    "companion": "https://arxiv.org/pdf/2105.09938",
+    "notes": "AlphaCode mentions that test coverage was insufficient, leading to false positive.",
     "summary": "10,000 programming problems with python solutions and test cases for correctness.  Curated from Codewars, AtCoder, Kattis, and Codeforces."
 }
