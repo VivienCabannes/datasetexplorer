@@ -3,91 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Dataset Explorer</title>
-  <style>
-    /* Basic styling for the explorer */
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .search-bar {
-      margin-bottom: 20px;
-    }
-    .tags {
-      margin-bottom: 20px;
-    }
-    .tag {
-      display: inline-block;
-      background-color: #eee;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tag.selected {
-      background-color: #cce5ff;
-    }
-    .sort-bar {
-      margin-bottom: 20px;
-    }
-    .dataset {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-    .dataset:hover {
-      background-color: #f9f9f9;
-    }
-    .dataset-title {
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .dataset-detail {
-      margin: 5px 0;
-    }
-    /* The full details section is hidden by default */
-    .dataset-full {
-      display: none;
-      margin-top: 10px;
-      border-top: 1px dashed #ccc;
-      padding-top: 10px;
-    }
-    /* Styling for tags shown within each dataset */
-    .dataset-tag {
-      display: inline-block;
-      background-color: #ddd;
-      padding: 2px 5px;
-      margin: 2px;
-      border-radius: 3px;
-    }
-    /* Updated custom tooltip styling */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-    }
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      background-color: #f9f9f9; /* Light background */
-      color: #000;               /* Dark text */
-      text-align: center;
-      padding: 5px 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      position: absolute;
-      z-index: 1;
-      top: 110%;               /* Appear under the button */
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;     /* Single line */
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .tooltip:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-  </style>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
 </head>
 <body>
   <h1>Dataset Explorer</h1>
@@ -111,7 +28,7 @@
 
   <script>
     // Retrieve dataset and tag specifications passed from Flask via Jinja2.
-    let datasets = JSON.parse('[{"companion": "Not available", "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2", "name": "ArXiv", "notes": "Valuable for training models on high-level mathematical and scientific content. Data collected in a snapshot taken in 2023 by RedPajama.", "size": "29 billion tokens", "summary": "A vast dataset consisting of research papers scraped from the ArXiv website, capturing a wide array of scientific literature and advanced mathematical concepts.", "tags": ["math", "competition", "tag3", "to_clean"]}, {"companion": "Not available", "date": "2020-02-01", "download": "https://huggingface.co/datasets/AI-MO/aimo-validation-amc/", "name": "AMC", "notes": "Used as a filtering round for more advanced competitions. Historical data is beneficial for practice and analysis.", "size": "3 levels x 25 multiple-choice questions per year", "summary": "Historical data from the American Math Competition, designed for high-school students as a preliminary round before AIME. It includes multiple levels of difficulty.", "tags": ["math", "competition", "tag1", "tag2", "to_clean"]}, {"companion": "https://arxiv.org/abs/2110.14168", "date": "2024-01-01", "download": "https://github.com/openai/grade-school-math", "name": "GSM8k", "notes": "Reflects real-world educational content; useful for benchmarking model performance on elementary math problems.", "size": "8,500 problems (~5 MB)", "summary": "The Grade School Math (GSM) dataset contains 8,500 problems designed to evaluate mathematical reasoning at a grade-school level, curated and annotated by humans.", "tags": ["math", "competition", "tag5", "tag6", "tag7", "tag8", "to_clean"]}, {"companion": "Not available", "date": "2020-01-01", "download": "various locations including https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024", "name": "AIME", "notes": "New questions become available annually. Note that some questions may already be present on the internet and could be included in pretraining corpora.", "size": "15 questions per year", "summary": "A collection of historical questions from the American Invitational Mathematics Examination, a prestigious high-school competition that challenges advanced problem-solving skills.", "tags": ["math", "competition", "2020", "benchmark", "question:human", "to_clean"]}, {"companion": "Not available", "date": "2021-01-01", "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions", "name": "CodeForces", "notes": "Includes unit tests and code snippets. Extensive dataset useful for automated code evaluation systems.", "size": "700,000 samples (~1.7 GB)", "summary": "A dataset derived from CodeForces, featuring competitive programming submissions that provide a comprehensive resource for studying coding challenges and algorithmic problem solving.", "tags": ["code", "competition", "tag4", "to_clean"]}]');
+    let datasets = JSON.parse('[{"companion": "Not available", "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2", "name": "ArXiv", "notes": "Valuable for training models on high-level mathematical and scientific content. Data collected in a snapshot taken in 2023 by RedPajama.", "size": "29 billion tokens", "summary": "A vast dataset consisting of research papers scraped from the ArXiv website, capturing a wide array of scientific literature and advanced mathematical concepts.", "tags": ["math", "competition", "tag3", "to_clean"]}, {"companion": "Not available", "date": "2020-02-01", "download": "https://huggingface.co/datasets/AI-MO/aimo-validation-amc/", "name": "AMC", "notes": "Used as a filtering round for more advanced competitions. Historical data is beneficial for practice and analysis.", "size": "3 levels x 25 multiple-choice questions per year", "summary": "Historical data from the American Math Competition, designed for high-school students as a preliminary round before AIME. It includes multiple levels of difficulty.", "tags": ["math", "competition", "tag1", "tag2", "to_clean"]}, {"companion": "https://arxiv.org/abs/2110.14168", "date": "2024-01-01", "download": "https://github.com/openai/grade-school-math", "name": "GSM8k", "notes": "Reflects real-world educational content; useful for benchmarking model performance on elementary math problems.", "size": "8,500 problems (~5 MB)", "summary": "The Grade School Math (GSM) dataset contains 8,500 problems designed to evaluate mathematical reasoning at a grade-school level, curated and annotated by humans.", "tags": ["math", "competition", "tag5", "tag6", "tag7", "tag8", "to_clean"]}, {"companion": "Not available", "date": "2020-01-01", "download": "[various locations](https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024)", "name": "AIME", "notes": "New questions become available annually. Note that some questions may already be present on the internet and could be included in pretraining corpora.", "size": "15 questions per year", "summary": "A collection of historical questions from the American Invitational Mathematics Examination, a prestigious high-school competition that challenges advanced problem-solving skills.", "tags": ["math", "competition", "2020", "benchmark", "question:human", "to_clean"]}, {"companion": "Not available", "date": "2021-01-01", "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions", "name": "CodeForces", "notes": "Includes unit tests and code snippets. Extensive dataset useful for automated code evaluation systems.", "size": "700,000 samples (~1.7 GB)", "summary": "A dataset derived from CodeForces, featuring competitive programming submissions that provide a comprehensive resource for studying coding challenges and algorithmic problem solving.", "tags": ["code", "competition", "tag4", "to_clean"]}]');
     let tagData = JSON.parse('{"benchmark": "datasets often used for benchmarking purposes", "competition": "datasets from various competitions", "education": "education-related datasets", "math": "dataset focused on math"}');
 
     // Create an array of available tag names from the tagData.
