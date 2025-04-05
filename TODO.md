@@ -1,10 +1,12 @@
-Add editor tools:
-- easy way to check that all the tags in the datasets are registered in tags.json.
-- easy way to add tags to a list of datasets.
 
+- change to the back-end
+    - write the tags.json file correctly.
 
-- remove the "current format", "current location"
-- add the list of tags to the visualization.
-- add the date of the datasets
+- change to the front-end
+    - correct the hovering that cut some text.
+    - make the system of tags clearer.
 
-- order tags by topics, and create hovering effect to see the definition of a tag.
+- add "editor tools" to efficient edit the datasets cards:
+    - function to remove tags to a list of datasets
+
+- (?) add way to filter by the negative of a tag (i.e. remove all datasets that have a tag)

@@ -2,7 +2,6 @@ import os
 import sys
 import re
 import json
-from pathlib import Path
 
 
 def parse_markdown_file(md_path):
