@@ -3,9 +3,8 @@
     "summary": "Historical data from the American Math Competition, designed for high-school students as a preliminary round before AIME. It includes multiple levels of difficulty.",
     "size": "3 levels x 25 multiple-choice questions per year",
     "download": "https://huggingface.co/datasets/AI-MO/aimo-validation-amc/",
-    "location": "Not specified",
-    "format": "Not specified",
     "notes": "Used as a filtering round for more advanced competitions. Historical data is beneficial for practice and analysis.",
     "companion": "Not available",
-    "tags": ["math", "competition", "2020", "tag1", "tag2", "to_clean"]
+    "tags": ["math", "competition", "tag1", "tag2", "to_clean"],
+    "date": "2020-02-01"
 }

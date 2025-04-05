@@ -26,6 +26,9 @@
     .tag.selected {
       background-color: #cce5ff;
     }
+    .sort-bar {
+      margin-bottom: 20px;
+    }
     .dataset {
       border: 1px solid #ccc;
       padding: 10px;
@@ -50,6 +53,14 @@
       border-top: 1px dashed #ccc;
       padding-top: 10px;
     }
+    /* Styling for tags shown within each dataset */
+    .dataset-tag {
+      display: inline-block;
+      background-color: #ddd;
+      padding: 2px 5px;
+      margin: 2px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -59,6 +70,14 @@
   </div>
   <div class="tags" id="tags-container">
     <!-- Tags will be dynamically inserted here -->
+  </div>
+  <div class="sort-bar">
+    <label for="sort-select">Sort by:</label>
+    <select id="sort-select">
+      <option value="name">Name (A-Z)</option>
+      <option value="date_latest">Date (Latest)</option>
+      <option value="date_earliest">Date (Earliest)</option>
+    </select>
   </div>
   <div id="datasets-container">
     <!-- Matching datasets will be displayed here -->
@@ -97,15 +116,25 @@
         .map(tagElem => tagElem.textContent.toLowerCase());
     }
 
-    // Filter and render datasets based on search input and selected tags.
+    // Render tags for a dataset using the tagData for tooltip.
+    function renderDatasetTags(tags) {
+      if (!tags) return "";
+      return tags.map(tag => {
+        let tooltip = tagData[tag.toLowerCase()] || "";
+        return `<span class="dataset-tag" title="${tooltip}">${tag}</span>`;
+      }).join(" ");
+    }
+
+    // Filter and render datasets based on search input, selected tags, and sort order.
     function filterDatasets() {
       const searchTerm = document.getElementById("search-input").value.toLowerCase();
       const selectedTags = getSelectedTags();
+      const sortValue = document.getElementById("sort-select").value;
       const datasetsContainer = document.getElementById("datasets-container");
       datasetsContainer.innerHTML = "";
 
       // Filter datasets by checking search term and tag match.
-      const filtered = datasets.filter(ds => {
+      let filtered = datasets.filter(ds => {
         // Basic search match in name, summary, or notes.
         const matchesSearch = ds.name.toLowerCase().includes(searchTerm) ||
                               ds.summary.toLowerCase().includes(searchTerm) ||
@@ -122,22 +151,31 @@
         return matchesSearch && matchesTags;
       });
 
+      // Sort datasets based on selected sort option.
+      if (sortValue === "name") {
+        filtered.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sortValue === "date_latest") {
+        filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      } else if (sortValue === "date_earliest") {
+        filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      }
+
       // Render each filtered dataset.
       filtered.forEach(ds => {
         const dsElem = document.createElement("div");
         dsElem.classList.add("dataset");
 
-        // Minimal view: title, summary, and size.
+        // Minimal view: title, summary, size, creation date, and tags.
         dsElem.innerHTML = `
           <div class="dataset-minimal">
             <div class="dataset-title">${ds.name}</div>
             <div class="dataset-detail"><strong>Summary:</strong> ${ds.summary}</div>
             <div class="dataset-detail"><strong>Size:</strong> ${ds.size}</div>
+            <div class="dataset-detail"><strong>Date Created:</strong> ${ds.date || "N/A"}</div>
+            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(ds.tags)}</div>
           </div>
           <div class="dataset-full">
             <div class="dataset-detail"><strong>Download Location:</strong> <a href="${ds.download}" target="_blank">${ds.download}</a></div>
-            <div class="dataset-detail"><strong>Current Location:</strong> ${ds.location}</div>
-            <div class="dataset-detail"><strong>Format:</strong> ${ds.format}</div>
             <div class="dataset-detail"><strong>Notes:</strong> ${ds.notes}</div>
             <div class="dataset-detail"><strong>Companion Paper:</strong> ${
               ds.companion === "Not available" 
@@ -155,8 +193,9 @@
       });
     }
 
-    // Listen for changes in the search input.
+    // Listen for changes in the search input and sort selection.
     document.getElementById("search-input").addEventListener("input", filterDatasets);
+    document.getElementById("sort-select").addEventListener("change", filterDatasets);
 
     // Initial render.
     renderTags();

@@ -3,9 +3,8 @@
     "summary": "The Grade School Math (GSM) dataset contains 8,500 problems designed to evaluate mathematical reasoning at a grade-school level, curated and annotated by humans.",
     "size": "8,500 problems (~5 MB)",
     "download": "https://github.com/openai/grade-school-math",
-    "location": "/checkpoint/amaia/explore/datasets/evals",
-    "format": "jsonl",
     "notes": "Reflects real-world educational content; useful for benchmarking model performance on elementary math problems.",
     "companion": "https://arxiv.org/abs/2110.14168",
-    "tags": ["math", "competition", "2024", "tag5", "tag6", "tag7", "tag8", "to_clean"]
+    "tags": ["math", "competition", "tag5", "tag6", "tag7", "tag8", "to_clean"],
+    "date": "2024-01-01"
 }

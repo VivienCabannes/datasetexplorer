@@ -2,7 +2,6 @@
     "benchmark": "datasets often used for benchmarking purposes",
     "math": "dataset focused on math",
     "competition": "datasets from various competitions",
-    "2020": "datasets from the year 2020",
     "education": "education-related datasets"
 }
   
