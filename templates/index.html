@@ -3,65 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Dataset Explorer</title>
-  <style>
-    /* Basic styling for the explorer */
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    .search-bar {
-      margin-bottom: 20px;
-    }
-    .tags {
-      margin-bottom: 20px;
-    }
-    .tag {
-      display: inline-block;
-      background-color: #eee;
-      padding: 5px 10px;
-      margin: 5px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .tag.selected {
-      background-color: #cce5ff;
-    }
-    .sort-bar {
-      margin-bottom: 20px;
-    }
-    .dataset {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-    .dataset:hover {
-      background-color: #f9f9f9;
-    }
-    .dataset-title {
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .dataset-detail {
-      margin: 5px 0;
-    }
-    /* The full details section is hidden by default */
-    .dataset-full {
-      display: none;
-      margin-top: 10px;
-      border-top: 1px dashed #ccc;
-      padding-top: 10px;
-    }
-    /* Styling for tags shown within each dataset */
-    .dataset-tag {
-      display: inline-block;
-      background-color: #ddd;
-      padding: 2px 5px;
-      margin: 2px;
-      border-radius: 3px;
-    }
-  </style>
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <h1>Dataset Explorer</h1>
@@ -91,21 +34,32 @@
     // Create an array of available tag names from the tagData.
     let availableTags = Object.keys(tagData);
 
-    // Render the tags using tagData (with description as tooltip).
+    // Render the tags using custom tooltip (with the tag's description shown on hover).
     function renderTags() {
       const tagsContainer = document.getElementById("tags-container");
       tagsContainer.innerHTML = "";
       availableTags.forEach(tag => {
+        // Create the tag element.
         const tagElem = document.createElement("span");
         tagElem.classList.add("tag");
         tagElem.textContent = tag;
-        // Tooltip with the tag's description.
-        tagElem.title = tagData[tag];
         tagElem.addEventListener("click", () => {
           tagElem.classList.toggle("selected");
           filterDatasets();
         });
-        tagsContainer.appendChild(tagElem);
+
+        // Create tooltip element.
+        const tooltipText = document.createElement("span");
+        tooltipText.classList.add("tooltiptext");
+        tooltipText.textContent = tagData[tag];
+
+        // Wrap the tag element in a tooltip container.
+        const tooltipContainer = document.createElement("span");
+        tooltipContainer.classList.add("tooltip");
+        tooltipContainer.appendChild(tagElem);
+        tooltipContainer.appendChild(tooltipText);
+
+        tagsContainer.appendChild(tooltipContainer);
       });
     }
 
@@ -116,12 +70,14 @@
         .map(tagElem => tagElem.textContent.toLowerCase());
     }
 
-    // Render tags for a dataset using the tagData for tooltip.
+    // Render tags for a dataset with tooltips.
     function renderDatasetTags(tags) {
       if (!tags) return "";
       return tags.map(tag => {
         let tooltip = tagData[tag.toLowerCase()] || "";
-        return `<span class="dataset-tag" title="${tooltip}">${tag}</span>`;
+        return `<span class="tooltip dataset-tag">${tag}
+                  <span class="tooltiptext">${tooltip}</span>
+                </span>`;
       }).join(" ");
     }
 
@@ -172,7 +128,6 @@
             <div class="dataset-detail"><strong>Summary:</strong> ${ds.summary}</div>
             <div class="dataset-detail"><strong>Size:</strong> ${ds.size}</div>
             <div class="dataset-detail"><strong>Date Created:</strong> ${ds.date || "N/A"}</div>
-            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(ds.tags)}</div>
           </div>
           <div class="dataset-full">
             <div class="dataset-detail"><strong>Download Location:</strong> <a href="${ds.download}" target="_blank">${ds.download}</a></div>
@@ -182,6 +137,7 @@
                 ? "Not available" 
                 : `<a href="${ds.companion}" target="_blank">${ds.companion}</a>`
             }</div>
+            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(ds.tags)}</div>
           </div>
         `;
         // Toggle the display of the full details on click.

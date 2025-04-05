@@ -5,6 +5,5 @@
     "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
     "notes": "Valuable for training models on high-level mathematical and scientific content. Data collected in a snapshot taken in 2023 by RedPajama.",
     "companion": "Not available",
-    "tags": ["math", "competition", "tag3", "to_clean"],
-    "date": "2023-01-01"
+    "tags": ["math", "competition", "tag3", "to_clean"]
 }
