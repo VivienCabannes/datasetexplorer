@@ -19,27 +19,30 @@ source venv/bin/activate
 pip install flask frozen-flask
 ```
 
-### Test Locally
+### Build Locally
 
-To develop and test the Flask application on your local machine, start the application by running
+To build and run the website on your local machine, run the build script.
+It will launch the Flask application.
 
 ```bash
-python app.py
+python scripts/build.py
 ```
 
 Once the app is running, open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
 You should see the Dataset Explorer website.
-As you modify the codebase, you can simply refresh your browser to see your changes immediately.
+As you modify the codebase, refresh your browser to immediately view your updates.
 
-### Build & Deploy
+### Deploy Remotely
 
-Simply run the build script. You will need to have git working with access right to the repository to be able to modify the online website.
+To deploy the website remotely, run the deploy script.
+It will creates a static website that you can view locally by opening `/<path-to-repo>/docs/index.html` in your web browser.
+It will also prompt you to optionally push your changes to GitHub, which will automatically update the online website. Ensure your git environment is properly configured, and you have sufficient write permissions to the repository to perform this action.
 
 ```bash
-python build.py
+python scripts/deploy.py
 ```
 
-## Scripts
+## Editor tools
 
 This repository includes several utility scripts to help manage and update your datasets and tags.
 These scripts automate common tasks such as verifying tag usage and batch updating dataset files.
