@@ -48,7 +48,7 @@
 
 
   <!-- Render math and markdown properly -->
-  <script>
+  <!-- <script>
     MathJax = {
       tex: {
         inlineMath: [['$', '$']],
@@ -57,22 +57,16 @@
         fontCache: 'global'
       }
     };
-  </script>
+  </script> -->
   <script id="Mathjax-script" src="{{ url_for('static', filename='mathjax.js') }}"></script>
   <script id="markdown-it" src="{{ url_for('static', filename='markdownit.js') }}"></script>
   <script id="data" type="application/json">{{ datasets | tojson }}</script>
 
   <script>
-    // Renderer placeholder
-    let md = new markdownit({
-      html: false,
-      linkify: false,
-      typographer: false,
-      breaks: true,
-    });
+    // Markdown and MathJax parser
+    let md = new markdownit({linkify: true,});
 
     // Data from flask server
-    console.log("Data from Flask server: ", document.getElementById("data").textContent);
     const datasets = JSON.parse(document.getElementById("data").textContent);
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
@@ -83,13 +77,21 @@
       const container = document.getElementById("datasets-container");
       container.innerHTML = "";
       list.forEach(dataset => {
-        // Use markdown-it to render fields that might include markdown/LaTeX
-        const summaryHtml = md.render(dataset.summary || "");
-        // const summaryHtml = dataset.summary || "";
-        const sizeHtml = md.render(dataset.size || "");
-        const dateHtml = md.render(dataset.date || "N/A");
-        const notesHtml = md.render(dataset.notes || "");
-        const downloadHtml = md.render(dataset.download || "");
+        const summaryHtml = md.renderInline(dataset.summary || "");
+        const sizeHtml = md.renderInline(dataset.size || "");
+        const dateHtml = md.renderInline(dataset.date || "N/A");
+
+        // Only include full details if present
+        let optionalDetails = "";
+        if (dataset.download) {
+          optionalDetails += `<div class="dataset-detail"><strong>Download Location:</strong> ${md.renderInline(dataset.download)}</div>`;
+        }
+        if (dataset.companion) {
+          optionalDetails += `<div class="dataset-detail"><strong>Companion Paper:</strong> ${md.renderInline(dataset.companion)}</div>`;
+        }
+        if (dataset.notes) {
+          optionalDetails += `<div class="dataset-detail"> ${md.renderInline(dataset.notes)}</div>`;
+        }
 
         const elem = document.createElement("div");
         elem.className = "dataset";
@@ -101,13 +103,7 @@
             <div class="dataset-detail"><strong>Date Created:</strong> ${dateHtml}</div>
           </div>
           <div class="dataset-full" style="display: none;">
-            <div class="dataset-detail"><strong>Download Location:</strong> ${downloadHtml}</div>
-            <div class="dataset-detail"><strong>Companion Paper:</strong> ${
-              dataset.companion === "Not available"
-                ? "Not available"
-                : `<a href="${dataset.companion}" target="_blank">${dataset.companion}</a>`
-            }</div>
-            <div class="dataset-detail">${notesHtml}</div>
+            ${optionalDetails}
             <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
           </div>
         `;
@@ -127,10 +123,8 @@
         });
       });
 
-      // trigger MathJax to process any LaTeX expressions
-      if (window.MathJax && MathJax.typesetPromise) {
-        MathJax.typesetPromise();
-      }
+      // parse potential LaTeX with MathJax
+      MathJax.typesetPromise();
     }
 
     // Filter datasets based on search term and selected tags.
@@ -145,7 +139,6 @@
         return matchesSearch && matchesTags;
       });
       renderDatasets(filtered);
-      console.log("Filtered datasets: ", filtered);
     };
 
     // Sort datasets
