@@ -103,22 +103,22 @@
       const container = document.getElementById("tags-container");
       container.innerHTML = "";
 
-      // iterate over tag groups
-      Object.keys(tagData).forEach(group => {
+      // Iterate over the array to preserve order.
+      tagData.forEach(groupObj => {
         const groupContainer = document.createElement("div");
         groupContainer.className = "tag-group-line";
 
         const header = document.createElement("span");
         header.className = "tag-group-header";
-        header.textContent = `${group}: `;
+        header.textContent = `${groupObj.group}: `;
         groupContainer.appendChild(header);
 
-        // iterate over tags with the group
-        Object.keys(tagData[group]).forEach(tag => {
+        // Iterate over tags within the group.
+        Object.keys(groupObj.tags).forEach(tag => {
           const tagElem = document.createElement("span");
           tagElem.className = "tag";
           tagElem.textContent = tag;
-          tagElem.title = tagData[group][tag];
+          tagElem.setAttribute("data-tooltip", groupObj.tags[tag]);
           tagElem.style.cursor = "pointer";
 
           tagElem.addEventListener("click", e => {
@@ -137,10 +137,9 @@
 
         container.appendChild(groupContainer);
       });
-    };
+    }
 
-    // Simplified rendering of dataset tags with native tooltips.
-    const renderDatasetTags = tags => {
+    function renderDatasetTags(tags) {
       if (!tags) return "";
       return tags.map(tag => {
         let tooltip = "";
@@ -150,7 +149,7 @@
             break;
           }
         }
-        return `<span class="dataset-tag" title="${tooltip}">${tag}</span>`;
+        return `<span class="tag" data-tooltip="${tooltip}">${tag}</span>`;
       }).join(" ");
     };
 
@@ -167,5 +166,6 @@
     updateView();
 
   </script>
+  <script src="{{ url_for('static', filename='tooltip.js') }}"></script>
 </body>
 </html>
