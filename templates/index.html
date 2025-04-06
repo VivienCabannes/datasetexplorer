@@ -88,18 +88,18 @@
         elem.innerHTML = `
           <div class="dataset-minimal">
             <div class="dataset-title">${dataset.name}</div>
-            <div class="dataset-detail"><strong>Summary:</strong> ${dataset.summary}</div>
+            <div class="dataset-detail">${dataset.summary}</div>
             <div class="dataset-detail"><strong>Size:</strong> ${dataset.size}</div>
             <div class="dataset-detail"><strong>Date Created:</strong> ${dataset.date || "N/A"}</div>
           </div>
           <div class="dataset-full" style="display: none;">
             <div class="dataset-detail"><strong>Download Location:</strong> <a href="${dataset.download}" target="_blank">${dataset.download}</a></div>
-            <div class="dataset-detail"><strong>Notes:</strong> ${dataset.notes}</div>
             <div class="dataset-detail"><strong>Companion Paper:</strong> ${
               dataset.companion === "Not available"
                 ? "Not available"
                 : `<a href="${dataset.companion}" target="_blank">${dataset.companion}</a>`
             }</div>
+            <div class="dataset-detail">${dataset.notes}</div>
             <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
           </div>
         `;
