@@ -82,6 +82,9 @@ python add_tags.py path/to/your_mapping.json
 
 This will update the dataset files with the new tags as specified in the mapping file.
 
+## Potential features
+
+- We may want to filter out datasets that have a certain tag. We could image doing "shift+click" to filter out a tag (which would appear red-ish on the screen).
 
 ## License
 

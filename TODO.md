@@ -1,7 +1,6 @@
-
-- change to the front-end
-    - (?) add way to filter by the negative of a tag (i.e. remove all datasets that have a tag) if we click twice on a tag: the tag should appear red-ish.
-    - use markdown to render the text written in the dataset cards (notably for hyperlink).
+- back-end
+    - edit all the dataset cards one by one
+    - for fast edition one can use various tools such as update a list of tag to datasets, before running some `batch_add_tag` script
 
 - add "editor tools" to efficient edit the datasets cards:
     - function to remove tags to a list of datasets
