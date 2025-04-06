@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>Dataset Explorer</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Use Katex to render math if needed -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+      onload="renderMathInElement(document.body);"></script>
 </head>
 <body>
   <div class="header">
@@ -17,7 +23,11 @@
   <!-- Help text block, initially hidden -->
   <div id="help-text" style="display:none; margin: 10px 0;">
     <p>
-      Welcome to the Dataset Explorer! Use the filters to narrow your dataset choices, type in the search bar to find datasets by name, summary or notes, and sort them as needed. Click on a dataset to see further details.
+      ⚠️ <strong>Under Construction:</strong> the dataset card needs to be completed.<br/><br/>
+
+      <strong>Welcome to the Dataset Explorer!</strong><br/>
+      Use the filters to narrow your dataset choices, type in the search bar to find datasets by name or summary, and sort them as needed. 
+      Click on a dataset to see further details.
     </p>
   </div>
   
@@ -46,24 +56,12 @@
     <!-- Matching datasets will be displayed here -->
   </div>
 
-
-  <!-- Render math and markdown properly -->
-  <!-- <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$']],
-      },
-      svg: {
-        fontCache: 'global'
-      }
-    };
-  </script> -->
-  <script id="Mathjax-script" src="{{ url_for('static', filename='mathjax.js') }}"></script>
+  <!-- Render mardown -->
   <script id="markdown-it" src="{{ url_for('static', filename='markdownit.js') }}"></script>
   <script id="data" type="application/json">{{ datasets | tojson }}</script>
 
   <script>
-    // Markdown and MathJax parser
+    // Markdown parser
     let md = new markdownit({linkify: true,});
 
     // Data from flask server
@@ -122,9 +120,6 @@
           link.setAttribute("onclick", "event.stopPropagation()");
         });
       });
-
-      // parse potential LaTeX with MathJax
-      MathJax.typesetPromise();
     }
 
     // Filter datasets based on search term and selected tags.
