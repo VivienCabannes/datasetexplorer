@@ -1,9 +1,11 @@
 # Static Dataset Explorer Website
 
-This project creates a dataset explorer with minimal information per dataset on the front page.
+This repository codes a dataset explorer.
+A list with minimal information per dataset is rendered on the front page.
+A tag system allows to filter it.
 Users can click on a dataset card to expand and view full details. 
 The data (datasets and tags) are loaded from JSON files and rendered via a Flask app. 
-We then use Frozen-Flask to generate a static version of the site that can be hosted on GitHub Pages.
+We use Frozen-Flask to generate a static version of the site that is [hosted on GitHub Pages](https://viviencabannes.github.io/datasetexplorer/)
 
 ### Installation
 
@@ -27,7 +29,7 @@ python app.py
 
 Once the app is running, open your web browser and navigate to [http://localhost:5000](http://localhost:5000).
 You should see the Dataset Explorer website.
-As you modify your Flask app, you can simply refresh your browser to see your changes immediately.
+As you modify the codebase, you can simply refresh your browser to see your changes immediately.
 
 ### Build & Deploy
 
