@@ -8,9 +8,6 @@ body {
   color: #000;
 }
 
-/* Light Mode (Default) Styles */
-/* (You can customize these further if needed.) */
-
 /* Dark Mode Styles */
 .dark-mode {
   background-color: #282828;
@@ -51,26 +48,36 @@ h1 {
   display: flex;
   gap: 10px;
 }
+
 .round-button {
   border: none;
-  background-color: #eee;
+  background: radial-gradient(circle, #eee, #ccc);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   font-size: 18px;
   cursor: pointer;
+  margin: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.round-button:hover {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4), -3px -3px 8px rgba(255, 255, 255, 0.7);
+}
+.dark-mode .round-button {
+  background: radial-gradient(circle, #333, #444);
+  color: #ccc;
 }
 
 /* Theme Toggle Button: Darker in Light Mode, Lighter in Dark Mode */
 #theme-toggle-button {
-  background-color: #ccc;
+  background: radial-gradient(circle, #222, #444);
   color: #000;
 }
 .dark-mode #theme-toggle-button {
-  background-color: #eee;
+  background: radial-gradient(circle, #ccc, #aaa);
   color: #fff;
 }
 
@@ -84,7 +91,6 @@ h1 {
 .dark-mode #help-text {
   background-color: #444;
   border-color: #888;
-  color: #a0a0a0;
 }
 
 /* Tags Container and Grouping */
@@ -103,8 +109,8 @@ h1 {
 .tag {
   display: inline-block;
   background-color: #eee;
-  padding: 5px 10px;
-  margin: 5px 5px 5px 0;
+  padding: 2px 5px;
+  margin: 2px 1px 0px 0;
   border-radius: 5px;
   cursor: pointer;
   position: relative;
@@ -113,8 +119,11 @@ h1 {
   background-color: #cce5ff;
 }
 .dark-mode .tag {
-  background-color: #444;
-  color: #a0a0a0;
+  background-color: #111;
+  color: #aaa;
+}
+.dark-mode .tag.selected {
+  background-color: #274b8a;
 }
 
 /* Tooltip Styling */
@@ -122,15 +131,15 @@ h1 {
   position: fixed;
   background-color: #f9f9f9;
   color: #000;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   border-radius: 4px;
   padding: 5px 8px;
   z-index: 9999;
   word-wrap: break-word;
 }
 .dark-mode .custom-tooltip {
-  background-color: #555;
-  color: #a0a0a0;
+  background-color: #111;
+  color: #ccc;
   border-color: #666;
 }
 
@@ -157,6 +166,14 @@ h1 {
   padding: 8px;
   font-size: 16px;
 }
+/* Dark Mode for Search Bar and Order Menu */
+.dark-mode .search-bar input,
+.dark-mode .sort-bar select {
+  background-color: #333; /* Dark background */
+  color: #fff;            /* Light text for contrast */
+  border: 1px solid #555; /* Optional: adjust border for better visibility */
+}
+
 
 /* Dataset Container Styles */
 .dataset {
@@ -173,7 +190,7 @@ h1 {
   border-color: #555;
 }
 .dark-mode .dataset:hover {
-  background-color: #3a3a3a;
+  background-color: #222;
 }
 .dataset-title {
   font-size: 1.2em;
