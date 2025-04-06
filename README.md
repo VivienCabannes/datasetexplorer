@@ -1,11 +1,11 @@
 # Static Dataset Explorer Website
 
-This repository codes a dataset explorer.
-A list with minimal information per dataset is rendered on the front page.
-A tag system allows to filter it.
-Users can click on a dataset card to expand and view full details. 
-The data (datasets and tags) are loaded from JSON files and rendered via a Flask app. 
-We use Frozen-Flask to generate a static version of the site that is [hosted on GitHub Pages](https://viviencabannes.github.io/datasetexplorer/)
+This repository implements a dataset explorer.
+A list displaying minimal information for each dataset is shown on the front page.
+Users can filter datasets using a tagging system.
+Clicking on a dataset card expands it to display full details.
+The data (datasets and tags) are loaded from JSON files and rendered through a Flask application. 
+Frozen-Flask is used to generate a static version of the site, which is [hosted on GitHub Pages](https://viviencabannes.github.io/datasetexplorer/).
 
 ### Installation
 
