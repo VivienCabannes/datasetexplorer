@@ -6,35 +6,57 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Dataset Explorer</h1>
-  <div class="search-bar">
-    <input type="text" id="search-input" placeholder="Search datasets...">
+  <div class="header">
+    <h1>Dataset Explorer</h1>
+    <div class="top-buttons">
+      <button id="help-button" class="round-button" title="click for help">?</button>
+      <button id="theme-toggle-button" class="round-button" title="toggle theme">🌙</button>
+    </div>
   </div>
-  <div class="tags" id="tags-container">
+  
+  <!-- Help text block, initially hidden -->
+  <div id="help-text" style="display:none; margin: 10px 0;">
+    <p>
+      Welcome to the Dataset Explorer! Use the filters to narrow your dataset choices, type in the search bar to find datasets by name, summary or notes, and sort them as needed. Click on a dataset to see further details.
+    </p>
+  </div>
+  
+  <!-- Tags rendered below the help button -->
+  <div id="tags-container">
     <!-- Tags will be dynamically inserted here -->
   </div>
-  <div class="sort-bar">
-    <label for="sort-select">Sort by:</label>
-    <select id="sort-select">
-      <option value="name">Name (A-Z)</option>
-      <option value="date_latest">Date (Latest)</option>
-      <option value="date_earliest">Date (Earliest)</option>
-    </select>
+  
+  <!-- Controls row: Search bar (left) & Order menu (right) -->
+  <div class="controls-row">
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Search datasets...">
+    </div>
+    <div class="sort-bar">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select">
+        <option value="name">Name (A-Z)</option>
+        <option value="date_latest">Date (Latest)</option>
+        <option value="date_earliest">Date (Earliest)</option>
+      </select>
+    </div>
   </div>
+  
+  <!-- Container for displaying datasets -->
   <div id="datasets-container">
     <!-- Matching datasets will be displayed here -->
   </div>
 
   <script>
+    // Data from the server
     const datasets = JSON.parse('{{ datasets | tojson | safe }}');
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
     let selectedTags = [];
 
-    // Filter datasets by search term and selected tags.
+    // Filter datasets based on search term and selected tags.
     const updateView = () => {
       const filtered = datasets.filter(dataset => {
-        const matchesSearch = !searchTerm || 
+        const matchesSearch = !searchTerm ||
           (dataset.name && dataset.name.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (dataset.summary && dataset.summary.toLowerCase().includes(searchTerm.toLowerCase())) ||
           (dataset.notes && dataset.notes.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -42,14 +64,12 @@
           (Array.isArray(dataset.tags) && selectedTags.every(tag => dataset.tags.includes(tag)));
         return matchesSearch && matchesTags;
       });
-      
       renderDatasets(filtered);
     };
 
-    // Sort datasets 
+    // Sort datasets
     function updateOrder() {
       const sortOption = document.getElementById("sort-select").value;
-      console.log("Sorting datasets by:", sortOption);
       datasets.sort((a, b) => {
         if (sortOption === "name") return a.name.localeCompare(b.name);
         if (sortOption === "date_latest") return new Date(b.date) - new Date(a.date);
@@ -58,17 +78,13 @@
       updateView();
     }
 
-    // Render dataset elements.
+    // Render datasets in the container.
     function renderDatasets(list) {
       const container = document.getElementById("datasets-container");
       container.innerHTML = "";
-
-      console.log(`Rendering ${list.length} datasets...`);
-
       list.forEach(dataset => {
         const elem = document.createElement("div");
         elem.className = "dataset";
-
         elem.innerHTML = `
           <div class="dataset-minimal">
             <div class="dataset-title">${dataset.name}</div>
@@ -87,40 +103,34 @@
             <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
           </div>
         `;
-
-        // Toggle full details on click.
+        // Toggle details on click.
         elem.addEventListener("click", () => {
           const details = elem.querySelector(".dataset-full");
           details.style.display = details.style.display === "block" ? "none" : "block";
         });
-
         container.appendChild(elem);
       });
-    };
+    }
 
     // Render and handle tag buttons with tooltips.
     function renderTags() {
       const container = document.getElementById("tags-container");
       container.innerHTML = "";
-
-      // Iterate over the array to preserve order.
+      // iterate over the array to preserve order.
       tagData.forEach(groupObj => {
         const groupContainer = document.createElement("div");
         groupContainer.className = "tag-group-line";
-
         const header = document.createElement("span");
         header.className = "tag-group-header";
         header.textContent = `${groupObj.group}: `;
         groupContainer.appendChild(header);
-
-        // Iterate over tags within the group.
+        // iterate over tags within the group.
         Object.keys(groupObj.tags).forEach(tag => {
           const tagElem = document.createElement("span");
           tagElem.className = "tag";
           tagElem.textContent = tag;
           tagElem.setAttribute("data-tooltip", groupObj.tags[tag]);
           tagElem.style.cursor = "pointer";
-
           tagElem.addEventListener("click", e => {
             e.stopPropagation();
             tagElem.classList.toggle("selected");
@@ -130,15 +140,14 @@
               : selectedTags.filter(t => t !== tagText);
             updateView();
           });
-
           groupContainer.appendChild(tagElem);
           groupContainer.appendChild(document.createTextNode(" "));
         });
-
         container.appendChild(groupContainer);
       });
     }
 
+    // Render tags for a dataset's tag list.
     function renderDatasetTags(tags) {
       if (!tags) return "";
       return tags.map(tag => {
@@ -151,13 +160,30 @@
         }
         return `<span class="tag" data-tooltip="${tooltip}">${tag}</span>`;
       }).join(" ");
-    };
+    }
 
-    // Event listeners for sort and search.
-    document.getElementById("sort-select").addEventListener("change", updateOrder);
+    // Event listeners for search and sorting.
     document.getElementById("search-input").addEventListener("input", e => {
       searchTerm = e.target.value;
       updateView();
+    });
+    document.getElementById("sort-select").addEventListener("change", updateOrder);
+
+    // help button toggles the display of help text.
+    document.getElementById("help-button").addEventListener("click", () => {
+      const helpText = document.getElementById("help-text");
+      helpText.style.display = helpText.style.display === "none" ? "block" : "none";
+    });
+
+    // theme toggle button: toggles dark mode and updates its icon.
+    document.getElementById("theme-toggle-button").addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const button = document.getElementById("theme-toggle-button");
+      if(document.body.classList.contains("dark-mode")){
+        button.textContent = "☀️";
+      } else {
+        button.textContent = "🌙";
+      }
     });
 
     // Initialize the page.
@@ -165,7 +191,47 @@
     updateOrder();
     updateView();
 
+    // Avoid overflow when hovering on tooltips.
+    document.querySelectorAll('.tag').forEach(tag => {
+      let tooltipDiv;
+
+      tag.addEventListener('mouseenter', () => {
+        const text = tag.getAttribute('data-tooltip');
+        if (!text) return;
+
+        tooltipDiv = document.createElement('div');
+        tooltipDiv.className = 'custom-tooltip';
+        tooltipDiv.innerText = text;
+        document.body.appendChild(tooltipDiv);
+
+        // Position the tooltip
+        const rect = tag.getBoundingClientRect();
+        const tooltipRect = tooltipDiv.getBoundingClientRect();
+
+        let top = rect.bottom + window.scrollY + 5;
+        let left = rect.left + window.scrollX + (rect.width - tooltipRect.width) / 2;
+
+        if (left + tooltipRect.width > window.innerWidth) {
+          left = window.innerWidth - tooltipRect.width - 5;
+        }
+        if (left < 0) {
+          left = 5;
+        }
+        if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
+          top = rect.top + window.scrollY - tooltipRect.height - 5;
+        }
+
+        tooltipDiv.style.top = `${top}px`;
+        tooltipDiv.style.left = `${left}px`;
+      });
+
+      tag.addEventListener('mouseleave', () => {
+        if (tooltipDiv) {
+          tooltipDiv.remove();
+          tooltipDiv = null;
+        }
+      });
+    });
   </script>
-  <script src="{{ url_for('static', filename='tooltip.js') }}"></script>
 </body>
 </html>

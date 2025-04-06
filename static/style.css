@@ -1,93 +1,193 @@
 /* Global Styles */
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    position: relative;
-    overflow: visible;  /* Ensure tooltips aren’t clipped */
+  font-family: system-ui, sans-serif;
+  font-size: 1em;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #fff;
+  color: #000;
 }
 
-/* Top-right Controls */
-.search-bar {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 200px;
+/* Light Mode (Default) Styles */
+/* (You can customize these further if needed.) */
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #282828;
+  color: #ccc;
 }
 
-.sort-bar {
-    position: absolute;
-    top: 20px;
-    right: 220px;
-    width: 200px;
+/* Hyperlink Styling */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+.dark-mode a {
+  color: #66bfff;
+}
+.dark-mode a:hover {
+  color: #aaddff;
+  text-decoration: underline;
 }
 
-/* Page Title */
+/* Header: Title and Top Buttons on the Same Line */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 h1 {
-    margin: 0;
+  margin: 0;
 }
 
-/* Tags Container (shifted to avoid top-right controls) */
-.tags {
-    margin-top: 20px;
-    margin-bottom: 20px;
+/* Top Buttons (Help & Theme Toggle) */
+.top-buttons {
+  display: flex;
+  gap: 10px;
+}
+.round-button {
+  border: none;
+  background-color: #eee;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Unified Tag Styling for Both Filter & Dataset Tags */
+/* Theme Toggle Button: Darker in Light Mode, Lighter in Dark Mode */
+#theme-toggle-button {
+  background-color: #ccc;
+  color: #000;
+}
+.dark-mode #theme-toggle-button {
+  background-color: #eee;
+  color: #fff;
+}
+
+/* Help Text Block */
+#help-text {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-left: 3px solid #ccc;
+  margin-bottom: 20px;
+}
+.dark-mode #help-text {
+  background-color: #444;
+  border-color: #888;
+  color: #a0a0a0;
+}
+
+/* Tags Container and Grouping */
+#tags-container {
+  margin-bottom: 20px;
+}
+.tag-group-line {
+  margin-bottom: 5px;
+}
+.tag-group-header {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Tag Styles */
 .tag {
-    display: inline-block;
-    background-color: #eee;
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    position: relative; /* For positioning if needed */
+  display: inline-block;
+  background-color: #eee;
+  padding: 5px 10px;
+  margin: 5px 5px 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
 }
-
-/* Selected State */
 .tag.selected {
-    background-color: #cce5ff;
+  background-color: #cce5ff;
+}
+.dark-mode .tag {
+  background-color: #444;
+  color: #a0a0a0;
 }
 
-/* Styling for the Dynamic Tooltip Created via JS */
+/* Tooltip Styling */
 .custom-tooltip {
-    position: fixed; /* Relative to the viewport */
-    background-color: #f9f9f9;
-    color: #000;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 5px 8px;
-    z-index: 9999;
-    word-wrap: break-word;
+  position: fixed;
+  background-color: #f9f9f9;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px 8px;
+  z-index: 9999;
+  word-wrap: break-word;
+}
+.dark-mode .custom-tooltip {
+  background-color: #555;
+  color: #a0a0a0;
+  border-color: #666;
+}
+
+/* Controls Row: Search Bar & Sort Menu */
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.search-bar {
+  flex: 1;
+}
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+.sort-bar {
+  flex: 1;
+  text-align: right;
+}
+.sort-bar select {
+  padding: 8px;
+  font-size: 16px;
 }
 
 /* Dataset Container Styles */
 .dataset {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
-
 .dataset:hover {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
-
-/* Dataset Title */
+.dark-mode .dataset {
+  border-color: #555;
+}
+.dark-mode .dataset:hover {
+  background-color: #3a3a3a;
+}
 .dataset-title {
-    font-size: 1.2em;
-    font-weight: bold;
+  font-size: 1.2em;
+  font-weight: bold;
 }
-
-/* Dataset Details */
 .dataset-detail {
-    margin: 5px 0;
+  margin: 5px 0;
 }
-
-/* Full Dataset Details (Initially Hidden) */
 .dataset-full {
-    display: none;
-    margin-top: 10px;
-    border-top: 1px dashed #ccc;
-    padding-top: 10px;
+  display: none;
+  margin-top: 10px;
+  border-top: 1px dashed #ccc;
+  padding-top: 10px;
+}
+.dark-mode .dataset-full {
+  border-top-color: #666;
 }
