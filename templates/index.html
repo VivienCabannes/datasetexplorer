@@ -30,19 +30,143 @@
     // Retrieve dataset and tag specifications passed from Flask via Jinja2.
     let datasets = JSON.parse('{{ datasets | tojson | safe }}');
     let tagData = JSON.parse('{{ tags | tojson | safe }}');
-  
-    // Render the tags grouped by type on a single line.
+
+    // Datasets rendering
+    let renderedDatasets = [...datasets];
+    function renderDatasets() {
+      const datasetsContainer = document.getElementById("datasets-container");
+      datasetsContainer.innerHTML = "";
+
+      console.log(`Rendering ${renderedDatasets.length} datasets...`);
+      
+      renderedDatasets.forEach(dataset => {
+        const datasetElem = document.createElement("div");
+        datasetElem.classList.add("dataset");
+        
+        datasetElem.innerHTML = `
+          <div class="dataset-minimal">
+            <div class="dataset-title">${dataset.name}</div>
+            <div class="dataset-detail"><strong>Summary:</strong> ${dataset.summary}</div>
+            <div class="dataset-detail"><strong>Size:</strong> ${dataset.size}</div>
+            <div class="dataset-detail"><strong>Date Created:</strong> ${dataset.date || "N/A"}</div>
+          </div>
+          <div class="dataset-full">
+            <div class="dataset-detail"><strong>Download Location:</strong> <a href="${dataset.download}" target="_blank">${dataset.download}</a></div>
+            <div class="dataset-detail"><strong>Notes:</strong> ${dataset.notes}</div>
+            <div class="dataset-detail"><strong>Companion Paper:</strong> ${
+              dataset.companion === "Not available" 
+                ? "Not available" 
+                : `<a href="${dataset.companion}" target="_blank">${dataset.companion}</a>`
+            }</div>
+            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
+          </div>
+        `;
+        datasetElem.addEventListener("click", function() {
+          const details = datasetElem.querySelector(".dataset-full");
+          details.style.display = (details.style.display === "block") ? "none" : "block";
+        });
+        
+        datasetsContainer.appendChild(datasetElem);
+      });
+    }
+
+    // Filtering based on search and tags primitives
+    let searchedNames = new Set(datasets.map(dataset => dataset.name));
+    let taggedNames = new Set(datasets.map(dataset => dataset.name));
+
+    function filterDatasets() {
+      console.log("Combining filters...");
+      renderedDatasets = datasets.filter(dataset => 
+        searchedNames.has(dataset.name) && taggedNames.has(dataset.name)
+      );
+      renderDatasets();
+    }
+
+    // Sort datasets 
+    function sortDatasets() {
+      const sortOption = document.getElementById("sort-select").value;
+      console.log("Sorting datasets by:", sortOption);
+      if (sortOption === "name") {
+        datasets.sort((a, b) => a.name.localeCompare(b.name));
+      } else if (sortOption === "date_latest") {
+        datasets.sort((a, b) => new Date(b.date) - new Date(a.date));
+      } else if (sortOption === "date_earliest") {
+        datasets.sort((a, b) => new Date(a.date) - new Date(b.date));
+      }
+      filterDatasets();
+    }
+    // corresponding event handling
+    document.getElementById("sort-select").addEventListener("change", sortDatasets);
+
+    // Filter datasets based on search input
+    function filterBySearch() {
+      const searchInput = document.getElementById("search-input");
+      const searchTerm = searchInput ? searchInput.value : "";
+      console.log("Searching for:", searchTerm);
+      
+      searchedNames.clear();
+      if (!searchTerm) {
+        datasets.forEach(dataset => searchedNames.add(dataset.name));
+      } else {
+        // search in dataset name, summary, and notes
+        const term = searchTerm.toLowerCase();
+        datasets.forEach(dataset => {
+          const nameMatch = dataset.name && dataset.name.toLowerCase().includes(term);
+          const summaryMatch = dataset.summary && dataset.summary.toLowerCase().includes(term);
+          const notesMatch = dataset.notes && dataset.notes.toLowerCase().includes(term);
+          if (nameMatch || summaryMatch || notesMatch) {
+            searchedNames.add(dataset.name);
+          }
+        });
+      }
+      console.log("List of searched datasets:", taggedNames);
+      filterDatasets();
+    }
+    // corresponding event handling
+    document.addEventListener("DOMContentLoaded", function() {
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) {
+        searchInput.addEventListener("input", filterBySearch);
+        console.log("Search listener attached successfully");
+      } else {
+        console.error("Could not find search-input element");
+      }
+    });
+
+    // Filter datasets based on selected tags
+    function filterByTags() {
+      // Retrieve the currently selected tags.
+      let selectedTags = Array.from(document.getElementsByClassName("tag"))
+          .filter(tagElem => tagElem.classList.contains("selected"))
+          .map(tagElem => tagElem.textContent);
+      console.log("Filtering datasets based on selected tags:", selectedTags);
+      
+      taggedNames.clear();
+      if (selectedTags.length === 0) {
+        datasets.forEach(dataset => taggedNames.add(dataset.name));
+      } else {
+        datasets.forEach(dataset => {
+          if (Array.isArray(dataset.tags) && selectedTags.every(tag => dataset.tags.includes(tag))) {
+            taggedNames.add(dataset.name);
+          }
+        });
+      }
+      console.log("List of tagged datasets:", taggedNames);
+      filterDatasets();
+    }
+
+    // tag rendering
     function renderTags() {
       const tagsContainer = document.getElementById("tags-container");
       tagsContainer.innerHTML = "";
-  
-      // Iterate over each tag group (e.g., "Data Source Tags", etc.)
+
+      // Iterate over each tag group (e.g., "Data Source", etc.)
       Object.keys(tagData).forEach(group => {
-        // Create a container for the entire group line.
+        // Create a container for the entire group.
         const groupContainer = document.createElement("div");
         groupContainer.classList.add("tag-group-line");
   
-        // Create a header for the tag type with a colon.
+        // Create a header for the tag group.
         const groupHeader = document.createElement("span");
         groupHeader.classList.add("tag-group-header");
         groupHeader.textContent = group + ": ";
@@ -72,7 +196,7 @@
           // Attach the click event to the entire tooltip container.
           tooltipContainer.addEventListener("click", () => {
             tagElem.classList.toggle("selected");
-            filterDatasets();
+            filterByTags();
           });
   
           // Append the tooltip container to the group container.
@@ -88,22 +212,15 @@
       });
     }
   
-    // Retrieve the currently selected tags.
-    function getSelectedTags() {
-      return Array.from(document.getElementsByClassName("tag"))
-        .filter(tagElem => tagElem.classList.contains("selected"))
-        .map(tagElem => tagElem.textContent.toLowerCase());
-    }
-  
     // Render tags for a dataset with tooltips.
     function renderDatasetTags(tags) {
       if (!tags) return "";
       return tags.map(tag => {
         let tooltip = "";
-        // Search for the tag in all groups using case-insensitive matching.
+        // Search for the tag in all groups
         for (let group in tagData) {
           for (let key in tagData[group]) {
-            if (key.toLowerCase() === tag.toLowerCase()) {
+            if (key === tag) {
               tooltip = tagData[group][key];
               break;
             }
@@ -115,85 +232,16 @@
                 </span>`;
       }).join(" ");
     }
-  
-    // Filter and render datasets based on search input, selected tags, and sort order.
-    function filterDatasets() {
-      const searchTerm = document.getElementById("search-input").value.toLowerCase();
-      const selectedTags = getSelectedTags();
-      console.log("Selected tags:", selectedTags);  // Debug: log selected tags
-  
-      const sortValue = document.getElementById("sort-select").value;
+
+    // Initial render
+    function init() {
       const datasetsContainer = document.getElementById("datasets-container");
-      datasetsContainer.innerHTML = "";
-  
-      // Filter datasets by checking search term and tag match.
-      let filtered = datasets.filter(ds => {
-        console.log("Dataset:", ds.name, "Tags:", ds.tags);  // Debug: log dataset tags
-  
-        // Check if the dataset matches the search term.
-        const matchesSearch =
-          ds.name.toLowerCase().includes(searchTerm) ||
-          ds.summary.toLowerCase().includes(searchTerm) ||
-          ds.notes.toLowerCase().includes(searchTerm);
-  
-        // Check if the dataset matches all selected tags.
-        const matchesTags = selectedTags.length === 0 || selectedTags.every(tag => {
-          // Ensure ds.tags is an array and perform case-insensitive matching.
-          return Array.isArray(ds.tags) && ds.tags.some(t => t.toLowerCase() === tag);
-        });
-  
-        return matchesSearch && matchesTags;
-      });
-      
-      console.log("Filtered datasets:", filtered);  // Debug: log filtered results
-  
-      // Sort datasets based on the selected sort option.
-      if (sortValue === "name") {
-        filtered.sort((a, b) => a.name.localeCompare(b.name));
-      } else if (sortValue === "date_latest") {
-        filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-      } else if (sortValue === "date_earliest") {
-        filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-      }
-  
-      // Render each filtered dataset.
-      filtered.forEach(ds => {
-        const dsElem = document.createElement("div");
-        dsElem.classList.add("dataset");
-  
-        dsElem.innerHTML = `
-          <div class="dataset-minimal">
-            <div class="dataset-title">${ds.name}</div>
-            <div class="dataset-detail"><strong>Summary:</strong> ${ds.summary}</div>
-            <div class="dataset-detail"><strong>Size:</strong> ${ds.size}</div>
-            <div class="dataset-detail"><strong>Date Created:</strong> ${ds.date || "N/A"}</div>
-          </div>
-          <div class="dataset-full">
-            <div class="dataset-detail"><strong>Download Location:</strong> <a href="${ds.download}" target="_blank">${ds.download}</a></div>
-            <div class="dataset-detail"><strong>Notes:</strong> ${ds.notes}</div>
-            <div class="dataset-detail"><strong>Companion Paper:</strong> ${
-              ds.companion === "Not available" 
-                ? "Not available" 
-                : `<a href="${ds.companion}" target="_blank">${ds.companion}</a>`
-            }</div>
-            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(ds.tags)}</div>
-          </div>
-        `;
-        dsElem.addEventListener("click", function() {
-          const details = dsElem.querySelector(".dataset-full");
-          details.style.display = (details.style.display === "block") ? "none" : "block";
-        });
-        datasetsContainer.appendChild(dsElem);
-      });
+      datasetsContainer.innerHTML = "<p>Loading datasets...</p>";
+      renderTags();
+      renderDatasets();
     }
-  
-    // Event listeners for search input and sort selection.
-    document.getElementById("search-input").addEventListener("input", filterDatasets);
-    document.getElementById("sort-select").addEventListener("change", filterDatasets);
-  
-    // Initial render.
-    renderTags();
-    filterDatasets();
+    init();
+
   </script>
 </body>
 </html>
