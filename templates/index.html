@@ -46,12 +46,92 @@
     <!-- Matching datasets will be displayed here -->
   </div>
 
+
+  <!-- Render math and markdown properly -->
   <script>
-    // Data from the server
-    const datasets = JSON.parse('{{ datasets | tojson | safe }}');
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script id="Mathjax-script" src="{{ url_for('static', filename='mathjax.js') }}"></script>
+  <script id="markdown-it" src="{{ url_for('static', filename='markdownit.js') }}"></script>
+  <script id="data" type="application/json">{{ datasets | tojson }}</script>
+
+  <script>
+    // Renderer placeholder
+    let md = new markdownit({
+      html: false,
+      linkify: false,
+      typographer: false,
+      breaks: true,
+    });
+
+    // Data from flask server
+    console.log("Data from Flask server: ", document.getElementById("data").textContent);
+    const datasets = JSON.parse(document.getElementById("data").textContent);
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
     let selectedTags = [];
+
+    // Render datasets with markdown and LaTeX support
+    function renderDatasets(list) {
+      const container = document.getElementById("datasets-container");
+      container.innerHTML = "";
+      list.forEach(dataset => {
+        // Use markdown-it to render fields that might include markdown/LaTeX
+        const summaryHtml = md.render(dataset.summary || "");
+        // const summaryHtml = dataset.summary || "";
+        const sizeHtml = md.render(dataset.size || "");
+        const dateHtml = md.render(dataset.date || "N/A");
+        const notesHtml = md.render(dataset.notes || "");
+        const downloadHtml = md.render(dataset.download || "");
+
+        const elem = document.createElement("div");
+        elem.className = "dataset";
+        elem.innerHTML = `
+          <div class="dataset-minimal">
+            <div class="dataset-title">${dataset.name}</div>
+            <div class="dataset-detail">${summaryHtml}</div>
+            <div class="dataset-detail"><strong>Size:</strong> ${sizeHtml}</div>
+            <div class="dataset-detail"><strong>Date Created:</strong> ${dateHtml}</div>
+          </div>
+          <div class="dataset-full" style="display: none;">
+            <div class="dataset-detail"><strong>Download Location:</strong> ${downloadHtml}</div>
+            <div class="dataset-detail"><strong>Companion Paper:</strong> ${
+              dataset.companion === "Not available"
+                ? "Not available"
+                : `<a href="${dataset.companion}" target="_blank">${dataset.companion}</a>`
+            }</div>
+            <div class="dataset-detail">${notesHtml}</div>
+            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
+          </div>
+        `;
+        // Toggle details on click.
+        elem.addEventListener("click", () => {
+          const details = elem.querySelector(".dataset-full");
+          details.style.display = details.style.display === "block" ? "none" : "block";
+        });
+        container.appendChild(elem);
+
+        // Add hyperlink logic
+        const links = elem.querySelectorAll("a");
+        links.forEach(link => {
+          link.setAttribute("target", "_blank");
+          link.setAttribute("rel", "noopener noreferrer");
+          link.setAttribute("onclick", "event.stopPropagation()");
+        });
+      });
+
+      // trigger MathJax to process any LaTeX expressions
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise();
+      }
+    }
 
     // Filter datasets based on search term and selected tags.
     const updateView = () => {
@@ -65,6 +145,7 @@
         return matchesSearch && matchesTags;
       });
       renderDatasets(filtered);
+      console.log("Filtered datasets: ", filtered);
     };
 
     // Sort datasets
@@ -76,40 +157,6 @@
         if (sortOption === "date_earliest") return new Date(a.date) - new Date(b.date);
       });
       updateView();
-    }
-
-    // Render datasets in the container.
-    function renderDatasets(list) {
-      const container = document.getElementById("datasets-container");
-      container.innerHTML = "";
-      list.forEach(dataset => {
-        const elem = document.createElement("div");
-        elem.className = "dataset";
-        elem.innerHTML = `
-          <div class="dataset-minimal">
-            <div class="dataset-title">${dataset.name}</div>
-            <div class="dataset-detail">${dataset.summary}</div>
-            <div class="dataset-detail"><strong>Size:</strong> ${dataset.size}</div>
-            <div class="dataset-detail"><strong>Date Created:</strong> ${dataset.date || "N/A"}</div>
-          </div>
-          <div class="dataset-full" style="display: none;">
-            <div class="dataset-detail"><strong>Download Location:</strong> <a href="${dataset.download}" target="_blank">${dataset.download}</a></div>
-            <div class="dataset-detail"><strong>Companion Paper:</strong> ${
-              dataset.companion === "Not available"
-                ? "Not available"
-                : `<a href="${dataset.companion}" target="_blank">${dataset.companion}</a>`
-            }</div>
-            <div class="dataset-detail">${dataset.notes}</div>
-            <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
-          </div>
-        `;
-        // Toggle details on click.
-        elem.addEventListener("click", () => {
-          const details = elem.querySelector(".dataset-full");
-          details.style.display = details.style.display === "block" ? "none" : "block";
-        });
-        container.appendChild(elem);
-      });
     }
 
     // Render and handle tag buttons with tooltips.
@@ -186,12 +233,12 @@
       }
     });
 
-    // Initialize the page.
-    renderTags();
+    // Initialiation
     updateOrder();
     updateView();
+    renderTags();
 
-    // Avoid overflow when hovering on tooltips with a delay.
+    // Add hovering logic over tags
     document.querySelectorAll('.tag').forEach(tag => {
       let tooltipDiv;
       let hoverTimer; // Timer for the delay
