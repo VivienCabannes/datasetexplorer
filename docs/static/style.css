@@ -1,16 +1,38 @@
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    position: relative;
+    overflow: visible;  /* Ensure tooltips aren’t clipped */
 }
 
+/* Top-right Controls */
 .search-bar {
-    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
 }
 
+.sort-bar {
+    position: absolute;
+    top: 20px;
+    right: 220px;
+    width: 200px;
+}
+
+/* Page Title */
+h1 {
+    margin: 0;
+}
+
+/* Tags Container (shifted to avoid top-right controls) */
 .tags {
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
+/* Unified Tag Styling for Both Filter & Dataset Tags */
 .tag {
     display: inline-block;
     background-color: #eee;
@@ -18,16 +40,28 @@ body {
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
+    position: relative; /* For positioning if needed */
 }
 
+/* Selected State */
 .tag.selected {
     background-color: #cce5ff;
 }
 
-.sort-bar {
-    margin-bottom: 20px;
+/* Styling for the Dynamic Tooltip Created via JS */
+.custom-tooltip {
+    position: fixed; /* Relative to the viewport */
+    background-color: #f9f9f9;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 8px;
+    z-index: 9999;
+    max-width: 250px;
+    word-wrap: break-word;
 }
 
+/* Dataset Container Styles */
 .dataset {
     border: 1px solid #ccc;
     padding: 10px;
@@ -40,57 +74,21 @@ body {
     background-color: #f9f9f9;
 }
 
+/* Dataset Title */
 .dataset-title {
     font-size: 1.2em;
     font-weight: bold;
 }
 
+/* Dataset Details */
 .dataset-detail {
     margin: 5px 0;
 }
 
-/* The full details section is hidden by default */
+/* Full Dataset Details (Initially Hidden) */
 .dataset-full {
     display: none;
     margin-top: 10px;
     border-top: 1px dashed #ccc;
     padding-top: 10px;
-}
-
-/* Styling for tags shown within each dataset */
-.dataset-tag {
-    display: inline-block;
-    background-color: #ddd;
-    padding: 2px 5px;
-    margin: 2px;
-    border-radius: 3px;
-}
-
-/* Updated custom tooltip styling */
-.tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.tooltip .tooltiptext {
-    visibility: hidden;
-    background-color: #f9f9f9; /* Light background */
-    color: #000;               /* Dark text */
-    text-align: center;
-    padding: 5px 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    position: absolute;
-    z-index: 1;
-    top: 110%;               /* Appear under the button */
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;     /* Single line */
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
 }
