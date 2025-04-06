@@ -1,0 +1,8 @@
+{
+    "name": "CodeContests",
+    "size": "13,000 samples, 2GB",
+    "download": "https://huggingface.co/datasets/deepmind/code_contests",
+    "companion": "https://arxiv.org/abs/2203.07814",
+    "notes": "Includes correct and incorrect solutions. Rich data for training/debugging models.",
+    "summary": "Dataset used for AlphaCode. Competitive programming problems from Aizu, AtCoder, CodeChef, Codeforces and HackerEarth."
+}

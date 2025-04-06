@@ -1,0 +1,7 @@
+{
+    "name": "Still",
+    "size": "30,000 samples, 10 MB",
+    "download": "https://huggingface.co/datasets/RUC-AIBOX/STILL-3-Preview-RL-Data",
+    "companion": "https://arxiv.org/abs/2412.09413",
+    "summary": "Collection of question and verifiable answer extracted from Math, Numina, and Aime. # Additional notes (for additional assets) MIT-8 benchmark Proof-Pile - ArXiv.math (10GB) - Open-source math textbooks (50MB) - Formal mathematics libraries (500MB) - Lean mathlib and other Lean repositories - Isabelle AFP - Coq mathematical components and other Coq repositories - HOL Light - set.mm - Mizar Mathematical Library - Math Overflow and Math Stack Exchange (2.5GB) - Wiki-style sources (50MB) - ProofWiki - Wikipedia math articles - MATH dataset (6MB) https://huggingface.co/datasets/HuggingFaceTB/cosmopedia https://huggingface.co/datasets/open-web-math/open-web-math https://github.com/LiveCodeBench/LiveCodeBench https://huggingface.co/datasets/LLM360/MegaMath https://huggingface.co/datasets/math-ai/AutoMathText https://arxiv.org/abs/2402.07625 https://huggingface.co/datasets/open-thoughts/OpenThoughts-114k AMPS (Khan + Mathematica) Dataset OCR: https://arxiv.org/pdf/2502.18443"
+}

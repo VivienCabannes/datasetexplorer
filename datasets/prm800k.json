@@ -1,0 +1,8 @@
+{
+    "name": "PRM800K",
+    "size": "800,000 samples,",
+    "download": "https://github.com/openai/prm800k",
+    "companion": "https://arxiv.org/abs/2305.20050",
+    "notes": "Some annotations were reported to be incorrect",
+    "summary": "Datasets created by OpenAI by using LLMs to answer question from the MATH datasets, with rationale graded by humnas."
+}

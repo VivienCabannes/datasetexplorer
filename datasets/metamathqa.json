@@ -1,0 +1,8 @@
+{
+    "name": "MetaMathQA",
+    "size": "400,000 samples, 200 MB.",
+    "download": "https://huggingface.co/datasets/meta-math/MetaMathQA",
+    "companion": "https://arxiv.org/abs/2309.12284",
+    "notes": "OpenMathInstruct is a more recent iteration of the same idea.",
+    "summary": "Datasets collected by 'bootstrapping' gsm8k and Math"
+}

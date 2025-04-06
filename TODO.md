@@ -5,5 +5,3 @@
 
 - add "editor tools" to efficient edit the datasets cards:
     - function to remove tags to a list of datasets
-
-rename all the dataset.json with lowercase, and replace space and hyphen by underscore.
