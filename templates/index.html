@@ -61,18 +61,58 @@
   <script id="data" type="application/json">{{ datasets | tojson }}</script>
 
   <script>
-    // Markdown parser
-    let md = new markdownit({linkify: true,});
-
-    // Data from flask server
+    // Markdown parser and data setup.
+    let md = new markdownit({ linkify: true });
     const datasets = JSON.parse(document.getElementById("data").textContent);
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
     let selectedTags = [];
-    // Global state to track expanded datasets by using dataset name as the key.
     let expandedStates = {};
-
-    // Render datasets with markdown and LaTeX support
+  
+    // Function to attach hover event listeners to tag elements within a given container.
+    function attachHoverToTags(container) {
+      container.querySelectorAll('.tag').forEach(tag => {
+        let tooltipDiv;
+        let hoverTimer;
+  
+        tag.addEventListener('mouseenter', () => {
+          const text = tag.getAttribute('data-tooltip');
+          if (!text) return;
+          hoverTimer = setTimeout(() => {
+            tooltipDiv = document.createElement('div');
+            tooltipDiv.className = 'custom-tooltip';
+            tooltipDiv.innerText = text;
+            document.body.appendChild(tooltipDiv);
+            const rect = tag.getBoundingClientRect();
+            const tooltipRect = tooltipDiv.getBoundingClientRect();
+            let top = rect.bottom + window.scrollY + 5;
+            let left = rect.left + window.scrollX + (rect.width - tooltipRect.width) / 2;
+            if (left + tooltipRect.width > window.innerWidth) {
+              left = window.innerWidth - tooltipRect.width - 5;
+            }
+            if (left < 0) {
+              left = 5;
+            }
+            if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
+              top = rect.top + window.scrollY - tooltipRect.height - 5;
+            }
+            tooltipDiv.style.top = `${top}px`;
+            tooltipDiv.style.left = `${left}px`;
+          }, 500);
+        });
+  
+        tag.addEventListener('mouseleave', () => {
+          clearTimeout(hoverTimer);
+          if (tooltipDiv) {
+            tooltipDiv.remove();
+            tooltipDiv = null;
+          }
+        });
+      });
+    }
+  
+    // Render dataset cards. Note that after rendering the cards,
+    // we call attachHoverToTags to bind hover logic to the newly created tag elements.
     function renderDatasets(list) {
       const container = document.getElementById("datasets-container");
       container.innerHTML = "";
@@ -80,7 +120,6 @@
         const summaryHtml = md.renderInline(dataset.summary || "");
         const sizeHtml = md.renderInline(dataset.size || "");
         const dateHtml = md.renderInline(dataset.date || "N/A");
-
         // Only include full details if present
         let optionalDetails = "";
         if (dataset.download) {
@@ -90,12 +129,10 @@
           optionalDetails += `<div class="dataset-detail"><strong>Companion Paper:</strong> ${md.renderInline(dataset.companion)}</div>`;
         }
         if (dataset.notes) {
-          optionalDetails += `<div class="dataset-detail"> ${md.renderInline(dataset.notes)}</div>`;
+          optionalDetails += `<div class="dataset-detail">${md.renderInline(dataset.notes)}</div>`;
         }
-
         // Check the global expanded state for this dataset.
         const isExpanded = expandedStates[dataset.name];
-
         const elem = document.createElement("div");
         elem.className = "dataset";
         elem.innerHTML = `
@@ -110,10 +147,9 @@
             <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
           </div>
         `;
-        // Toggle details on click and update the global expanded state.
         elem.addEventListener("click", () => {
           const details = elem.querySelector(".dataset-full");
-          if(expandedStates[dataset.name]) {
+          if (expandedStates[dataset.name]) {
             expandedStates[dataset.name] = false;
             details.style.display = "none";
           } else {
@@ -122,8 +158,8 @@
           }
         });
         container.appendChild(elem);
-
-        // Add hyperlink logic so links don't trigger the parent click event.
+  
+        // Ensure links inside the card don’t trigger the parent click event.
         const links = elem.querySelectorAll("a");
         links.forEach(link => {
           link.setAttribute("target", "_blank");
@@ -131,9 +167,26 @@
           link.setAttribute("onclick", "event.stopPropagation()");
         });
       });
+      // Re-attach hover handlers to tag elements in the newly rendered datasets.
+      attachHoverToTags(container);
     }
-
-    // Filter datasets based on search term and selected tags.
+  
+    // Render dataset tags (inside each dataset card).
+    function renderDatasetTags(tags) {
+      if (!tags) return "";
+      return tags.map(tag => {
+        let tooltip = "";
+        for (let group of tagData) {
+          if (group.tags && group.tags[tag]) {
+            tooltip = group.tags[tag];
+            break;
+          }
+        }
+        return `<span class="tag" data-tooltip="${tooltip}">${tag}</span>`;
+      }).join(" ");
+    }
+  
+    // Update view based on search and tag filters.
     const updateView = () => {
       const filtered = datasets.filter(dataset => {
         const matchesSearch = !searchTerm ||
@@ -146,8 +199,8 @@
       });
       renderDatasets(filtered);
     };
-
-    // Sort datasets
+  
+    // Sort datasets.
     function updateOrder() {
       const sortOption = document.getElementById("sort-select").value;
       datasets.sort((a, b) => {
@@ -157,12 +210,11 @@
       });
       updateView();
     }
-
-    // Render and handle tag buttons with tooltips.
+  
+    // Render the top-level tag filters.
     function renderTags() {
       const container = document.getElementById("tags-container");
       container.innerHTML = "";
-      // iterate over the array to preserve order.
       tagData.forEach(groupObj => {
         const groupContainer = document.createElement("div");
         groupContainer.className = "tag-group-line";
@@ -170,7 +222,6 @@
         header.className = "tag-group-header";
         header.textContent = `${groupObj.group}: `;
         groupContainer.appendChild(header);
-        // iterate over tags within the group.
         Object.keys(groupObj.tags).forEach(tag => {
           const tagElem = document.createElement("span");
           tagElem.className = "tag";
@@ -191,99 +242,30 @@
         });
         container.appendChild(groupContainer);
       });
+      // Attach hover handlers for the top-level tags.
+      attachHoverToTags(container);
     }
-
-    // Render tags for a dataset's tag list.
-    function renderDatasetTags(tags) {
-      if (!tags) return "";
-      return tags.map(tag => {
-        let tooltip = "";
-        for (let group in tagData) {
-          if (tagData[group].tags && tagData[group].tags[tag]) {
-            tooltip = tagData[group].tags[tag];
-            break;
-          }
-        }
-        return `<span class="tag" data-tooltip="${tooltip}">${tag}</span>`;
-      }).join(" ");
-    }
-
+  
     // Event listeners for search and sorting.
     document.getElementById("search-input").addEventListener("input", e => {
       searchTerm = e.target.value;
       updateView();
     });
     document.getElementById("sort-select").addEventListener("change", updateOrder);
-
-    // Help button toggles the display of help text.
     document.getElementById("help-button").addEventListener("click", () => {
       const helpText = document.getElementById("help-text");
       helpText.style.display = helpText.style.display === "none" ? "block" : "none";
     });
-
-    // Theme toggle button: toggles dark mode and updates its icon.
     document.getElementById("theme-toggle-button").addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
       const button = document.getElementById("theme-toggle-button");
-      if(document.body.classList.contains("dark-mode")){
-        button.textContent = "☀️";
-      } else {
-        button.textContent = "🌙";
-      }
+      button.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
-
-    // Initialization
+  
+    // Initialization.
     renderTags();
     updateOrder();
     updateView();
-
-    // Add hovering logic over tags.
-    document.querySelectorAll('.tag').forEach(tag => {
-      let tooltipDiv;
-      let hoverTimer; // Timer for the delay
-
-      tag.addEventListener('mouseenter', () => {
-        const text = tag.getAttribute('data-tooltip');
-        if (!text) return;
-
-        // Start the timer for 500ms delay
-        hoverTimer = setTimeout(() => {
-          tooltipDiv = document.createElement('div');
-          tooltipDiv.className = 'custom-tooltip';
-          tooltipDiv.innerText = text;
-          document.body.appendChild(tooltipDiv);
-
-          // Position the tooltip.
-          const rect = tag.getBoundingClientRect();
-          const tooltipRect = tooltipDiv.getBoundingClientRect();
-
-          let top = rect.bottom + window.scrollY + 5;
-          let left = rect.left + window.scrollX + (rect.width - tooltipRect.width) / 2;
-
-          if (left + tooltipRect.width > window.innerWidth) {
-            left = window.innerWidth - tooltipRect.width - 5;
-          }
-          if (left < 0) {
-            left = 5;
-          }
-          if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
-            top = rect.top + window.scrollY - tooltipRect.height - 5;
-          }
-
-          tooltipDiv.style.top = `${top}px`;
-          tooltipDiv.style.left = `${left}px`;
-        }, 500);
-      });
-
-      tag.addEventListener('mouseleave', () => {
-        clearTimeout(hoverTimer);
-        if (tooltipDiv) {
-          tooltipDiv.remove();
-          tooltipDiv = null;
-        }
-      });
-    });
-
   </script>
 </body>
 </html>
