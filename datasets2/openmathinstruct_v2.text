@@ -1,0 +1,17 @@
+Here's the completed dataset card for **OpenMathInstruct-2**:
+
+- **name**: OpenMathInstruct-2
+
+- **summary**: OpenMathInstruct-2 is a large-scale synthetic dataset comprising approximately 14 million question-solution pairs, derived from around 600,000 unique mathematical questions. The dataset was created by augmenting existing benchmarks, such as MATH and GSM8K, using the Llama3.1 family of models to generate solutions. This augmentation aimed to enhance the training of large language models in mathematical reasoning tasks. 
+
+- **size**: The dataset contains approximately 14 million samples, totaling around 12 GB. 
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/nvidia/OpenMathInstruct-2](https://huggingface.co/datasets/nvidia/OpenMathInstruct-2). 
+
+- **companion**: The dataset is introduced in the paper "OpenMathInstruct-2: Accelerating AI for Math with Massive Open-Source Instruction Data," accessible at [https://arxiv.org/abs/2410.01560](https://arxiv.org/abs/2410.01560). 
+
+- **notes**: OpenMathInstruct-2 was developed to address the challenges in mathematical reasoning within large language models. Through careful ablation experiments on data synthesis using the Llama3.1 models, the dataset was constructed to improve solution formats, leverage strong teacher models, and ensure question diversity. Fine-tuning models with OpenMathInstruct-2 has shown significant performance improvements on benchmarks like MATH. 
+
+- **tags**: "synthetic", "QA", "compilation", "answer:verifiable", "with rationale", "question:synthetic", "answer:synthetic", "rationale:synthetic", "mathematics"
+
+This card provides a comprehensive overview of the OpenMathInstruct-2 dataset, highlighting its structure, content, and relevance to research in mathematical reasoning and instruction tuning.

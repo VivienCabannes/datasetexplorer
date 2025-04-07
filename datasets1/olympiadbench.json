@@ -1,0 +1,7 @@
+{
+    "name": "OlympiadBench",
+    "size": "8,000 questions.",
+    "download": "https://huggingface.co/datasets/Hothan/OlympiadBench",
+    "companion": "https://arxiv.org/pdf/2402.14008",
+    "summary": "Datasets collected from Olympiads with figures (multi-modal), rationale (derived by humans), various level of difficulty."
+}

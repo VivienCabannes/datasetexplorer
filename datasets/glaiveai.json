@@ -8,16 +8,16 @@
 
 Here's the completed dataset card for **GlaiveAI Reasoning v1-20M**:
 
-- **name**: GlaiveAI Reasoning v1-20M
+- **name**: GlaiveAI Reasoning v1-20M
 
-- **summary**: GlaiveAI Reasoning v1-20M is a substantial dataset comprising 20 million examples, totaling approximately 87 GB. It consists of reasoning traces distilled from the DeepSeek-R1 model, encompassing tasks across mathematics, coding, and science domains. The dataset is designed to facilitate the training and evaluation of large language models (LLMs) in complex reasoning tasks. Notably, the dataset does not include verification of correctness for the reasoning traces, which may impact its applicability in certain contexts. 
+- **summary**: GlaiveAI Reasoning v1-20M is a substantial dataset comprising 20 million examples, totaling approximately 87 GB. It consists of reasoning traces distilled from the DeepSeek-R1 model, encompassing tasks across mathematics, coding, and science domains. The dataset is designed to facilitate the training and evaluation of large language models (LLMs) in complex reasoning tasks. Notably, the dataset does not include verification of correctness for the reasoning traces, which may impact its applicability in certain contexts. 
 
-- **size**: Approximately 20 million examples, totaling around 87 GB. 
+- **size**: Approximately 20 million examples, totaling around 87 GB. 
 
-- **download**: The dataset is available for download at [https://huggingface.co/datasets/glaiveai/reasoning-v1-20m](https://huggingface.co/datasets/glaiveai/reasoning-v1-20m). 
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/glaiveai/reasoning-v1-20m](https://huggingface.co/datasets/glaiveai/reasoning-v1-20m). 
 
-- **notes**: The dataset comprises reasoning traces distilled from the DeepSeek-R1 model. It is important to note that the dataset does not include verification of the correctness of these reasoning traces. Users should exercise caution and consider implementing additional verification mechanisms when utilizing this dataset for training or evaluation purposes. 
+- **notes**: The dataset comprises reasoning traces distilled from the DeepSeek-R1 model. It is important to note that the dataset does not include verification of the correctness of these reasoning traces. Users should exercise caution and consider implementing additional verification mechanisms when utilizing this dataset for training or evaluation purposes. 
 
-- **tags**: "synthetic", "reasoning", "DeepSeek-R1", "mathematics", "coding", "science"
+- **tags**: "synthetic", "reasoning", "DeepSeek-R1", "mathematics", "coding", "science"
 
 This card provides an overview of the GlaiveAI Reasoning v1-20M dataset, highlighting its content, structure, and considerations for use in developing and assessing reasoning capabilities in large language models. 

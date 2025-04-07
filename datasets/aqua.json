@@ -8,18 +8,18 @@
 
 Here's the completed dataset card for **AQuA (Algebra Question Answering with Rationales)**:
 
-- **name**: AQuA (Algebra Question Answering with Rationales)
+- **name**: AQuA (Algebra Question Answering with Rationales)
 
-- **summary**: AQuA is a large-scale dataset developed by DeepMind, consisting of approximately 100,000 algebraic word problems. Each problem is presented as a multiple-choice question with five possible answers, accompanied by a natural language rationale explaining the solution. The dataset was constructed by extracting around 34,000 questions from undergraduate and graduate admission tests such as the GMAT and GRE, supplemented with answers and rationales sourced from the web. Additionally, crowdsourcing methods were employed to generate similar questions, enhancing the dataset's diversity and comprehensiveness. citeturn0search0
+- **summary**: AQuA is a large-scale dataset developed by DeepMind, consisting of approximately 100,000 algebraic word problems. Each problem is presented as a multiple-choice question with five possible answers, accompanied by a natural language rationale explaining the solution. The dataset was constructed by extracting around 34,000 questions from undergraduate and graduate admission tests such as the GMAT and GRE, supplemented with answers and rationales sourced from the web. Additionally, crowdsourcing methods were employed to generate similar questions, enhancing the dataset's diversity and comprehensiveness. 
 
-- **size**: Approximately 100,000 samples, totaling around 52 MB. citeturn0search2
+- **size**: Approximately 100,000 samples, totaling around 52 MB. 
 
-- **download**: The dataset is available for download at [https://huggingface.co/datasets/deepmind/aqua_rat](https://huggingface.co/datasets/deepmind/aqua_rat). citeturn0search2
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/deepmind/aqua_rat](https://huggingface.co/datasets/deepmind/aqua_rat). 
 
-- **companion**: The dataset is introduced in the paper "Program Induction by Rationale Generation: Learning to Solve and Explain Algebraic Word Problems," accessible at [https://arxiv.org/pdf/1705.04146](https://arxiv.org/pdf/1705.04146).
+- **companion**: The dataset is introduced in the paper "Program Induction by Rationale Generation: Learning to Solve and Explain Algebraic Word Problems," accessible at [https://arxiv.org/pdf/1705.04146](https://arxiv.org/pdf/1705.04146).
 
-- **notes**: AQuA provides a rich resource for training and evaluating models on algebraic problem-solving and rationale generation. The inclusion of both correct answers and detailed rationales allows for the development of models that not only arrive at the correct solution but also provide explanatory reasoning. Researchers should note that while the dataset is extensive, the quality of web-sourced rationales may vary, and additional verification may be necessary for certain applications. citeturn0search0
+- **notes**: AQuA provides a rich resource for training and evaluating models on algebraic problem-solving and rationale generation. The inclusion of both correct answers and detailed rationales allows for the development of models that not only arrive at the correct solution but also provide explanatory reasoning. Researchers should note that while the dataset is extensive, the quality of web-sourced rationales may vary, and additional verification may be necessary for certain applications. 
 
-- **tags**: "algebra", "word problems", "rationale generation", "multiple-choice", "DeepMind", "GMAT", "GRE", "crowdsourcing"
+- **tags**: "algebra", "word problems", "rationale generation", "multiple-choice", "DeepMind", "GMAT", "GRE", "crowdsourcing"
 
 This card provides an overview of the AQuA dataset, highlighting its structure, content, and significance in advancing research in algebraic problem-solving and explainable AI. 

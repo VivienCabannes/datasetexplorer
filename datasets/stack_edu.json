@@ -9,18 +9,18 @@
 
 Here's the completed dataset card for **Stack-Edu**:
 
-- **name**: Stack-Edu
+- **name**: Stack-Edu
 
-- **summary**: Stack-Edu is a curated subset of The Stack v2 dataset, focusing on code files with high educational value across 15 programming languages. It was developed to enhance the training of small language models, particularly SmolLM2, by providing high-quality, educational code examples. The dataset was created using classifiers fine-tuned on code files annotated by Llama3.1-70B-Instruct, scoring the educational value of each file. citeturn0search1
+- **summary**: Stack-Edu is a curated subset of The Stack v2 dataset, focusing on code files with high educational value across 15 programming languages. It was developed to enhance the training of small language models, particularly SmolLM2, by providing high-quality, educational code examples. The dataset was created using classifiers fine-tuned on code files annotated by Llama3.1-70B-Instruct, scoring the educational value of each file. 
 
-- **size**: The dataset comprises approximately 167 million samples, totaling around 1 terabyte of data. citeturn0search4
+- **size**: The dataset comprises approximately 167 million samples, totaling around 1 terabyte of data. 
 
-- **download**: The dataset is available for download at [https://huggingface.co/datasets/HuggingFaceTB/stack-edu](https://huggingface.co/datasets/HuggingFaceTB/stack-edu). citeturn0search4
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/HuggingFaceTB/stack-edu](https://huggingface.co/datasets/HuggingFaceTB/stack-edu). 
 
-- **companion**: The dataset is introduced and utilized in the paper "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model," accessible at [https://arxiv.org/abs/2502.02737](https://arxiv.org/abs/2502.02737). citeturn0search1
+- **companion**: The dataset is introduced and utilized in the paper "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model," accessible at [https://arxiv.org/abs/2502.02737](https://arxiv.org/abs/2502.02737). 
 
-- **notes**: Due to its substantial size, downloading Stack-Edu requires the use of Amazon S3. Despite its size, the dataset offers a significant number of tokens, making it valuable for training language models. The creation of Stack-Edu involved fine-tuning classifiers on code files annotated by Llama3.1-70B-Instruct to assess their educational quality. Each classifier was trained on a specific programming language to ensure precise evaluation. citeturn0search2
+- **notes**: Due to its substantial size, downloading Stack-Edu requires the use of Amazon S3. Despite its size, the dataset offers a significant number of tokens, making it valuable for training language models. The creation of Stack-Edu involved fine-tuning classifiers on code files annotated by Llama3.1-70B-Instruct to assess their educational quality. Each classifier was trained on a specific programming language to ensure precise evaluation. 
 
-- **tags**: "human", "monolithic", "filtration", "programming"
+- **tags**: "human", "monolithic", "filtration", "programming"
 
 This card provides a comprehensive overview of the Stack-Edu dataset, highlighting its structure, content, and relevance to research in code-related language model training. 

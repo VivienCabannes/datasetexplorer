@@ -6,18 +6,18 @@
 
 Here's the completed dataset card for **DeepSeek Math Corpus**:
 
-- **name**: DeepSeek Math Corpus
+- **name**: DeepSeek Math Corpus
 
-- **summary**: The DeepSeek Math Corpus is a large-scale, high-quality dataset comprising approximately 120 billion tokens of mathematical content. It was constructed to enhance the mathematical reasoning capabilities of language models. The dataset was developed through an iterative data selection pipeline that involved training a fastText classifier on mathematical content from OpenWebMath, using this classifier to identify math-related content from the Common Crawl dataset, and refining the selection through manual annotation and domain-specific heuristics. This approach resulted in a corpus that is significantly larger than previous mathematical datasets, such as Minerva and OpenWebMath, and includes multilingual data, supporting performance improvements in both English and Chinese mathematical benchmarks.
+- **summary**: The DeepSeek Math Corpus is a large-scale, high-quality dataset comprising approximately 120 billion tokens of mathematical content. It was constructed to enhance the mathematical reasoning capabilities of language models. The dataset was developed through an iterative data selection pipeline that involved training a fastText classifier on mathematical content from OpenWebMath, using this classifier to identify math-related content from the Common Crawl dataset, and refining the selection through manual annotation and domain-specific heuristics. This approach resulted in a corpus that is significantly larger than previous mathematical datasets, such as Minerva and OpenWebMath, and includes multilingual data, supporting performance improvements in both English and Chinese mathematical benchmarks.
 
-- **size**: Approximately 120 billion tokens.
+- **size**: Approximately 120 billion tokens.
 
-- **download**: As of now, the DeepSeek Math Corpus has not been publicly released for download. Researchers interested in this dataset may refer to the associated publications for more details.
+- **download**: As of now, the DeepSeek Math Corpus has not been publicly released for download. Researchers interested in this dataset may refer to the associated publications for more details.
 
-- **companion**: The dataset is introduced in the paper "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models," accessible at [https://arxiv.org/abs/2402.03300](https://arxiv.org/abs/2402.03300).
+- **companion**: The dataset is introduced in the paper "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models," accessible at [https://arxiv.org/abs/2402.03300](https://arxiv.org/abs/2402.03300).
 
-- **notes**: The DeepSeek Math Corpus was instrumental in training the DeepSeekMath 7B model, which achieved a score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of models like GPT-4 and Gemini-Ultra. The corpus includes multilingual data, contributing to improved performance on both English and Chinese mathematical benchmarks. The data collection process involved several iterations of classifier training and data refinement to ensure the quality and relevance of the mathematical content.
+- **notes**: The DeepSeek Math Corpus was instrumental in training the DeepSeekMath 7B model, which achieved a score of 51.7% on the competition-level MATH benchmark without relying on external toolkits and voting techniques, approaching the performance level of models like GPT-4 and Gemini-Ultra. The corpus includes multilingual data, contributing to improved performance on both English and Chinese mathematical benchmarks. The data collection process involved several iterations of classifier training and data refinement to ensure the quality and relevance of the mathematical content.
 
-- **tags**: "web", "compilation", "filtration", "CommonCrawl", "mathematics", "multilingual"
+- **tags**: "web", "compilation", "filtration", "CommonCrawl", "mathematics", "multilingual"
 
 This card provides an overview of the DeepSeek Math Corpus, highlighting its construction, content, and significance in advancing the mathematical reasoning capabilities of language models. 

@@ -6,18 +6,18 @@
 
 Here's the completed dataset card for **The Stack v2**:
 
-- **name**: The Stack v2
+- **name**: The Stack v2
 
-- **summary**: The Stack v2 is a comprehensive dataset of software source code, compiled by the BigCode project in collaboration with Software Heritage. It encompasses over 3 billion files across more than 600 programming and markup languages, sourced from the Software Heritage archive as of September 2023. This dataset serves as a substantial resource for training and evaluating large language models (LLMs) for code generation and understanding. citeturn0search0
+- **summary**: The Stack v2 is a comprehensive dataset of software source code, compiled by the BigCode project in collaboration with Software Heritage. It encompasses over 3 billion files across more than 600 programming and markup languages, sourced from the Software Heritage archive as of September 2023. This dataset serves as a substantial resource for training and evaluating large language models (LLMs) for code generation and understanding. 
 
-- **size**: The dataset comprises approximately 5.5 billion samples, totaling around 67.5 terabytes of data. citeturn0search0
+- **size**: The dataset comprises approximately 5.5 billion samples, totaling around 67.5 terabytes of data. 
 
-- **download**: Access to The Stack v2 requires an agreement with Software Heritage and INRIA. Interested parties should contact datasets@softwareheritage.org for more information. citeturn0search0
+- **download**: Access to The Stack v2 requires an agreement with Software Heritage and INRIA. Interested parties should contact datasets@softwareheritage.org for more information. 
 
-- **companion**: The dataset is accompanied by the paper "StarCoder2 and The Stack v2: The Next Generation," accessible at [https://arxiv.org/abs/2402.19173](https://arxiv.org/abs/2402.19173). citeturn0search9
+- **companion**: The dataset is accompanied by the paper "StarCoder2 and The Stack v2: The Next Generation," accessible at [https://arxiv.org/abs/2402.19173](https://arxiv.org/abs/2402.19173). 
 
-- **notes**: The Stack v2 is an evolution of the original Stack dataset, significantly expanding its scope and size. It includes a diverse range of programming languages and has been curated to support the development of code-focused LLMs. The dataset is structured to facilitate research in code generation, understanding, and related tasks. citeturn0search0
+- **notes**: The Stack v2 is an evolution of the original Stack dataset, significantly expanding its scope and size. It includes a diverse range of programming languages and has been curated to support the development of code-focused LLMs. The dataset is structured to facilitate research in code generation, understanding, and related tasks. 
 
-- **tags**: "human", "monolithic", "compilation", "programming"
+- **tags**: "human", "monolithic", "compilation", "programming"
 
 This card provides a comprehensive overview of The Stack v2 dataset, highlighting its structure, content, and relevance to research in code-related large language models. 

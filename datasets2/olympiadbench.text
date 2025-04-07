@@ -1,0 +1,17 @@
+Here's the completed dataset card for **OlympiadBench**:
+
+- **name**: OlympiadBench
+
+- **summary**: OlympiadBench is a comprehensive benchmark designed to evaluate the reasoning capabilities of large language models (LLMs) and large multimodal models (LMMs) using Olympiad-level problems in mathematics and physics. The dataset comprises 8,476 problems sourced from international and regional Olympiad competitions, including the Chinese College Entrance Exam (Gaokao). Each problem is accompanied by expert-level, step-by-step solutions, facilitating in-depth assessment of model performance. Notably, 57% of the problems include visual elements, making it a multimodal benchmark. 
+
+- **size**: 8,476 problems. 
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/Hothan/OlympiadBench](https://huggingface.co/datasets/Hothan/OlympiadBench). 
+
+- **companion**: The dataset is introduced in the paper "OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems," accessible at [https://arxiv.org/abs/2402.14008](https://arxiv.org/abs/2402.14008). 
+
+- **notes**: OlympiadBench was developed to address the need for more rigorous benchmarks as LLMs and LMMs approach expert-level performance in various tasks. The problems are bilingual (Chinese and English) and span a range of difficulties, with 66% categorized as Chinese College Entrance Exam level and 34% as competition level. The inclusion of visual elements in over half of the problems allows for the evaluation of models' multimodal reasoning abilities. 
+
+- **tags**: "human", "QA", "atomic", "answer:verifiable", "with rationale", "question:human", "answer:human", "rationale:human", "mathematics", "physics"
+
+This card provides a comprehensive overview of the OlympiadBench dataset, highlighting its structure, content, and relevance to advancing the evaluation of complex reasoning in AI models.

@@ -1,0 +1,23 @@
+Here's the completed dataset card for **DeepScaleR**:
+
+- **name**: DeepScaleR
+
+- **summary**: DeepScaleR is a curated dataset comprising approximately 40,000 unique problem-answer pairs, specifically designed to enhance the mathematical reasoning capabilities of language models. The dataset aggregates problems from several reputable sources:
+  - **AIME (American Invitational Mathematics Examination)**: Problems spanning from 1984 to 2023.
+  - **AMC (American Mathematics Competitions)**: Problems from years prior to 2023.
+  - **Omni-MATH dataset**: A compilation of diverse mathematical problems.
+  - **Still dataset**: A collection of mathematical problems from various competitions.
+
+  This dataset was instrumental in fine-tuning the DeepScaleR-1.5B-Preview model, which achieved a 43.1% Pass@1 accuracy on the AIME 2024 benchmark, surpassing the performance of OpenAI's O1-Preview model. 
+
+- **size**: Approximately 40,000 unique problem-answer pairs. 
+
+- **download**: The dataset is not publicly available as a standalone resource. However, it was utilized in training the DeepScaleR-1.5B-Preview model, whose details can be found at [https://huggingface.co/agentica-org/DeepScaleR-1.5B-Preview](https://huggingface.co/agentica-org/DeepScaleR-1.5B-Preview). 
+
+- **companion**: The dataset and its application are discussed in the article "DeepScaleR: Surpassing O1-Preview with a 1.5B Model by Scaling RL," accessible at [https://medium.com/data-science-in-your-pocket/deepseek-r1-5b-new-deepseek-r1-model-tops-openai-o1-in-math-18dacfd04f1f](https://medium.com/data-science-in-your-pocket/deepseek-r1-5b-new-deepseek-r1-model-tops-openai-o1-in-math-18dacfd04f1f). 
+
+- **notes**: The DeepScaleR dataset was meticulously compiled to support reinforcement learning approaches in training language models for mathematical reasoning tasks. The inclusion of problems from AIME, AMC, Omni-MATH, and Still datasets ensures a diverse and challenging set of mathematical questions, facilitating the development of models capable of advanced problem-solving. 
+
+- **tags**: "mathematics", "reasoning", "reinforcement learning", "AIME", "AMC", "Omni-MATH", "Still"
+
+This card provides an overview of the DeepScaleR dataset, emphasizing its composition, purpose, and role in advancing the mathematical reasoning capabilities of language models.

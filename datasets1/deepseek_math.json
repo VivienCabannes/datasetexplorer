@@ -1,0 +1,5 @@
+{
+    "name": "DeepSeek Math Corpus",
+    "companion": "https://arxiv.org/pdf/2402.03300",
+    "summary": "Filtering of Common Crawl based on a FastText classifier based on OpenWebMath as initial positive examples, and additional heuristics. Datasets not available."
+}

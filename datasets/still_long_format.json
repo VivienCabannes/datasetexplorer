@@ -8,21 +8,21 @@
 
 Here's the completed dataset card for **STILL Long Format**:
 
-- **name**: STILL Long Format
+- **name**: STILL Long Format
 
-- **summary**: STILL Long Format is a dataset comprising 5,000 complex problems emphasizing long-form answers. The questions are sourced from diverse platforms, including NuminaMath, AIME, Leetcode, OpenCoder, Camel, Gaokao (Chinese A-level), and RiddleSense. Each problem is designed to elicit detailed, structured responses, facilitating the evaluation of models' capabilities in generating comprehensive solutions. citeturn0search0
+- **summary**: STILL Long Format is a dataset comprising 5,000 complex problems emphasizing long-form answers. The questions are sourced from diverse platforms, including NuminaMath, AIME, Leetcode, OpenCoder, Camel, Gaokao (Chinese A-level), and RiddleSense. Each problem is designed to elicit detailed, structured responses, facilitating the evaluation of models' capabilities in generating comprehensive solutions. 
 
-- **size**: The dataset contains 5,000 samples with a total storage footprint of approximately 20 MB. citeturn0search0
+- **size**: The dataset contains 5,000 samples with a total storage footprint of approximately 20 MB. 
 
-- **download**: The dataset is available for download at [https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k](https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k). citeturn0search0
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k](https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k). 
 
-- **companion**: The dataset is accompanied by the paper "Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems," accessible at [https://arxiv.org/abs/2412.09413](https://arxiv.org/abs/2412.09413). citeturn0search1
+- **companion**: The dataset is accompanied by the paper "Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems," accessible at [https://arxiv.org/abs/2412.09413](https://arxiv.org/abs/2412.09413). 
 
-- **notes**: STILL Long Format is part of the STILL framework, which focuses on slow-thinking reasoning systems that engage in extended reasoning processes before arriving at solutions. The dataset is structured in JSONL format, with each entry containing:
-  - **question**: The problem statement.
-  - **combined_text**: The model's response, divided into 'thought' (the reasoning process) and 'solution' (the final answer).
-  - **domain**: The category of the question, including fields such as mathematics, physics, chemistry, biology, coding, and puzzles. citeturn0search0
+- **notes**: STILL Long Format is part of the STILL framework, which focuses on slow-thinking reasoning systems that engage in extended reasoning processes before arriving at solutions. The dataset is structured in JSONL format, with each entry containing:
+  - **question**: The problem statement.
+  - **combined_text**: The model's response, divided into 'thought' (the reasoning process) and 'solution' (the final answer).
+  - **domain**: The category of the question, including fields such as mathematics, physics, chemistry, biology, coding, and puzzles. 
 
-- **tags**: "human", "QA", "compilation", "answer:verifiable", "with rationale", "question:human", "answer:human", "rationale:human", "mathematics", "programming"
+- **tags**: "human", "QA", "compilation", "answer:verifiable", "with rationale", "question:human", "answer:human", "rationale:human", "mathematics", "programming"
 
 This card provides a comprehensive overview of the STILL Long Format dataset, highlighting its structure, content, and relevance to research in complex problem-solving and reasoning. 

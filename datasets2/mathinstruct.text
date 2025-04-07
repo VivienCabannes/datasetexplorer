@@ -1,0 +1,17 @@
+Here's the completed dataset card for **MathInstruct**:
+
+- **name**: MathInstruct
+
+- **summary**: MathInstruct is a meticulously curated instruction tuning dataset designed to enhance mathematical reasoning capabilities in large language models (LLMs). Compiled from 13 distinct mathematical rationale datasets—including GSM8K, AQuA, Camel-Math, and others—it uniquely integrates both chain-of-thought (CoT) and program-of-thought (PoT) rationales. This hybrid approach ensures extensive coverage across diverse mathematical fields, facilitating the development of models capable of versatile problem-solving strategies. 
+
+- **size**: Approximately 262,039 samples, totaling around 200 MB. 
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/TIGER-Lab/MathInstruct](https://huggingface.co/datasets/TIGER-Lab/MathInstruct). 
+
+- **companion**: The dataset is introduced in the paper "MAmmoTH: Building Math Generalist Models through Hybrid Instruction Tuning," accessible at [https://arxiv.org/pdf/2309.05653](https://arxiv.org/pdf/2309.05653). 
+
+- **notes**: MathInstruct serves as the foundational dataset for training the MAmmoTH series of models, which have demonstrated substantial improvements over existing open-source models on multiple mathematical reasoning benchmarks. The dataset's emphasis on both CoT and PoT rationales allows models to employ diverse problem-solving methodologies, enhancing their generalization across various mathematical tasks. 
+
+- **tags**: "synthetic", "QA", "compilation", "answer:verifiable", "question:synthetic", "answer:synthetic", "mathematics"
+
+This card provides a comprehensive overview of the MathInstruct dataset, highlighting its structure, content, and significance in advancing mathematical reasoning capabilities in language models.

@@ -1,6 +1,6 @@
 {
     "name": "OmniMath",
-    "size": "4,000, 7 MB.",
+    "size": "4,000, 7 MB."
     "download": "https://huggingface.co/datasets/KbsdJames/Omni-MATH",
     "companion": "https://arxiv.org/abs/2410.07985",
     "summary": "Data obtained from regional to international Olympiads, from the art-of-problem solving."
@@ -8,18 +8,18 @@
 
 Here's the completed dataset card for **Omni-MATH**:
 
-- **name**: Omni-MATH
+- **name**: Omni-MATH
 
-- **summary**: Omni-MATH is a comprehensive and challenging benchmark designed to assess large language models' (LLMs) mathematical reasoning capabilities at the Olympiad level. The dataset comprises 4,428 competition-level problems sourced from various regional to international Olympiads, curated from the Art of Problem Solving platform. It focuses exclusively on mathematics, encompassing over 33 sub-domains with diverse difficulty levels, aiming to push the boundaries of LLMs in complex mathematical reasoning. citeturn0search1
+- **summary**: Omni-MATH is a comprehensive and challenging benchmark designed to assess large language models' (LLMs) mathematical reasoning capabilities at the Olympiad level. The dataset comprises 4,428 competition-level problems sourced from various regional to international Olympiads, curated from the Art of Problem Solving platform. It focuses exclusively on mathematics, encompassing over 33 sub-domains with diverse difficulty levels, aiming to push the boundaries of LLMs in complex mathematical reasoning. 
 
-- **size**: 4,428 problems, approximately 7 MB. citeturn0search0
+- **size**: 4,428 problems, approximately 7 MB. 
 
-- **download**: The dataset is available for download at [https://huggingface.co/datasets/KbsdJames/Omni-MATH](https://huggingface.co/datasets/KbsdJames/Omni-MATH). citeturn0search0
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/KbsdJames/Omni-MATH](https://huggingface.co/datasets/KbsdJames/Omni-MATH). 
 
-- **companion**: The dataset is introduced in the paper "Omni-MATH: A Universal Olympiad Level Mathematic Benchmark For Large Language Models," accessible at [https://arxiv.org/abs/2410.07985](https://arxiv.org/abs/2410.07985). citeturn0search1
+- **companion**: The dataset is introduced in the paper "Omni-MATH: A Universal Olympiad Level Mathematic Benchmark For Large Language Models," accessible at [https://arxiv.org/abs/2410.07985](https://arxiv.org/abs/2410.07985). 
 
-- **notes**: Omni-MATH was developed to address the limitations of existing mathematical benchmarks, which have become less challenging for advanced LLMs. By focusing on Olympiad-level problems, the dataset provides a rigorous assessment tool for evaluating and improving the mathematical reasoning abilities of LLMs. Experimental results indicate that even state-of-the-art models struggle with these problems, highlighting significant challenges in this domain. citeturn0search1
+- **notes**: Omni-MATH was developed to address the limitations of existing mathematical benchmarks, which have become less challenging for advanced LLMs. By focusing on Olympiad-level problems, the dataset provides a rigorous assessment tool for evaluating and improving the mathematical reasoning abilities of LLMs. Experimental results indicate that even state-of-the-art models struggle with these problems, highlighting significant challenges in this domain. 
 
-- **tags**: "human", "QA", "atomic", "answer:verifiable", "question:human", "answer:human", "mathematics"
+- **tags**: "human", "QA", "atomic", "answer:verifiable", "question:human", "answer:human", "mathematics"
 
 This card provides a comprehensive overview of the Omni-MATH dataset, emphasizing its structure, content, and relevance to advancing mathematical reasoning in large language models. 

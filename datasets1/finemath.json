@@ -1,0 +1,6 @@
+{
+    "name": "FineMath",
+    "download": "https://huggingface.co/datasets/HuggingFaceTB/finemath",
+    "companion": "https://arxiv.org/abs/2502.02737",
+    "summary": "Filtered from CommonCrawl by HuggingFace for SmolLM focused on Math domain."
+}

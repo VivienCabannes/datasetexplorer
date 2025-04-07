@@ -1,0 +1,17 @@
+Here's the completed dataset card for **MATH**:
+
+- **name**: MATH
+
+- **summary**: MATH is a dataset comprising 12,500 challenging mathematics competition problems, primarily sourced from American high school contests such as the American Mathematics Competitions (AMC 10 and AMC 12) and the American Invitational Mathematics Examination (AIME). Each problem is accompanied by a detailed step-by-step solution, facilitating the training and evaluation of models in mathematical reasoning and problem-solving. The problems span various topics, including algebra, geometry, number theory, and calculus, and are categorized by difficulty levels ranging from 1 to 5. citeturn0search0
+
+- **size**: 12,500 problems with detailed solutions. citeturn0search0
+
+- **download**: The dataset was previously available at [https://github.com/hendrycks/math](https://github.com/hendrycks/math). However, it has been removed from certain platforms, including Hugging Face, due to copyright issues raised by the Art of Problem Solving. citeturn0search4
+
+- **companion**: The dataset is introduced in the paper "Measuring Mathematical Problem Solving With the MATH Dataset," accessible at [https://arxiv.org/abs/2103.03874](https://arxiv.org/abs/2103.03874). citeturn0search0
+
+- **notes**: MATH serves as a benchmark for evaluating the mathematical problem-solving abilities of machine learning models. Despite advancements in language models, performance on this dataset remains relatively low, indicating the complexity of the problems and the need for further research in mathematical reasoning. citeturn0search0
+
+- **tags**: "human", "QA", "benchmark", "answer:verifiable", "question:human", "answer:human", "mathematics"
+
+This card provides an overview of the MATH dataset, highlighting its structure, content, and role in advancing mathematical problem-solving capabilities in machine learning models.

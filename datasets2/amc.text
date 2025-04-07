@@ -1,0 +1,21 @@
+Here's the completed dataset card for **AMC (American Mathematics Competitions)**:
+
+- **name**: AMC (American Mathematics Competitions)
+
+- **summary**: The American Mathematics Competitions (AMC) are a series of examinations and curriculum materials designed to strengthen the mathematical capabilities of students from middle school through high school. Serving as the first in a series of competitions that lead to the International Mathematical Olympiad (IMO), the AMC challenges students with engaging problems that promote the development of problem-solving skills and mathematical reasoning. The competitions are divided into different levels:
+
+  - **AMC 8**: For students in grades 8 and below.
+  - **AMC 10**: For students in grades 10 and below.
+  - **AMC 12**: For students in grades 12 and below.
+
+  Each competition consists of 25 multiple-choice questions to be completed within a specified time. High-scoring students may qualify for subsequent competitions such as the American Invitational Mathematics Examination (AIME) and the United States of America Mathematical Olympiad (USAMO). citeturn0search16
+
+- **size**: Each AMC competition level (AMC 10 and AMC 12) administers 25 multiple-choice questions per year. Over the years, this has resulted in a substantial collection of problems across various mathematical topics and difficulty levels.
+
+- **download**: Various formatted datasets based on historical AMC questions are available. For instance, the [AI-MO/aimo-validation-amc](https://huggingface.co/datasets/AI-MO/aimo-validation-amc) dataset on Hugging Face provides a curated set of AMC problems, particularly from recent years. Additionally, the [MATH dataset](https://huggingface.co/datasets/qwedsacf/competition_math) includes problems from AMC 10, AMC 12, AIME, and other competitions, each accompanied by step-by-step solutions. citeturn0search1turn0search4
+
+- **notes**: The AMC serves as a pre-selection competition for the AIME, acting as a gateway for students aspiring to participate in higher-level mathematical olympiads. The problems are designed to promote deep mathematical thinking and problem-solving skills. Researchers and educators often utilize AMC problems to develop and evaluate mathematical models and to prepare students for advanced mathematical studies.
+
+- **tags**: "mathematics competitions", "high school mathematics", "problem-solving", "AMC 10", "AMC 12", "AIME", "USAMO", "mathematical reasoning"
+
+This card provides an overview of the AMC competitions, highlighting their structure, significance, and available resources for accessing historical problem sets.

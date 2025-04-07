@@ -1,0 +1,8 @@
+{
+    "name": "Stack-Edu",
+    "size": "167,000,000 samples, ~1 TB",
+    "download": "https://huggingface.co/datasets/HuggingFaceTB/stack-edu",
+    "companion": "https://arxiv.org/abs/2502.02737",
+    "notes": "Need to be download with S3, still really big in terms of number of tokens.",
+    "summary": "Filtering version of the Stack V2. # LLM Augmented Source Data being synthesized with LLMs. The LLM can be used to synthesize texts or questions (usually providing example of questions from existing datasets). It can also be used to synthesize a rationale to answer questions. The answer may be verified, either with parser checking for numerical equality (i.e. `\\frac13` = `0.333`), or using LLM as a judge. Synthesized questions (bootstrapped from existing one), synthesized, eventually verified, answers."
+}

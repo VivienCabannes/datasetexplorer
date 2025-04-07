@@ -1,0 +1,17 @@
+Here's the completed dataset card for **STILL-3 Preview RL Data**:
+
+- **name**: STILL-3 Preview RL Data
+
+- **summary**: STILL-3 is a dataset comprising 30,000 mathematical problems sourced from collections such as Math, Numina, and AIME. Each problem is paired with verifiable answers, facilitating the evaluation of reasoning models. This dataset is designed to support reinforcement learning approaches in mathematical problem-solving. citeturn0search11
+
+- **size**: The dataset contains 30,000 samples with a total storage footprint of approximately 10 MB.
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/RUC-AIBOX/STILL-3-Preview-RL-Data](https://huggingface.co/datasets/RUC-AIBOX/STILL-3-Preview-RL-Data). citeturn0search11
+
+- **companion**: The dataset is accompanied by the paper "Imitate, Explore, and Self-Improve: A Reproduction Report on Slow-thinking Reasoning Systems," accessible at [https://arxiv.org/abs/2412.09413](https://arxiv.org/abs/2412.09413). 
+
+- **notes**: STILL-3 serves as a resource for training and evaluating models in mathematical reasoning tasks. It includes problems from various reputable sources, ensuring a diverse range of mathematical challenges. The dataset is part of the STILL framework, which focuses on slow-thinking reasoning systems that engage in extended reasoning processes before arriving at solutions. 
+
+- **tags**: "human", "QA", "compilation", "answer:verifiable", "question:human", "answer:human", "mathematics"
+
+This card provides a comprehensive overview of the STILL-3 Preview RL Data dataset, highlighting its structure, content, and relevance to mathematical reasoning research.

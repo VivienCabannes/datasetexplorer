@@ -8,27 +8,18 @@
 
 Here's the completed dataset card for **Algebraic Stack**:
 
-- **name**: Algebraic Stack
+- **name**: Algebraic Stack
 
-- **summary**: Algebraic Stack is a specialized subset of the Proof-Pile-2 dataset, comprising approximately 11 billion tokens of mathematical code. It was curated to support the development and training of language models in mathematical and scientific domains. The dataset includes source code from 17 programming languages, focusing on numerical computing, computer algebra, and formal mathematics. Notably, it encompasses data from Coq, Isabelle, Lean, and MATLAB, as well as extracted proof states from Lean's Mathlib 4 library and a collection of Isabelle proofs. This diverse compilation aims to enhance language models' proficiency in understanding and generating mathematical code and proofs. citeturn0search0
+- **summary**: Algebraic Stack is a specialized subset of the Proof-Pile-2 dataset, comprising approximately 11 billion tokens of mathematical code. It was curated to support the development and training of language models in mathematical and scientific domains. The dataset includes source code from 17 programming languages, focusing on numerical computing, computer algebra, and formal mathematics. Notably, it encompasses data from Coq, Isabelle, Lean, and MATLAB, as well as extracted proof states from Lean's Mathlib 4 library and a collection of Isabelle proofs. This diverse compilation aims to enhance language models' proficiency in understanding and generating mathematical code and proofs. 
 
-- **size**: Approximately 11 billion tokens. citeturn0search0
+- **size**: Approximately 11 billion tokens. 
 
-- **download**: The dataset is available as part of the Proof-Pile-2 collection at [https://huggingface.co/datasets/EleutherAI/proof-pile-2](https://huggingface.co/datasets/EleutherAI/proof-pile-2). To load only the Algebraic Stack subset, use the following code:
+- **download**: The dataset is available as part of the Proof-Pile-2 collection at [https://huggingface.co/datasets/EleutherAI/proof-pile-2](https://huggingface.co/datasets/EleutherAI/proof-pile-2).
 
-  
-```python
-  from datasets import load_dataset
-  ds_algebraic_stack = load_dataset("EleutherAI/proof-pile-2", "algebraic-stack")
-  ```
-
+- **companion**: The dataset is introduced in the paper "Llemma: An Open Language Model For Mathematics," accessible at [https://arxiv.org/abs/2310.10631](https://arxiv.org/abs/2310.10631). 
 
-  citeturn0search0
+- **notes**: Algebraic Stack was instrumental in training the Llemma models, which are designed to enhance mathematical reasoning capabilities in language models. The dataset's composition includes a significant portion of Python code (approximately 6.1 billion tokens), reflecting its prevalent use in mathematical computing. Additionally, it contains substantial amounts of code from languages like C++, Isabelle, Lean, and Julia, among others. Researchers and developers can utilize this dataset to advance the development of AI systems capable of engaging with complex mathematical concepts and formal proofs. 
 
-- **companion**: The dataset is introduced in the paper "Llemma: An Open Language Model For Mathematics," accessible at [https://arxiv.org/abs/2310.10631](https://arxiv.org/abs/2310.10631). citeturn0search1
-
-- **notes**: Algebraic Stack was instrumental in training the Llemma models, which are designed to enhance mathematical reasoning capabilities in language models. The dataset's composition includes a significant portion of Python code (approximately 6.1 billion tokens), reflecting its prevalent use in mathematical computing. Additionally, it contains substantial amounts of code from languages like C++, Isabelle, Lean, and Julia, among others. Researchers and developers can utilize this dataset to advance the development of AI systems capable of engaging with complex mathematical concepts and formal proofs. citeturn0search0
-
-- **tags**: "mathematical code", "formal mathematics", "Proof-Pile-2", "Llemma", "Coq", "Isabelle", "Lean", "MATLAB", "Python", "numerical computing", "computer algebra"
+- **tags**: "mathematical code", "formal mathematics", "Proof-Pile-2", "Llemma", "Coq", "Isabelle", "Lean", "MATLAB", "Python", "numerical computing", "computer algebra"
 
 This card provides an overview of the Algebraic Stack dataset, highlighting its structure, content, and significance in advancing research in mathematical and formal language processing. 

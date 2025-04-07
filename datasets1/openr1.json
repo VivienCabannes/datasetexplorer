@@ -1,0 +1,7 @@
+{
+    "name": "Open-R1-220k",
+    "size": "225,000 samples, 8 GB.",
+    "download": "https://huggingface.co/datasets/open-r1/OpenR1-Math-220k",
+    "notes": "They have other datasets, see https://huggingface.co/open-r1",
+    "summary": "This part of an ongoing effort by HuggingFace to reproduce DeepSeek R1. Consists of DeepSeek R1 traces answering problems from NuminaMath, verified with Math Verify, a HuggingFace parser to check numerical equality."
+}
