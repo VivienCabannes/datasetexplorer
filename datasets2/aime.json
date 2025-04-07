@@ -1,0 +1,17 @@
+{
+  "name": "AIME (American Invitational Mathematics Examination)",
+  "summary": "The AIME is a prestigious annual mathematics competition in the United States, serving as an intermediate stage between the American Mathematics Competitions (AMC) and the USA Mathematical Olympiad (USAMO). It consists of 15 challenging questions to be solved within a 3-hour time limit, designed to assess and promote problem-solving skills among high school students.",
+  "size": "Each AIME exam comprises 15 questions. Given its annual occurrence since 1983, the dataset includes a substantial collection of problems over the years.",
+  "download": "Various formatted datasets based on historical AIME questions are available. For example, the [di-zhang-fdu/AIME_1983_2024](https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024) dataset on Hugging Face provides problems from 1983 to 2024.",
+  "notes": "As AIME is conducted annually, new problems are introduced each year, expanding the dataset. However, it's noteworthy that some questions may resemble existing problems available online, potentially overlapping with content in pretraining corpora.",
+  "tags": [
+    "mathematics",
+    "competition",
+    "high school",
+    "problem-solving",
+    "benchmark",
+    "QA",
+    "question:human",
+    "answer:human"
+  ]
+}

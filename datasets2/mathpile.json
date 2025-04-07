@@ -1,0 +1,14 @@
+{
+  "name": "MathPile",
+  "summary": "MathPile is a diverse and high-quality math-centric corpus comprising approximately 9.5 billion tokens. Developed by the Generative AI Research Lab (GAIR), the dataset aggregates mathematical content from various sources, including textbooks, arXiv papers, ProofWiki, StackExchange, Wikipedia, and filtered Common Crawl data. The collection aims to enhance the mathematical reasoning abilities of language models by providing a comprehensive and meticulously curated pretraining corpus.",
+  "size": "Approximately 9.5 billion tokens.",
+  "download": "The dataset is available for download at [https://huggingface.co/datasets/GAIR/MathPile](https://huggingface.co/datasets/GAIR/MathPile).",
+  "companion": "The dataset is introduced in the paper \"MathPile: A Billion-Token-Scale Pretraining Corpus for Math,\" accessible at [https://arxiv.org/abs/2312.17120](https://arxiv.org/abs/2312.17120).",
+  "notes": "MathPile adheres to the principle of \"less is more,\" emphasizing data quality over quantity. The dataset underwent extensive preprocessing, including prefiltering, language identification, cleaning, filtering, and deduplication, to ensure high quality. Additionally, data contamination detection was performed to eliminate duplicates from benchmark test sets like MATH and MMLU-STEM.",
+  "tags": [
+    "human",
+    "compilation",
+    "filtration",
+    "mathematics"
+  ]
+}

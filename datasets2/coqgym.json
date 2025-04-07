@@ -1,0 +1,15 @@
+{
+  "name": "CoqGym",
+  "summary": "CoqGym is a comprehensive dataset and learning environment designed to facilitate research in automated theorem proving through interaction with the Coq proof assistant. It encompasses 70,856 human-written proofs extracted from 123 open-source Coq projects, covering diverse domains such as mathematics, computer hardware, and programming languages. The dataset provides rich structural information, including abstract syntax trees (ASTs) and detailed proof trees, enabling the development and evaluation of machine learning models for tactic prediction and proof generation.",
+  "size": "Approximately 70,856 proofs from 123 Coq projects.",
+  "download": "The dataset is available for download at [https://github.com/princeton-vl/CoqGym](https://github.com/princeton-vl/CoqGym).",
+  "companion": "The dataset is introduced in the paper \"Learning to Prove Theorems via Interacting with Proof Assistants,\" accessible at [https://arxiv.org/abs/1905.09381](https://arxiv.org/abs/1905.09381).",
+  "notes": "CoqGym includes tools for interacting with the Coq proof assistant, facilitating the training and evaluation of automated theorem-proving agents. The dataset's structural information, such as ASTs and proof trees, supports the development of models capable of generating tactics and proofs. Additionally, CoqGym provides synthetic proofs generated from intermediate proof steps, augmenting the training data for machine learning models.",
+  "tags": [
+    "theorem proving",
+    "Coq",
+    "machine learning",
+    "proof assistant",
+    "formal verification"
+  ]
+}
