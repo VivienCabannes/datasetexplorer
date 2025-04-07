@@ -56,7 +56,7 @@
     <!-- Matching datasets will be displayed here -->
   </div>
 
-  <!-- Render mardown -->
+  <!-- Render markdown -->
   <script id="markdown-it" src="{{ url_for('static', filename='markdownit.js') }}"></script>
   <script id="data" type="application/json">{{ datasets | tojson }}</script>
 
@@ -69,6 +69,8 @@
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
     let selectedTags = [];
+    // Global state to track expanded datasets by using dataset name as the key.
+    let expandedStates = {};
 
     // Render datasets with markdown and LaTeX support
     function renderDatasets(list) {
@@ -91,6 +93,9 @@
           optionalDetails += `<div class="dataset-detail"> ${md.renderInline(dataset.notes)}</div>`;
         }
 
+        // Check the global expanded state for this dataset.
+        const isExpanded = expandedStates[dataset.name];
+
         const elem = document.createElement("div");
         elem.className = "dataset";
         elem.innerHTML = `
@@ -100,19 +105,25 @@
             <div class="dataset-detail"><strong>Size:</strong> ${sizeHtml}</div>
             <div class="dataset-detail"><strong>Date Created:</strong> ${dateHtml}</div>
           </div>
-          <div class="dataset-full" style="display: none;">
+          <div class="dataset-full" style="display: ${isExpanded ? 'block' : 'none'};">
             ${optionalDetails}
             <div class="dataset-detail"><strong>Tags:</strong> ${renderDatasetTags(dataset.tags)}</div>
           </div>
         `;
-        // Toggle details on click.
+        // Toggle details on click and update the global expanded state.
         elem.addEventListener("click", () => {
           const details = elem.querySelector(".dataset-full");
-          details.style.display = details.style.display === "block" ? "none" : "block";
+          if(expandedStates[dataset.name]) {
+            expandedStates[dataset.name] = false;
+            details.style.display = "none";
+          } else {
+            expandedStates[dataset.name] = true;
+            details.style.display = "block";
+          }
         });
         container.appendChild(elem);
 
-        // Add hyperlink logic
+        // Add hyperlink logic so links don't trigger the parent click event.
         const links = elem.querySelectorAll("a");
         links.forEach(link => {
           link.setAttribute("target", "_blank");
@@ -204,13 +215,13 @@
     });
     document.getElementById("sort-select").addEventListener("change", updateOrder);
 
-    // help button toggles the display of help text.
+    // Help button toggles the display of help text.
     document.getElementById("help-button").addEventListener("click", () => {
       const helpText = document.getElementById("help-text");
       helpText.style.display = helpText.style.display === "none" ? "block" : "none";
     });
 
-    // theme toggle button: toggles dark mode and updates its icon.
+    // Theme toggle button: toggles dark mode and updates its icon.
     document.getElementById("theme-toggle-button").addEventListener("click", () => {
       document.body.classList.toggle("dark-mode");
       const button = document.getElementById("theme-toggle-button");
@@ -221,12 +232,12 @@
       }
     });
 
-    // Initialiation
+    // Initialization
     renderTags();
     updateOrder();
     updateView();
 
-    // Add hovering logic over tags
+    // Add hovering logic over tags.
     document.querySelectorAll('.tag').forEach(tag => {
       let tooltipDiv;
       let hoverTimer; // Timer for the delay
@@ -235,14 +246,14 @@
         const text = tag.getAttribute('data-tooltip');
         if (!text) return;
 
-        // Start the timer for 1 second delay
+        // Start the timer for 500ms delay
         hoverTimer = setTimeout(() => {
           tooltipDiv = document.createElement('div');
           tooltipDiv.className = 'custom-tooltip';
           tooltipDiv.innerText = text;
           document.body.appendChild(tooltipDiv);
 
-          // Position the tooltip
+          // Position the tooltip.
           const rect = tag.getBoundingClientRect();
           const tooltipRect = tooltipDiv.getBoundingClientRect();
 
@@ -261,11 +272,10 @@
 
           tooltipDiv.style.top = `${top}px`;
           tooltipDiv.style.left = `${left}px`;
-        }, 500); // 1 second delay
+        }, 500);
       });
 
       tag.addEventListener('mouseleave', () => {
-        // Clear the timer if the user leaves early
         clearTimeout(hoverTimer);
         if (tooltipDiv) {
           tooltipDiv.remove();
