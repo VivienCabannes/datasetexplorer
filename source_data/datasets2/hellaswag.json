@@ -1,0 +1,9 @@
+{
+  "name": "HellaSwag",
+  "summary": "HellaSwag is a challenge dataset designed to evaluate the commonsense natural language inference (NLI) capabilities of AI models. It presents models with sentence completion tasks that are straightforward for humans but challenging for state-of-the-art models.",
+  "size": "Approximately 70,000 instances",
+  "download": "https://github.com/rowanz/hellaswag",
+  "companion": "https://arxiv.org/abs/1905.07830",
+  "notes": "The dataset is structured to be trivial for humans (>95% accuracy) but challenging for state-of-the-art models, which have achieved less than 48% accuracy. It is commonly used to benchmark the performance of AI models in commonsense reasoning tasks.",
+  "tags": ["commonsense reasoning", "natural language inference", "sentence completion", "benchmark", "adversarial filtering"]
+}

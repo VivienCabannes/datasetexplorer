@@ -1,0 +1,16 @@
+{
+  "name": "TruthfulQA",
+  "summary": "TruthfulQA is a benchmark designed to evaluate the truthfulness of language models by assessing their ability to generate accurate answers to questions that commonly elicit false beliefs or misconceptions.",
+  "size": "817 questions across 38 categories",
+  "download": "https://github.com/sylinrl/TruthfulQA",
+  "companion": "https://arxiv.org/abs/2109.07958",
+  "notes": "The dataset comprises questions crafted to test whether language models produce imitative falsehoods—false answers that mimic popular misconceptions. Evaluations have shown that larger language models tend to generate more such falsehoods, highlighting challenges in ensuring model truthfulness. TruthfulQA serves as a critical tool for measuring and improving the reliability of AI-generated information.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human"
+  ]
+}

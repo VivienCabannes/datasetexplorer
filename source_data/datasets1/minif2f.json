@@ -1,0 +1,7 @@
+{
+    "name": "MiniF2F",
+    "size": "500 examples with Lean formal statements and informal statements and proofs.",
+    "download": "https://github.com/facebookresearch/miniF2F",
+    "companion": "https://arxiv.org/abs/2109.00110",
+    "summary": "MiniF2F is a benchmark for formal mathematics, created by Kunhao, consisting of 500 Olympiad-level mathematics problems from competitions like AIME, AMC, and IMO. Each problem is provided with both informal and formal statements. # Compilation"
+}

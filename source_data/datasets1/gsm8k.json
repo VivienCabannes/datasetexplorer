@@ -1,0 +1,7 @@
+{
+    "name": "GSM8k",
+    "size": "8,500 problems, 5 MB",
+    "download": "https://github.com/openai/grade-school-math",
+    "companion": "https://arxiv.org/abs/2110.14168",
+    "summary": "Grade School Math (GSM) benchmark, created by human annotator for OpenAI."
+}

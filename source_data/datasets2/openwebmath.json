@@ -1,0 +1,14 @@
+{
+  "name": "OpenWebMath",
+  "summary": "OpenWebMath is a dataset containing 6.3 million documents of high-quality mathematical text extracted from over 200 billion HTML files in the Common Crawl dataset. It encompasses approximately 14.7 billion tokens and is intended for use in pretraining and finetuning large language models.",
+  "size": "The dataset comprises 6.3 million samples, totaling approximately 27 GB.",
+  "download": "The dataset is available for download at [https://huggingface.co/datasets/open-web-math/open-web-math](https://huggingface.co/datasets/open-web-math/open-web-math).",
+  "companion": "The dataset is introduced in the paper \"OpenWebMath: An Open Dataset of High-Quality Mathematical Web Text,\" accessible at [https://arxiv.org/abs/2310.06786](https://arxiv.org/abs/2310.06786).",
+  "notes": "OpenWebMath was curated by filtering the Common Crawl dataset to include only English documents containing mathematical content of high quality. The filtering process involved prefiltering HTML documents, extracting text (including LaTeX content), classifying and filtering content, deduplicating using SimHash, and manual inspection to remove low-quality pages.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "mathematics"
+  ]
+}

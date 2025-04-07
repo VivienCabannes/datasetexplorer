@@ -1,0 +1,18 @@
+{
+  "name": "AIME (American Invitational Mathematics Examination)",
+  "summary": "Annual US high-school competition, harder than the AMC and easier than the USAMO.",
+  "size": "15 questions per year.",
+  "download": "Various formatted datasets based on historical AIME questions are available, e.g., [on HuggingFace](https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024).",
+  "notes": "The competition lasts 3 hours. The answer is a number between 0 and 999.",
+  "tags": [
+    "human",
+    "QA",
+    "dialog",
+    "atomic",
+    "benchmark",
+    "answer:human",
+    "answer:verifiable",
+    "question:human",
+    "mathematics"
+  ]
+}

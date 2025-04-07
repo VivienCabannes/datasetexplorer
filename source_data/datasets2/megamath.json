@@ -1,0 +1,17 @@
+{
+  "name": "MegaMath",
+  "summary": "MegaMath is an extensive open math pretraining dataset curated by the LLM360 team, encompassing over 300 billion tokens. The dataset is constructed through three primary efforts:",
+  "size": "Approximately 215 million samples totaling 371.6 billion tokens. ",
+  "download": "The dataset is available for download at [https://huggingface.co/datasets/LLM360/MegaMath](https://huggingface.co/datasets/LLM360/MegaMath). ",
+  "companion": "The dataset is introduced in the paper \"MegaMath: Pushing the Limits of Open Math Corpora,\" accessible at [https://arxiv.org/abs/2504.02807](https://arxiv.org/abs/2504.02807). ",
+  "notes": "MegaMath surpasses previous open math pretraining datasets, such as DeepSeekMath, by over 30% in token count. Extensive experiments during development led to optimized practices for text extraction, deduplication, and fastText training, ensuring high data quality. Training language models on MegaMath has demonstrated a 15% to 20% performance boost on ten downstream benchmarks, underscoring its efficacy. ",
+  "tags": [
+    "synthetic",
+    "compilation",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:synthetic",
+    "mathematics",
+    "programming"
+  ]
+}

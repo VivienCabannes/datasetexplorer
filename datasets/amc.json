@@ -1,0 +1,18 @@
+{
+  "name": "AMC: American Mathematics Competitions",
+  "summary": "US middle and high school examinations. THe competition is divided in three levels AMC 8, AMC 10, AMC 12 for students below 14, 16 and 18 years old.",
+  "size": "25 multiple-choice questions per year per level.",
+  "download": "Various formatted datasets based on historical AMC questions are available, e.g., https://huggingface.co/datasets/AI-MO/aimo-validation-amc.",
+  "notes": "The competition lasts 75 minutes for levels 10 and 12, 40 minutes for level 8.",
+  "tags": [
+    "human",
+    "QA",
+    "dialog",
+    "atomic",
+    "benchmark",
+    "answer:human",
+    "answer:verifiable",
+    "question:human",
+    "mathematics"
+  ]
+}

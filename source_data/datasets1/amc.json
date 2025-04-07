@@ -1,0 +1,6 @@
+{
+    "name": "AMC",
+    "size": "3 (levels) times 25 multi-choice questions per year.",
+    "download": "Various formatted datasets based on historical AMC questions are available, e.g. https://huggingface.co/datasets/AI-MO/aimo-validation-amc/",
+    "summary": "American Math competition for various high-school students, which acts as a pre-selection to AIME."
+}

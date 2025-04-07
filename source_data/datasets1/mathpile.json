@@ -1,0 +1,7 @@
+{
+    "name": "MathPile",
+    "size": "Approximately 9.5 billion tokens.",
+    "download": "https://huggingface.co/datasets/GAIR/MathPile",
+    "companion": "https://arxiv.org/abs/2312.17120",
+    "summary": "Dataset collected by GAIR (the lab behind LIMO) by compiling textbook, arXiv, ProofWiki, and filtering common crawl."
+}

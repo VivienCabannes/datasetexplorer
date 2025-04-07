@@ -1,0 +1,7 @@
+{
+    "name": "DataComp-LM (DCLM)",
+    "size": "4T token",
+    "download": "https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0",
+    "companion": "https://arxiv.org/abs/2406.11794",
+    "summary": "Filtering of Common Crawl based on heuristic cleaning and filtering (see RefinedWeb), deduplication (through Bloom), filtering with fastText classifier to match the reddit channel ExplainLikeImFive, and an instruct model."
+}
