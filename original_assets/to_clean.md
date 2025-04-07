@@ -397,22 +397,9 @@ Proof-Pile
     - ProofWiki
     - Wikipedia math articles
 - MATH dataset (6MB)
- 
-
- https://huggingface.co/datasets/HuggingFaceTB/cosmopedia
-
-https://huggingface.co/datasets/open-web-math/open-web-math
-
-https://github.com/LiveCodeBench/LiveCodeBench
 
 
-https://huggingface.co/datasets/LLM360/MegaMath
-
-https://huggingface.co/datasets/math-ai/AutoMathText
-https://arxiv.org/abs/2402.07625
-
-https://huggingface.co/datasets/open-thoughts/OpenThoughts-114k
- 
-AMPS (Khan + Mathematica) Dataset
-
-OCR: https://arxiv.org/pdf/2502.18443
+Make some card for generic ressources.
+- Educational website
+- Formal proof repositories
+    - Isabelle AFP

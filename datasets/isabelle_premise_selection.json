@@ -5,3 +5,20 @@
     "companion": "none, but the datasets was key to https://arxiv.org/abs/2303.04488",
     "summary": "Datasets of proofs in Isabelle collected from the Archive of Formal Proofs (https://www.isa-afp.org/). Useful to study premise selection (i.e. selecting potential lemmas to apply mid-proof)."
 }
+Here's the completed dataset card for **Isabelle Premise Selection**:
+
+- **name**: Isabelle Premise Selection
+
+- **summary**: The Isabelle Premise Selection dataset is a comprehensive collection of over 4 million aligned pairs of proof contexts and relevant premises, meticulously extracted from the Archive of Formal Proofs (AFP) and Isabelle's Standard Library. Designed to facilitate research in premise selection—a critical task in automated theorem proving—this dataset aids in identifying the most pertinent lemmas or theorems applicable at various stages of a proof. By encompassing both original proofs and those automatically generated using Isabelle's Sledgehammer tool, the dataset offers a diverse and rich resource for developing and evaluating models in automated reasoning and information retrieval. citeturn0search0
+
+- **size**: Over 4 million samples. citeturn0search0
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/Simontwice/premise_selection_in_isabelle](https://huggingface.co/datasets/Simontwice/premise_selection_in_isabelle). citeturn0search0
+
+- **companion**: While there isn't a dedicated companion paper, the dataset was instrumental in the research presented in "Magnushammer: A Transformer-based Approach to Premise Selection," accessible at [https://arxiv.org/abs/2303.04488](https://arxiv.org/abs/2303.04488). citeturn0search0
+
+- **notes**: The dataset includes premises from both manually crafted proofs and those generated via Isabelle's Sledgehammer tool, which employs symbolic methods for automatic premise selection. This amalgamation enhances the dataset's diversity, making it a valuable asset for training models in premise selection tasks. citeturn0search0
+
+- **tags**: "human", "compilation", "filtration", "theorem proving", "Isabelle"
+
+This card provides a comprehensive overview of the Isabelle Premise Selection dataset, highlighting its structure, content, and significance in advancing automated theorem proving and related research areas. 

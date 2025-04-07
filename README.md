@@ -49,9 +49,9 @@ These scripts automate common tasks such as verifying tag usage and batch updati
 
 ### Check Tags
 
-The `check_tags.py` script examines all JSON files in the `datasets/` folder to extract tags used by each dataset (using the dataset filename without the `.json` extension) and compares them with the tags defined in `tags.json`. The script will report:
-- Any datasets that use tags not defined in `tags.json`.
-- Any tags defined in `tags.json` that are never used in any dataset.
+The `check_tags.py` script examines all JSON files in the `datasets/` folder to extract tags used by each dataset (using the dataset filename without the `.json` extension) and compares them with the tags defined in `datasets/tags.jsonl`. The script will report:
+- Any datasets that use tags not defined in `tags.jsonl`.
+- Any tags defined in `tags.jsonl` that are never used in any dataset.
 
 You can run the script with:
 

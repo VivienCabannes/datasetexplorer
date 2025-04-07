@@ -5,3 +5,24 @@
     "companion": "https://arxiv.org/abs/2310.10631",
     "summary": "Massive pretraining corpus of formal mathematics and related documents (Lean, Coq, math papers)."
 }
+
+Here's the completed dataset card for **Proof-Pile-2**:
+
+- **name**: Proof-Pile-2
+
+- **summary**: Proof-Pile-2 is a 55-billion-token dataset of mathematical and scientific documents. It was created to train models like Llemma 7B and Llemma 34B. The dataset comprises three subsets:
+  - **arXiv**: 29B tokens from the ArXiv subset of RedPajama.
+  - **OpenWebMath**: 15B tokens from the OpenWebMath dataset, containing high-quality mathematical text from the internet.
+  - **AlgebraicStack**: 11B tokens of mathematical code, including numerical computing, computer algebra, and formal mathematics. citeturn0search6
+
+- **size**: The dataset contains approximately 55 billion tokens. citeturn0search6
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/EleutherAI/proof-pile-2](https://huggingface.co/datasets/EleutherAI/proof-pile-2). citeturn0search6
+
+- **companion**: The dataset is introduced in the paper "Llemma: An Open Language Model For Mathematics," accessible at [https://arxiv.org/abs/2310.10631](https://arxiv.org/abs/2310.10631). citeturn0search1
+
+- **notes**: Proof-Pile-2 serves as a substantial resource for training language models in mathematical reasoning and related tasks. It includes diverse sources of mathematical content, ensuring a comprehensive representation of formal mathematics. The dataset is structured to facilitate research in mathematical language processing and theorem proving. citeturn0search6
+
+- **tags**: "human", "monolithic", "compilation", "mathematics"
+
+This card provides a comprehensive overview of the Proof-Pile-2 dataset, highlighting its structure, content, and relevance to research in mathematical language modeling. 

@@ -5,3 +5,29 @@
     "notes": "Includes multiple datasets with corresponding training recipes.",
     "summary": "Collection of question with verifiable answer extracted from Numina, Apps, CodeContests, Taco and Codeforces. https://arxiv.org/abs/2502.01456"
 }
+
+Here's the completed dataset card for **Eurus-RL**:
+
+- **name**: Eurus-RL
+
+- **summary**: Eurus-RL is a high-quality reinforcement learning (RL) training dataset comprising approximately 480,537 samples of mathematics and coding problems, each accompanied by verifiable outcomes. The dataset aggregates problems from several sources:
+  - **Mathematics**: Sourced from NuminaMath-CoT, encompassing problems ranging from Chinese high school mathematics to International Mathematical Olympiad competition questions.
+  - **Coding**: Collected from APPS, CodeContests, TACO, and Codeforces, focusing on programming competition-level challenges.
+
+  To ensure data quality, extensive cleaning and filtering processes were applied:
+  - **Mathematics**: Advanced reasoning models like Qwen-QwQ were utilized to filter out unsolvable problems, unmatchable questions, or those with incorrect answers. Multiple-choice questions were reformatted into open-ended questions.
+  - **Coding**: Duplicates were removed to maintain uniqueness.
+
+  The final dataset includes 455,261 math problems and 25,276 coding problems, making it a valuable resource for training models in complex reasoning tasks. citeturn0search1
+
+- **size**: Approximately 480,537 samples, totaling around 2 GB. citeturn0search1
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/PRIME-RL/Eurus-2-RL-Data](https://huggingface.co/datasets/PRIME-RL/Eurus-2-RL-Data). citeturn0search1
+
+- **companion**: The dataset is associated with the paper "Process Reinforcement through Implicit Rewards," accessible at [https://arxiv.org/abs/2502.01456](https://arxiv.org/abs/2502.01456). 
+
+- **notes**: Eurus-RL includes multiple datasets with corresponding training recipes, facilitating research in reinforcement learning for complex reasoning tasks. The dataset's construction involved rigorous validation processes to ensure the correctness of solutions, making it suitable for training models that require verifiable outcomes. citeturn0search1
+
+- **tags**: "human", "compilation", "filtration", "mathematics", "coding", "reinforcement learning"
+
+This card provides an overview of the Eurus-RL dataset, highlighting its structure, content, and significance in advancing reinforcement learning applications in mathematical and coding problem-solving. 

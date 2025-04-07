@@ -24,7 +24,7 @@ def load_defined_tags(tags_file):
     """
     with open(tags_file, "r", encoding="utf-8") as f:
         tags_data = json.load(f)
-    return set(tags_data.keys())
+    return {key for tag_group in tags_data for key in tag_group["tags"].keys()}
 
 
 def check_tags(datasets_dir, tags_file):
@@ -56,8 +56,10 @@ def check_tags(datasets_dir, tags_file):
 
 
 if __name__ == "__main__":
+    import os
+
     datasets_dir = "datasets"
-    tags_file = "tags.json"
+    tags_file = os.path.join(datasets_dir, "tags.jsonl")
 
     missing_tags, unused_tags = check_tags(datasets_dir, tags_file)
 

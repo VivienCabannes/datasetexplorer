@@ -5,3 +5,32 @@
     "notes": "The datasets were collected for evaluation, it seems small and outdated.",
     "summary": "Compilation of many datasets including addsub, amps, apps, asdiv, conala, mathematics, dolphin, draw, gsm8k, math, mathqa, mbpp, mctaco, multiarith, numersense, numglus, simuleq, singleop, singleq, svamp."
 }
+
+Here's the completed dataset card for **Līla**:
+
+- **name**: Līla
+
+- **summary**: Līla is a comprehensive benchmark for mathematical reasoning, encompassing over 140,000 natural language questions annotated with Python programs and natural language instructions. The benchmark integrates 23 diverse tasks across four dimensions:
+  1. **Mathematical abilities**: Tasks range from arithmetic to calculus.
+  2. **Language format**: Includes question-answering and fill-in-the-blank formats.
+  3. **Language diversity**: Covers simple to complex language structures.
+  4. **External knowledge**: Some tasks require commonsense or domain-specific knowledge.
+
+  The dataset is constructed by extending 20 existing datasets, collecting task instructions and solutions in the form of Python programs to provide explainable solutions alongside correct answers. citeturn0search0
+
+- **size**: Over 140,000 questions across 23 tasks. citeturn0search0
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/allenai/lila](https://huggingface.co/datasets/allenai/lila). citeturn0search1
+
+- **companion**: The dataset is introduced in the paper "Līla: A Unified Benchmark for Mathematical Reasoning," accessible at [https://arxiv.org/abs/2210.17517](https://arxiv.org/abs/2210.17517). citeturn0search3
+
+- **notes**: Līla includes multiple splits to evaluate models under different conditions:
+  - **Līla-IID**: In-distribution split with train, dev, and test sets.
+  - **Līla-OOD**: Out-of-distribution split to assess generalization.
+  - **Līla-Robust**: Split designed to test robustness to language perturbations.
+
+  The benchmark also features a public leaderboard to track progress in mathematical reasoning tasks. citeturn0search0
+
+- **tags**: "compilation", "QA", "benchmark", "answer:verifiable", "question:human", "answer:human", "mathematics"
+
+This card provides a comprehensive overview of the Līla dataset, highlighting its structure, content, and significance in evaluating and advancing mathematical reasoning capabilities in language models. 

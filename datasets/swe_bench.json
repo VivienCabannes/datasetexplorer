@@ -5,3 +5,21 @@
     "companion": "https://arxiv.org/abs/2310.06770",
     "summary": "Datasets of codebase, issues and unit tests. The goal is to fix the codebase that currently yield the issue resulting in failing unit tests. The data was collected from popular Github repository."
 }
+
+Here's the completed dataset card for **SWE-bench**:
+
+- **name**: SWE-bench
+
+- **summary**: SWE-bench is a benchmark designed to evaluate large language models' (LLMs) capabilities in resolving real-world software engineering problems. It comprises 2,294 issues and corresponding pull requests sourced from 12 popular open-source Python repositories on GitHub. Each issue is paired with the codebase state at the time of the issue and the associated pull request that resolved it. The benchmark challenges models to generate patches that address the described issues, with success determined by the ability to pass unit tests that failed prior to the patch and pass after its application. citeturn0search1
+
+- **size**: The dataset contains 2,294 issue-pull request pairs from 12 popular Python repositories. citeturn0search1
+
+- **download**: The dataset is available for download at [https://github.com/swe-bench/SWE-bench](https://github.com/swe-bench/SWE-bench). citeturn0search0
+
+- **companion**: The dataset is accompanied by the paper "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?" accessible at [https://arxiv.org/abs/2310.06770](https://arxiv.org/abs/2310.06770). citeturn0search1
+
+- **notes**: SWE-bench includes subsets such as SWE-bench Lite, a curated selection of 300 instances designed for more accessible evaluation, and SWE-bench Verified, a human-validated subset of 500 problems confirmed to be solvable by experienced software engineers. These subsets aim to facilitate more efficient and reliable assessments of LLMs in software engineering tasks. citeturn0search2
+
+- **tags**: "human", "QA", "compilation", "answer:verifiable", "with rationale", "question:human", "answer:human", "rationale:human", "programming"
+
+This card provides a comprehensive overview of the SWE-bench dataset, highlighting its structure, content, and relevance to evaluating language models in real-world software engineering scenarios. 

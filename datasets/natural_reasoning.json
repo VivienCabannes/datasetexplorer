@@ -4,3 +4,21 @@
     "companion": "https://arxiv.org/abs/2502.13124",
     "summary": "From Fair RAM group, questions filtered from DCLM and FineMath, with answers provided by Llama."
 }
+
+Here's the completed dataset card for **NaturalReasoning**:
+
+- **name**: NaturalReasoning
+
+- **summary**: NaturalReasoning is a large-scale dataset developed by Meta's Fundamental AI Research (FAIR) group, comprising 2.8 million challenging reasoning questions across diverse domains, including STEM fields (e.g., Physics, Computer Science), Economics, and Social Sciences. The dataset was constructed by back-translating content from pretraining corpora such as DCLM and FineMath. To ensure quality, the questions were deduplicated and decontaminated from popular reasoning benchmarks, including MATH, GPQA, MMLU-Pro, and MMLU-STEM. Each question includes a reference final answer extracted from the original document when available, and a model-generated response from Llama3.3-70B-Instruct. citeturn0search1
+
+- **size**: Approximately 2.8 million questions. citeturn0search1
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/facebook/natural_reasoning](https://huggingface.co/datasets/facebook/natural_reasoning). citeturn0search0
+
+- **companion**: The dataset is introduced in the paper "NaturalReasoning: Reasoning in the Wild with 2.8M Challenging Questions," accessible at [https://arxiv.org/abs/2502.13124](https://arxiv.org/abs/2502.13124). citeturn0search1
+
+- **notes**: A 1.1 million subset of NaturalReasoning has been released to the research community to foster research on training robust large language model reasoners. citeturn0search0 The dataset's construction involved back-translating questions from pretraining corpora, ensuring a diverse and challenging set of reasoning tasks. citeturn0search1
+
+- **tags**: "synthetic", "QA", "compilation", "answer:verifiable", "question:synthetic", "answer:synthetic", "mathematics", "physics", "economics", "social sciences"
+
+This card provides a comprehensive overview of the NaturalReasoning dataset, highlighting its structure, content, and relevance to advancing research in complex reasoning tasks across multiple domains. 

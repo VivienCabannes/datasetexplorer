@@ -5,3 +5,19 @@
     "notes": "Quite extensive datasets with unit test",
     "summary": "Website with competitive programming puzzles."
 }
+
+Here's the completed dataset card for **Codeforces-Python-Submissions**:
+
+- **name**: Codeforces-Python-Submissions
+
+- **summary**: The Codeforces-Python-Submissions dataset is a comprehensive collection of Python programming solutions submitted to the Codeforces platform, a renowned competitive programming website. This dataset encompasses a wide array of problem-solving instances, including problem statements, user submissions, and corresponding metadata. It serves as a valuable resource for analyzing coding patterns, developing machine learning models for code generation and evaluation, and studying competitive programming methodologies. Notably, the dataset includes unit tests for many of the problems, facilitating automated assessment of solution correctness.
+
+- **size**: Approximately 690,000 samples, totaling around 1.7 GB. 
+
+- **download**: The dataset is available for download at [https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions](https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions). 
+
+- **notes**: The dataset is extensive and includes unit tests for many problems, enabling automated evaluation of code submissions. It is particularly useful for research in code synthesis, analysis of programming techniques, and the development of educational tools for programming instruction. Users should be aware of the licensing terms associated with the dataset, which are specified on the download page. 
+
+- **tags**: "competitive programming", "Python", "Codeforces", "programming puzzles", "unit tests"
+
+This card provides an overview of the Codeforces-Python-Submissions dataset, highlighting its composition, availability, and potential applications in programming research and education. 
