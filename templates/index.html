@@ -62,7 +62,7 @@
 
   <script>
     // Markdown parser and data setup.
-    let md = new markdownit({ linkify: true });
+    let md = new markdownit({ linkify: true, html: true });
     const datasets = JSON.parse(document.getElementById("data").textContent);
     const tagData = JSON.parse('{{ tags | tojson | safe }}');
     let searchTerm = '';
