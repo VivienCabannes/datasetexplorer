@@ -188,8 +188,8 @@
       return tags.map(tag => {
         let tooltip = "";
         for (let group in tagData) {
-          if (tagData[group][tag]) {
-            tooltip = tagData[group][tag];
+          if (tagData[group].tags && tagData[group].tags[tag]) {
+            tooltip = tagData[group].tags[tag];
             break;
           }
         }
