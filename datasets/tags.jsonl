@@ -1,30 +1,3 @@
-- back-end
-    - edit all the dataset cards one by one
-    - for fast edition one can use various tools such as update a list of tag to datasets, before running some `batch_add_tag` script
-
-- add "editor tools" to efficient edit the datasets cards:
-    - function to remove tags to a list of datasets
-
-- List all the datset with their card location. Sort them by names.
-- Solve the rendering issue when using datasets2
-
-
-
-#### Prompt to build dataset cards
-
-I'm building a dataset explorer with a structured tag system. I’ve already collected several datasets, but many are missing key details. For each dataset, I want to complete a card containing the following fields:
-
-- **name**: the name of the dataset  
-- **summary**: a brief executive summary of the dataset  
-- **size**: the dataset’s size, both in terms of the number of samples and its storage footprint (in bytes)  
-- **download**: the download link or location  
-- **companion**: a companion paper, if one was published alongside the dataset  
-- **notes**: additional details that could support an extended summary  
-- **tags**: all relevant tags based on my tagging system
-
-The tag system is organized into the following groups:
-
-```json
 [
   {
     "group": "Source",
@@ -78,8 +51,3 @@ The tag system is organized into the following groups:
     }
   }
 ]
-```
-
-Each dataset should be tagged with the relevant inner-level tags (e.g., `"human"`, `"QA"`, `"benchmark"`).
-
-Your role is to help me complete these dataset cards. I’ll provide partially filled cards, and you’ll research and complete any missing information, while also improving the quality of what’s already there.

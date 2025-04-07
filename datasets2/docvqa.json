@@ -1,0 +1,17 @@
+{
+  "name": "DocVQA",
+  "summary": "DocVQA is a dataset designed to evaluate Visual Question Answering (VQA) models on document images, comprising 50,000 questions over 12,000+ document images from the UCSF Industry Documents Library.",
+  "size": "50,000 questions on 12,000+ document images",
+  "download": "https://rrc.cvc.uab.es/?ch=17",
+  "companion": "https://arxiv.org/abs/2007.00398",
+  "notes": "DocVQA focuses on assessing models' abilities to understand and extract information from various document types, including forms, tables, and figures. The dataset presents a significant challenge, with a notable performance gap between existing models and human accuracy, highlighting the need for improved document understanding in VQA systems.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}
