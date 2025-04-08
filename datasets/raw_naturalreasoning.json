@@ -1,0 +1,21 @@
+{
+  "name": "NaturalReasoning",
+  "summary": "_⚠ Use card with caution_ <br>A large-scale dataset comprising 2.8 million challenging reasoning questions across diverse domains, including STEM fields, economics, and social sciences.",
+  "size": "Approximately 2.8 million questions.",
+  "date": "2025-02-18",
+  "download": "https://huggingface.co/datasets/facebook/natural_reasoning",
+  "companion": "https://arxiv.org/abs/2502.13124",
+  "notes": "Developed by Meta's FAIR group, NaturalReasoning was constructed by back-translating content from pretraining corpora such as DCLM and FineMath. The dataset was deduplicated and decontaminated from popular reasoning benchmarks, including MATH, GPQA, MMLU-Pro, and MMLU-STEM. Each question includes a reference answer extracted from the original document when available, and a model-generated response from Llama3.3-70B-Instruct. A 1.1 million subset has been released to the research community to foster research on training robust large language model reasoners.",
+  "tags": [
+    "synthetic",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:synthetic",
+    "mathematics",
+    "physics",
+    "economics",
+    "social sciences"
+  ]
+}

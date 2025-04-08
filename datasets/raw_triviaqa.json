@@ -1,0 +1,18 @@
+{
+  "name": "TriviaQA",
+  "summary": "_⚠ Use card with caution_ <br>A large-scale reading comprehension dataset with 95,000 trivia questions and corresponding evidence documents.",
+  "size": "Over 650,000 question-answer-evidence triples.",
+  "date": "2017-05-09",
+  "download": "http://nlp.cs.washington.edu/triviaqa/",
+  "companion": "https://arxiv.org/abs/1705.03551",
+  "notes": "Questions are authored by trivia enthusiasts and paired with evidence documents from Wikipedia and the web. The dataset includes both 'unfiltered' and 'filtered' subsets, with the latter ensuring answers appear in the provided texts. It is designed to challenge models with complex, compositional questions requiring cross-sentence reasoning.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

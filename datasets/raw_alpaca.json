@@ -1,0 +1,18 @@
+{
+  "name": "Stanford Alpaca (52k Instruction Dataset)",
+  "summary": "A synthetic instruction-following dataset of 52,000 diverse instructions and GPT-generated responses.",
+  "size": "52,000 instruction-response pairs (~80 MB JSON).",
+  "date": "2023-03-13",
+  "download": "https://github.com/tatsu-lab/stanford_alpaca",
+  "companion": "https://crfm.stanford.edu/2023/03/13/alpaca.html",
+  "notes": "Created by prompting OpenAI's text-davinci-003 with 175 human-written seed tasks using Self-Instruct techniques. Covers tasks like writing, transformation, closed QA, and code. Widely used to fine-tune models to follow user instructions. Synthetic nature may introduce subtle biases from the base model.",
+  "tags": [
+    "synthetic",
+    "monolithic",
+    "compilation",
+    "QA",
+    "question:synthetic",
+    "answer:synthetic",
+    "nlp"
+  ]
+}

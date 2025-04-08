@@ -1,0 +1,18 @@
+{
+  "name": "SearchQA",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of over 140,000 open-domain factoid question-answer pairs sourced from Jeopardy! clues, each augmented with approximately 50 text snippets retrieved via Google Search.",
+  "size": "140,461 question-answer pairs, each with an average of 49.6 supporting snippets.",
+  "date": "2017-04-18",
+  "download": "https://github.com/nyu-dl/SearchQA",
+  "companion": "https://arxiv.org/abs/1704.05179",
+  "notes": "The dataset was constructed by collecting question-answer pairs from the J! Archive and augmenting them with text snippets retrieved using the questions as queries in Google Search. Each snippet includes metadata such as the snippet's URL and title. The dataset reflects a realistic information retrieval scenario, requiring models to extract answers from multiple, potentially noisy, text snippets. It has been used to benchmark machine comprehension and question-answering systems.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

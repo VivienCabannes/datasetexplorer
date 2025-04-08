@@ -1,0 +1,20 @@
+{
+  "name": "WebGPT QA dataset",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of question-answer pairs with supporting evidence, derived from OpenAI's WebGPT project, featuring human-generated answers with web-based references.",
+  "size": "Approximately 4,398 question-answer pairs with references.",
+  "date": "2021-12-16",
+  "download": "https://huggingface.co/datasets/openai/webgpt_comparisons",
+  "companion": "https://arxiv.org/abs/2112.09332",
+  "notes": "Questions are sourced from Reddit's ELI5 subreddit and similar platforms. Human demonstrators used a text-based web browser to gather information and provide detailed, evidence-backed answers, including citations. The dataset was utilized to train WebGPT and serves as a benchmark for evaluating truthful, source-cited question answering. Due to web content licenses, the dataset is primarily available for research purposes.",
+  "tags": [
+    "human",
+    "QA",
+    "tool use",
+    "with rationale",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "rationale:human",
+    "nlp"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ShARC (Shaping Answers with Rules through Conversation)",
+  "summary": "_⚠ Use card with caution_ <br>A conversational QA dataset with ~32,000 instances focusing on understanding rule texts, such as government policies, through multi-turn interactions.",
+  "size": "~32,000 QA instances from 948 distinct scenarios.",
+  "date": "2018-10-16",
+  "download": "https://sharc-data.github.io/data.html",
+  "companion": "https://arxiv.org/abs/1809.01494",
+  "notes": "Involves an initial question followed by potential follow-up Q&A turns to clarify conditions before providing a final yes/no/inquire answer. Unique for its conversational logic, requiring systems to infer if the user’s scenario satisfies conditions in the rule text. Dialogues are tree-structured, and annotations include the underlying rule text and user scenario.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "atomic",
+    "with rationale",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "rationale:human",
+    "nlp"
+  ]
+}

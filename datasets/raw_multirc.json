@@ -1,0 +1,18 @@
+{
+  "name": "MultiRC (Multi-Sentence Reading Comprehension)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of short paragraphs with multi-sentence questions requiring reasoning across sentences for answers.",
+  "size": "Approximately 10,000 questions on 1,000 paragraphs across 7 domains.",
+  "date": "2018-06",
+  "download": "https://cogcomp.seas.upenn.edu/multirc/",
+  "companion": "https://aclanthology.org/N18-1023/",
+  "notes": "Each question has multiple candidate answers, with one or more correct options. Models must evaluate each option independently. The dataset encourages compositional reasoning across sentence boundaries and is part of the SuperGLUE benchmark.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

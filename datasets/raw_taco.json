@@ -1,0 +1,20 @@
+{
+  "name": "TACO: Topics in Algorithmic Code Generation",
+  "summary": "_⚠ Use card with caution_ <br>A large-scale dataset of 26,443 algorithmic programming problems with 1.5 million verified Python 3 solutions, sourced from various platforms.",
+  "size": "26,443 problems with 1,539,152 verified Python 3 solutions.",
+  "date": "2023-12-22",
+  "download": "https://huggingface.co/datasets/BAAI/TACO",
+  "companion": "https://arxiv.org/abs/2312.14852",
+  "notes": "Problems are sourced from platforms like CodeChef, CodeForces, HackerRank, GeeksforGeeks, and datasets such as APPS, CodeContest, and Description2code. Each problem includes fine-grained labels like task topics, algorithms, programming skills, and difficulty levels, along with unit tests for solution verification. The dataset emphasizes Python 3 solutions for cleaner code structures.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:human",
+    "answer:human",
+    "rationale:human",
+    "programming"
+  ]
+}

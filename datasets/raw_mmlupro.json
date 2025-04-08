@@ -1,0 +1,21 @@
+{
+  "name": "MMLU-Pro (Massive Multitask Language Understanding Professional)",
+  "summary": "_⚠ Use card with caution_ <br>An enhanced benchmark evaluating language models across 14 disciplines with complex, reasoning-focused multiple-choice questions.",
+  "size": "Approximately 12,000 multiple-choice questions.",
+  "date": "2024-06-03",
+  "download": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro",
+  "companion": "https://arxiv.org/abs/2406.01574",
+  "notes": "MMLU-Pro increases answer choices from four to ten to reduce random guessing and emphasizes reasoning over rote knowledge. Evaluations indicate a significant drop in accuracy compared to the original MMLU, providing a more rigorous assessment of language models' capabilities.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics",
+    "physics",
+    "programming",
+    "nlp"
+  ]
+}

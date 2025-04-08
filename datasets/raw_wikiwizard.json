@@ -1,0 +1,16 @@
+{
+  "name": "Wizard of Wikipedia",
+  "summary": "_⚠ Use card with caution_ <br>A knowledge-grounded open-domain dialogue dataset where one participant ('Wizard') utilizes Wikipedia knowledge to inform and engage with another participant ('Apprentice').",
+  "date": "2018-12-21",
+  "download": "https://huggingface.co/datasets/wizard_of_wikipedia",
+  "companion": "https://arxiv.org/abs/1811.01241",
+  "notes": "The dataset comprises approximately 22,311 dialogues totaling around 201,000 utterances, with each turn by the Wizard annotated with the corresponding Wikipedia sentence used. It facilitates training conversational agents capable of seamlessly integrating factual knowledge into dialogues. Evaluations often focus on knowledge accuracy and conversational fluency.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "tool use",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

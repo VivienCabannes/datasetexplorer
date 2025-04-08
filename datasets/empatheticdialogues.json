@@ -1,0 +1,16 @@
+{
+  "name": "OpenBookQA",
+  "summary": "_⚠ Use card with caution_ <br>A multiple-choice QA dataset for elementary science, requiring reasoning with a core fact and common knowledge.",
+  "size": "5,957 questions (4,957 train, 500 dev, 500 test), each with 4 answer choices.",
+  "download": "https://huggingface.co/datasets/openbookqa",
+  "companion": "https://arxiv.org/abs/1809.02789",
+  "notes": "The dataset includes 1,326 science facts, primarily from elementary textbooks, and tests multi-hop reasoning with factual and commonsense knowledge. It is part of the ARC/OpenBookQA leaderboard challenges.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "domain:physics"
+  ]
+}

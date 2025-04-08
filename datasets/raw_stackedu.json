@@ -1,0 +1,15 @@
+{
+  "name": "Stack-Edu",
+  "summary": "_⚠ Use card with caution_ <br>A curated subset of The Stack v2, focusing on high-quality educational code across 15 programming languages.",
+  "size": "Approximately 167 million samples, totaling around 1 terabyte.",
+  "date": "2025-02-04",
+  "download": "https://huggingface.co/datasets/HuggingFaceTB/stack-edu",
+  "companion": "https://arxiv.org/abs/2502.02737",
+  "notes": "Developed to enhance the training of small language models like SmolLM2. Due to its substantial size, downloading requires Amazon S3. The dataset was curated using classifiers fine-tuned on code files annotated by Llama3.1-70B-Instruct to assess educational quality.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "programming"
+  ]
+}

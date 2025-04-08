@@ -1,0 +1,17 @@
+{
+  "name": "SocialIQA",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark dataset with 38,000 multiple-choice questions assessing commonsense reasoning about social interactions.",
+  "size": "Approximately 38,000 questions with three answer choices each.",
+  "date": "2019-04-22",
+  "download": "https://leaderboard.allenai.org/socialiqa/submissions/get-started",
+  "companion": "https://arxiv.org/abs/1904.09728",
+  "notes": "Questions focus on understanding motivations, reactions, and emotions in everyday social scenarios, requiring models to infer beyond literal text.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

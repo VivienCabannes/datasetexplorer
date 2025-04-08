@@ -1,0 +1,18 @@
+{
+  "name": "TruthfulQA",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 817 questions across 38 categories designed to evaluate the truthfulness of language models by assessing their ability to avoid generating false answers that mimic common human misconceptions.",
+  "size": "817 questions spanning 38 categories.",
+  "date": "2021-09-16",
+  "download": "https://github.com/sylinrl/TruthfulQA",
+  "companion": "https://arxiv.org/abs/2109.07958",
+  "notes": "Questions are crafted to test models on imitative falsehoods—false answers that reflect widespread misconceptions. Evaluations indicate that larger language models tend to produce more such falsehoods, highlighting challenges in ensuring model truthfulness. TruthfulQA serves as a critical tool for measuring and improving the reliability of AI-generated information.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

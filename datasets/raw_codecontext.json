@@ -1,19 +1,18 @@
 {
-    "name": "CodeContests",
-    "summary": "_⚠ Use card with caution_ <br>A dataset of competitive programming problems with test cases and human solutions from platforms like Aizu, AtCoder, CodeChef, Codeforces, and HackerEarth.",
-    "size": "Approximately 13,000 problems, totaling around 2 GB.",
-    "date": "2022-03-15",
-    "download": "https://huggingface.co/datasets/deepmind/code_contests",
-    "companion": "https://arxiv.org/abs/2203.07814",
-    "notes": "Includes both correct and incorrect solutions in various programming languages, providing rich data for training and debugging models.",
-    "tags": [
-      "crowd-sourced",
-      "QA",
-      "compilation",
-      "benchmark",
-      "question:crowd-sourced",
-      "answer:crowd-sourced",
-      "programming"
-    ]
-  }
-  
+  "name": "CodeContests",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of competitive programming problems with test cases and human solutions from platforms like Aizu, AtCoder, CodeChef, Codeforces, and HackerEarth.",
+  "size": "Approximately 13,000 problems, totaling around 2 GB.",
+  "date": "2022-03-15",
+  "download": "https://huggingface.co/datasets/deepmind/code_contests",
+  "companion": "https://arxiv.org/abs/2203.07814",
+  "notes": "Includes both correct and incorrect solutions in various programming languages, providing rich data for training and debugging models.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "compilation",
+    "benchmark",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "programming"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "NarrativeQA",
+  "summary": "_⚠ Use card with caution_ <br>A reading comprehension dataset focusing on long narratives, requiring understanding of entire books or movie scripts to answer questions.",
+  "size": "1,567 stories with 46,765 question–answer pairs.",
+  "date": "2018-06",
+  "download": "https://github.com/deepmind/narrativeqa",
+  "companion": "https://arxiv.org/abs/1712.07040",
+  "notes": "NarrativeQA presents questions that necessitate reasoning across entire narratives, with answers being free-form summaries rather than exact spans. The dataset includes both summaries and full texts of stories, allowing for tasks that assess comprehension from summaries or full narratives.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

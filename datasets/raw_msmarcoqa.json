@@ -1,0 +1,18 @@
+{
+  "name": "MS MARCO QA (Microsoft MAchine Reading COmprehension Question Answering)",
+  "summary": "_⚠ Use card with caution_ <br>A large-scale machine reading comprehension dataset featuring real anonymized Bing search queries with corresponding passages and human-generated answers.",
+  "size": "Approximately 1,010,916 query-passage pairs; 182,669 queries with manually generated answers.",
+  "date": "2016-11-28",
+  "download": "https://microsoft.github.io/msmarco/",
+  "companion": "https://arxiv.org/abs/1611.09268",
+  "notes": "MS MARCO QA includes queries with passages extracted from web documents retrieved by Bing. Answers are often segments from passages or human-written summaries. The dataset is utilized for tasks like passage ranking and reading comprehension, and includes yes/no and unanswerable questions.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "SWE-bench",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 2,294 real-world GitHub issues and corresponding pull requests from 12 popular Python repositories, designed to evaluate language models' capabilities in resolving software engineering problems.",
+  "size": "2,294 issue-pull request pairs.",
+  "date": "2023-10-10",
+  "download": "https://github.com/swe-bench/SWE-bench",
+  "companion": "https://arxiv.org/abs/2310.06770",
+  "notes": "Each issue is paired with the codebase state at the time of the issue and the associated pull request that resolved it. Evaluation is performed by unit test verification, with models tasked to generate patches that address the described issues. Subsets include SWE-bench Lite (300 curated instances for accessible evaluation) and SWE-bench Verified (500 human-validated problems confirmed to be solvable).",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "programming"
+  ]
+}

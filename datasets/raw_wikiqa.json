@@ -1,0 +1,18 @@
+{
+  "name": "WikiQA",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of question and sentence pairs for open-domain question answering research.",
+  "size": "3,047 questions and 29,258 sentences.",
+  "date": "2015-09-01",
+  "download": "https://www.microsoft.com/en-us/download/details.aspx?id=52419",
+  "companion": "https://aclanthology.org/D15-1237/",
+  "notes": "Derived from Bing query logs, each question is linked to a Wikipedia page's summary section sentences, with 1,473 labeled as correct answers. Approximately 40% of questions have no correct answer in the provided sentences, making it suitable for answer sentence selection and answer triggering tasks.",
+  "tags": [
+    "human",
+    "QA",
+    "filtration",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

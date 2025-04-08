@@ -1,0 +1,21 @@
+{
+  "name": "STILL Long Format",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 5,000 complex problems emphasizing long-form answers across various domains.",
+  "size": "5,000 samples (~20 MB).",
+  "date": "2024-12-22",
+  "download": "https://huggingface.co/datasets/RUC-AIBOX/long_form_thought_data_5k",
+  "companion": "https://arxiv.org/abs/2412.09413",
+  "notes": "Questions are sourced from platforms like NuminaMath, AIME, Leetcode, OpenCoder, Camel, Gaokao (Chinese A-level), and RiddleSense. Each entry includes the problem statement ('question'), the model's response with 'thought' and 'solution' components ('combined_text'), and the domain (e.g., mathematics, physics, chemistry, biology, coding, puzzles). The dataset is structured in JSONL format.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:human",
+    "answer:human",
+    "rationale:human",
+    "mathematics",
+    "programming"
+  ]
+}

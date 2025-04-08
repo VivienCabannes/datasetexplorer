@@ -1,0 +1,19 @@
+{
+  "name": "ReCoRD (Reading Comprehension with Commonsense Reasoning Dataset)",
+  "summary": "_⚠ Use card with caution_ <br>A cloze-style reading comprehension dataset with over 120,000 queries from approximately 70,000 news articles, requiring commonsense reasoning.",
+  "size": "120,000+ queries from ~70,000 news articles.",
+  "date": "2018-10-30",
+  "download": "https://sheng-z.github.io/ReCoRD-explorer/",
+  "companion": "https://arxiv.org/abs/1810.12885",
+  "notes": "Each query is formed by masking out a noun phrase in a sentence from a news article, and the model must select the correct entity from the passage to fill in the blank, utilizing both the passage and broader commonsense knowledge. The dataset was added to the SuperGLUE benchmark in July 2019.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "filtration",
+    "with rationale",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:human",
+    "nlp"
+  ]
+}

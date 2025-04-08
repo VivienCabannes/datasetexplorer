@@ -1,0 +1,18 @@
+{
+  "name": "SQuAD1.1",
+  "summary": "_⚠ Use card with caution_ <br>A reading comprehension dataset of over 100,000 crowd-sourced questions on Wikipedia articles, with answers as text spans from the corresponding passages.",
+  "size": "107,785 question-answer pairs on 536 articles.",
+  "date": "2016-06-16",
+  "download": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json",
+  "companion": "https://arxiv.org/abs/1606.05250",
+  "notes": "Primarily used for extractive QA evaluation with exact-match and F1 scoring. All answers are spans from the passage; no unanswerable questions are included in v1.1.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:human",
+    "nlp"
+  ]
+}

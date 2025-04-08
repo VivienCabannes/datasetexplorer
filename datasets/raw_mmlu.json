@@ -1,0 +1,17 @@
+{
+  "name": "MMLU (Massive Multitask Language Understanding)",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark evaluating language models across 57 diverse subjects through multiple-choice questions.",
+  "size": "Approximately 16,000 multiple-choice questions.",
+  "date": "2020-09-07",
+  "download": "https://github.com/hendrycks/test",
+  "companion": "https://arxiv.org/abs/2009.03300",
+  "notes": "Designed for zero-shot and few-shot evaluation, MMLU assesses both world knowledge and problem-solving abilities of language models. Subjects range from elementary mathematics to professional law and medicine.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human"
+  ]
+}

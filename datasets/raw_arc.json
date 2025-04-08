@@ -1,18 +1,17 @@
 {
-    "name": "AI2 ARC (Easy & Challenge)",
-    "summary": "_⚠ Use card with caution_ <br>A dataset of 7,787 grade-school science multiple-choice questions, divided into Easy and Challenge sets.",
-    "size": "7,787 questions (5,228 Easy; 2,559 Challenge).",
-    "date": "2018-03-14",
-    "download": "https://huggingface.co/datasets/allenai/ai2_arc",
-    "companion": "https://arxiv.org/abs/1803.05457",
-    "notes": "Each question has four answer choices and is accompanied by a 14M-sentence science corpus for retrieval. The Challenge set contains questions that simple retrieval or co-occurrence methods fail to answer correctly.",
-    "tags": [
-      "compilation",
-      "QA",
-      "benchmark",
-      "question:human",
-      "answer:human",
-      "nlp"
-    ]
-  }
-  
+  "name": "AI2 ARC (Easy & Challenge)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 7,787 grade-school science multiple-choice questions, divided into Easy and Challenge sets.",
+  "size": "7,787 questions (5,228 Easy; 2,559 Challenge).",
+  "date": "2018-03-14",
+  "download": "https://huggingface.co/datasets/allenai/ai2_arc",
+  "companion": "https://arxiv.org/abs/1803.05457",
+  "notes": "Each question has four answer choices and is accompanied by a 14M-sentence science corpus for retrieval. The Challenge set contains questions that simple retrieval or co-occurrence methods fail to answer correctly.",
+  "tags": [
+    "compilation",
+    "QA",
+    "benchmark",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

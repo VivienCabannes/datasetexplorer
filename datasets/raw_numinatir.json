@@ -1,0 +1,21 @@
+{
+  "name": "NuminaMath-TIR",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of approximately 72,540 mathematical competition problems with solutions generated using Tool-Integrated Reasoning (TIR).",
+  "size": "Approximately 72,540 samples, totaling around 148 MB.",
+  "date": "2024-06-15",
+  "download": "https://huggingface.co/datasets/AI-MO/NuminaMath-TIR",
+  "companion": "https://arxiv.org/abs/2309.17452",
+  "notes": "NuminaMath-TIR was developed to enhance the mathematical reasoning capabilities of language models by incorporating tool-based solutions. Each problem is paired with a solution that combines natural language reasoning and executable code, allowing models to learn effective tool utilization in problem-solving. The dataset includes problems from various mathematical competitions, providing a diverse set of challenges.",
+  "tags": [
+    "synthetic",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:human",
+    "answer:synthetic",
+    "rationale:synthetic",
+    "tool use",
+    "mathematics"
+  ]
+}

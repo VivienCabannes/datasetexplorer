@@ -1,0 +1,21 @@
+{
+  "name": "SciQ",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 13,679 crowd-sourced multiple-choice science questions covering subjects like physics, chemistry, and biology.",
+  "size": "13,679 questions, each with 4 answer choices and a supporting explanation.",
+  "date": "2017-07-19",
+  "download": "https://allenai.org/data/sciq",
+  "companion": "https://arxiv.org/abs/1707.06209",
+  "notes": "Questions were created by crowdworkers who, after reviewing a science fact or paragraph, formulated a question along with answer options. Each question includes a correct answer and three distractors, accompanied by a supporting explanation. The dataset is useful for studying the impact of explanations on model performance and is often employed in data augmentation for scientific QA tasks.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "with rationale",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "rationale:crowd-sourced",
+    "physics",
+    "chemistry",
+    "biology"
+  ]
+}

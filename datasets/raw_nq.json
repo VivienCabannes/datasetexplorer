@@ -1,0 +1,18 @@
+{
+  "name": "NQ (Natural Questions)",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark dataset of real anonymized Google search queries paired with Wikipedia articles and human-annotated answers.",
+  "size": "307,373 training examples; 7,830 development examples; 7,842 test examples.",
+  "date": "2019-06",
+  "download": "https://ai.google.com/research/NaturalQuestions/download",
+  "companion": "https://aclanthology.org/Q19-1026/",
+  "notes": "Each example includes a Google search query and a corresponding Wikipedia page. Annotators provide a long answer (a paragraph or table) and, if present, a short answer (one or more entities or a 'yes'/'no' response). The dataset is designed to evaluate open-domain question answering systems and reading comprehension models.",
+  "tags": [
+    "human",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

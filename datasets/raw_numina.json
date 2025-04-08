@@ -1,0 +1,19 @@
+{
+  "name": "NuminaMath 1.5",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of over 900,000 competition-level math problems with Chain of Thought (CoT) solutions.",
+  "size": "Approximately 900,000 samples, totaling 531 MB.",
+  "date": "2025-02",
+  "download": "https://huggingface.co/datasets/AI-MO/NuminaMath-1.5",
+  "notes": "NuminaMath 1.5 enhances its predecessor by adding problem metadata for verifiability, manually curated data from various contests, and removing synthetic datasets like 'synthetic_amc' due to their negative impact on performance. The dataset sources include Art of Problem Solving community problems, American Mathematics Competitions, Chinese high school math exercises, and international mathematics olympiad problems.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:human",
+    "answer:human",
+    "rationale:human",
+    "mathematics"
+  ]
+}

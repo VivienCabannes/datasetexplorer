@@ -1,0 +1,17 @@
+{
+  "name": "ShareGPT Conversations",
+  "summary": "_⚠ Use card with caution_ <br>A crowdsourced dataset of dialogues between users and ChatGPT, contributed via ShareGPT, encompassing a wide range of topics and user queries.",
+  "size": "Approximately 90,000 conversations, each averaging 10–15 turns.",
+  "date": "2023-03-31",
+  "download": "https://huggingface.co/datasets/RyokoAI/ShareGPT52K",
+  "companion": "https://arxiv.org/abs/2304.08994",
+  "notes": "Conversations include user prompts and ChatGPT responses, reflecting real-world interactions. The dataset has been utilized to fine-tune open-source chat models like Vicuna. Legal and terms of service considerations are pertinent, as the data originates from user-submitted logs.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "compilation",
+    "question:human",
+    "answer:synthetic",
+    "nlp"
+  ]
+}

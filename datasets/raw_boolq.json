@@ -1,20 +1,19 @@
 {
-    "name": "BoolQ (Boolean Questions)",
-    "summary": "_⚠ Use card with caution_ <br>A dataset of 15,942 naturally occurring yes/no questions paired with Wikipedia passages.",
-    "size": "15,942 question–passage pairs.",
-    "date": "2019-05-23",
-    "download": "https://huggingface.co/datasets/boolq",
-    "companion": "https://arxiv.org/abs/1905.10044",
-    "notes": "Each example consists of a real user question (from search logs), a relevant Wikipedia passage, and a yes/no answer. Annotators labeled answers based on the passage. Questions often require inference or commonsense reasoning. Included in SuperGLUE.",
-    "tags": [
-      "human",
-      "QA",
-      "atomic",
-      "benchmark",
-      "answer:verifiable",
-      "question:human",
-      "answer:human",
-      "nlp"
-    ]
-  }
-  
+  "name": "BoolQ (Boolean Questions)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 15,942 naturally occurring yes/no questions paired with Wikipedia passages.",
+  "size": "15,942 question–passage pairs.",
+  "date": "2019-05-23",
+  "download": "https://huggingface.co/datasets/boolq",
+  "companion": "https://arxiv.org/abs/1905.10044",
+  "notes": "Each example consists of a real user question (from search logs), a relevant Wikipedia passage, and a yes/no answer. Annotators labeled answers based on the passage. Questions often require inference or commonsense reasoning. Included in SuperGLUE.",
+  "tags": [
+    "human",
+    "QA",
+    "atomic",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

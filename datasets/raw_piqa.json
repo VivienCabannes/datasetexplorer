@@ -1,0 +1,17 @@
+{
+  "name": "PIQA (Physical Interaction: Question Answering)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset for physical commonsense reasoning, featuring multiple-choice questions about everyday physical tasks.",
+  "size": "21,000 questions (Train: 16k, Dev: 2k, Test: 3k).",
+  "date": "2019-11-26",
+  "download": "https://allenai.org/data/piqa",
+  "companion": "https://arxiv.org/abs/1911.11641",
+  "notes": "Each question presents a goal and two possible solutions, focusing on naive physics and ergonomics knowledge. The task is to select the most plausible solution, evaluating models' grasp of physical commonsense.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "physics"
+  ]
+}

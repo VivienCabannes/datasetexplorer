@@ -1,0 +1,20 @@
+{
+  "name": "TheoremQA",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark dataset of 800 university-level questions requiring the application of over 350 STEM theorems across mathematics, physics, electrical engineering, computer science, and finance.",
+  "size": "800 questions covering 350+ theorems.",
+  "date": "2023-05-21",
+  "download": "https://huggingface.co/datasets/TIGER-Lab/TheoremQA",
+  "companion": "https://arxiv.org/abs/2305.12524",
+  "notes": "Curated by domain experts, TheoremQA includes a diverse range of theorems such as Taylor's theorem, Lagrange's theorem, Huffman coding, and Quantum Theorem. The dataset serves as a rigorous benchmark to assess large language models' abilities to apply theoretical knowledge to solve complex science problems. Evaluations indicate that models like GPT-4 achieve up to 51% accuracy with Program-of-Thoughts Prompting, while other open-source models perform below 15%, highlighting the dataset's challenging nature.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics",
+    "physics",
+    "programming"
+  ]
+}

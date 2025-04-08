@@ -1,0 +1,17 @@
+{
+  "name": "Llama-Nemotron-Post-Training-Dataset-v1",
+  "summary": "_⚠ Use card with caution_ <br>A comprehensive dataset developed by NVIDIA to enhance the post-training of large language models across various domains.",
+  "size": "Approximately 15 million samples, totaling around 6 GB.",
+  "date": "2025-03-18",
+  "download": "https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1",
+  "companion": "https://arxiv.org/abs/2502.00203",
+  "notes": "The dataset encompasses multiple subsets categorized into five main splits: code (approximately 1.56 million samples), math (approximately 13.1 million samples), science (approximately 484,000 samples), chat (approximately 39,800 samples), and safety (approximately 31,400 samples). It was developed to fine-tune models for improved accuracy and reliability.",
+  "tags": [
+    "synthetic",
+    "compilation",
+    "programming",
+    "mathematics",
+    "physics",
+    "nlp"
+  ]
+}

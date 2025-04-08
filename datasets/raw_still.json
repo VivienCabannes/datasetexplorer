@@ -1,0 +1,18 @@
+{
+  "name": "STILL-3 Preview RL Data",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 30,000 mathematical problems with verifiable answers, designed for reinforcement learning in mathematical reasoning.",
+  "size": "30,000 samples (~10 MB).",
+  "date": "2024-12-22",
+  "download": "https://huggingface.co/datasets/RUC-AIBOX/STILL-3-Preview-RL-Data",
+  "companion": "https://arxiv.org/abs/2412.09413",
+  "notes": "Sourced from MATH, NuminaMathCoT, and AIME (1983–2023). Each entry includes a 'question', 'messages' (formatted input using a chat template), and 'answer'. Part of the STILL framework focusing on slow-thinking reasoning systems engaging in extended reasoning processes before solutions.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics"
+  ]
+}

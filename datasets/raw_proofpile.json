@@ -1,0 +1,15 @@
+{
+  "name": "Proof-Pile-2",
+  "summary": "_⚠ Use card with caution_ <br>A 55-billion-token dataset of mathematical and scientific documents for training language models.",
+  "size": "Approximately 55 billion tokens.",
+  "date": "2023-10-17",
+  "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
+  "companion": "https://arxiv.org/abs/2310.10631",
+  "notes": "Proof-Pile-2 comprises three subsets: 29B tokens from the ArXiv subset of RedPajama, 15B tokens from OpenWebMath containing high-quality mathematical web texts, and 11B tokens from AlgebraicStack, which includes mathematical code across 17 programming languages. This dataset was utilized to train models like Llemma 7B and Llemma 34B, enhancing mathematical reasoning capabilities.",
+  "tags": [
+    "human",
+    "monolithic",
+    "compilation",
+    "mathematics"
+  ]
+}

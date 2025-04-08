@@ -1,0 +1,18 @@
+{
+  "name": "QuAC (Question Answering in Context)",
+  "summary": "_⚠ Use card with caution_ <br>A dialogue-style QA dataset with 13,594 information-seeking dialogs (98,407 questions) based on Wikipedia articles.",
+  "size": "13,594 dialogs with 98,407 question-answer pairs.",
+  "date": "2018-08-21",
+  "download": "https://quac.ai/",
+  "companion": "https://arxiv.org/abs/1808.07036",
+  "notes": "In each dialog, a student poses a sequence of freeform questions to learn about a hidden Wikipedia text, and a teacher answers by providing short excerpts from the text. Questions are often open-ended, unanswerable, or context-dependent. The dataset includes teacher's dialogue acts and answer summaries for some turns.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:human",
+    "nlp"
+  ]
+}

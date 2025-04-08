@@ -1,14 +1,13 @@
 {
-    "name": "Codeforces-Python-Submissions",
-    "summary": "_⚠ Use card with caution_ <br>A dataset of Python solutions submitted to Codeforces, including problem statements, user submissions, and metadata.",
-    "size": "Approximately 690,000 samples, totaling around 1.7 GB.",
-    "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions",
-    "notes": "The dataset includes unit tests for many problems, facilitating automated evaluation of code submissions. It is useful for research in code synthesis and programming education.",
-    "tags": [
-      "crowd-sourced",
-      "monolithic",
-      "atomic",
-      "programming"
-    ]
-  }
-  
+  "name": "Codeforces-Python-Submissions",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of Python solutions submitted to Codeforces, including problem statements, user submissions, and metadata.",
+  "size": "Approximately 690,000 samples, totaling around 1.7 GB.",
+  "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions",
+  "notes": "The dataset includes unit tests for many problems, facilitating automated evaluation of code submissions. It is useful for research in code synthesis and programming education.",
+  "tags": [
+    "crowd-sourced",
+    "monolithic",
+    "atomic",
+    "programming"
+  ]
+}

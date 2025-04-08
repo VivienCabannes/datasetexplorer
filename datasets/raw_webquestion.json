@@ -1,0 +1,19 @@
+{
+  "name": "WebQuestions",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 6,642 question-answer pairs designed for evaluating open-domain question answering systems using the Freebase knowledge graph.",
+  "size": "6,642 question-answer pairs.",
+  "date": "2013-10-01",
+  "download": "https://huggingface.co/datasets/Stanford/web_questions",
+  "companion": "https://aclanthology.org/D13-1160/",
+  "notes": "Questions were sourced using the Google Suggest API and answers were crowdsourced via Amazon Mechanical Turk, focusing on single named entities. The dataset is widely used for evaluating semantic parsing and knowledge base question answering systems.",
+  "tags": [
+    "human",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:human",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}
+  

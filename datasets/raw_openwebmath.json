@@ -1,0 +1,15 @@
+{
+  "name": "OpenWebMath",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 6.3 million high-quality mathematical documents extracted from Common Crawl.",
+  "size": "6.3 million documents (~27 GB).",
+  "date": "2023-10-10",
+  "download": "https://huggingface.co/datasets/open-web-math/open-web-math",
+  "companion": "https://arxiv.org/abs/2310.06786",
+  "notes": "OpenWebMath was curated by filtering over 200 billion HTML files from Common Crawl to include only English documents with substantial mathematical content. The extraction process preserved LaTeX expressions and removed boilerplate text. The dataset encompasses approximately 14.7 billion tokens and has been utilized for pretraining and fine-tuning large language models, demonstrating enhanced performance on mathematical reasoning tasks.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "mathematics"
+  ]
+}

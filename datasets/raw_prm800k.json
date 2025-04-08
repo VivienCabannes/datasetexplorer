@@ -1,0 +1,20 @@
+{
+  "name": "PRM800K",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 800,000 step-level correctness labels for model-generated solutions to MATH problems.",
+  "size": "800,000 annotated reasoning steps.",
+  "date": "2023-05-31",
+  "download": "https://github.com/openai/prm800k",
+  "companion": "https://arxiv.org/abs/2305.20050",
+  "notes": "Developed by OpenAI to support research in training reliable models for complex multi-step reasoning tasks. The dataset provides step-level human feedback, enabling the development of process reward models (PRMs) that evaluate intermediate steps in problem-solving. Some annotations have been reported to be incorrect, which may impact model training and evaluation.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:synthetic",
+    "answer:synthetic",
+    "rationale:human",
+    "mathematics"
+  ]
+}

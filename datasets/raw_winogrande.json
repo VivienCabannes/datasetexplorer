@@ -1,0 +1,16 @@
+{
+  "name": "WinoGrande",
+  "summary": "_⚠ Use card with caution_ <br>A large-scale dataset of 44,000 pronoun resolution problems designed to test commonsense reasoning.",
+  "date": "2020-04-03",
+  "download": "https://huggingface.co/datasets/allenai/winogrande",
+  "companion": "https://aaai.org/ojs/index.php/AAAI/article/view/6399",
+  "notes": "Each problem presents a sentence with an ambiguous pronoun and two possible referents; the task is to choose the correct one. Example: 'The trophy didn't fit in the suitcase because ___ was too big.' (Options: trophy or suitcase). WinoGrande was created through crowdsourcing with adversarial filtering to reduce biases, making it more challenging than the original Winograd Schema Challenge.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "PersonaChat",
+  "summary": "_⚠ Use card with caution_ <br>A dialogue dataset where paired crowdworkers engage in conversations, each adopting a given persona.",
+  "size": "10,907 dialogues with 162,064 utterances.",
+  "date": "2018-01-22",
+  "download": "https://github.com/facebookresearch/ParlAI/tree/main/parlai/tasks/personachat",
+  "companion": "https://arxiv.org/abs/1801.07243",
+  "notes": "Each participant is assigned a persona consisting of 4-5 profile sentences, resulting in 1,155 unique personas. The dataset is designed to facilitate personalized dialogue modeling, aiming to build agents that can naturally integrate persona information into conversations.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}
