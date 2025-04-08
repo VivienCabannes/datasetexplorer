@@ -1,1 +1,16 @@
-{"name": "SocialIQA", "summary": "A benchmark for social commonsense reasoning. It consists of 38,000 multiple choice questions about everyday social interactions&#8203;:contentReference[oaicite:59]{index=59}. Each question focuses on motivations, reactions, or feelings of people in a short context scenario, with 3 answer options.", "size": "37,000+ questions with 3-choice answers&#8203;:contentReference[oaicite:60]{index=60} (Train ~33k, Dev 1.1k, Test 1.2k). Also 1,924 unique narrative contexts.", "download": "Data available via AI2 (social-iqa dataset on GitHub) and on HuggingFace `social_i_qa`.", "companion": "https://arxiv.org/abs/1904.09728 (Sap et al. 2019, SocialIQA paper)", "notes": "Built on ATOMIC knowledge graph events. Question types include \"What will X do next?\", \"Why did X do that?\", etc. It tests understanding of social dynamics and emotions. Models need to infer beyond the literal text. It\u2019s commonly used to evaluate commonsense reasoning in language models.", "tags": ["crowd-sourced", "QA", "atomic", "question:crowd-sourced", "answer:crowd-sourced", "domain:nlp"]}
+{
+    "name": "SocialIQA",
+    "summary": "A benchmark for social commonsense reasoning. It consists of 38,000 multiple choice questions about everyday social interactions&#8203;:contentReference[oaicite:59]{index=59}. Each question focuses on motivations, reactions, or feelings of people in a short context scenario, with 3 answer options.",
+    "size": "37,000+ questions with 3-choice answers&#8203;:contentReference[oaicite:60]{index=60} (Train ~33k, Dev 1.1k, Test 1.2k). Also 1,924 unique narrative contexts.",
+    "download": "Data available via AI2 (social-iqa dataset on GitHub) and on HuggingFace `social_i_qa`.",
+    "companion": "https://arxiv.org/abs/1904.09728 (Sap et al. 2019, SocialIQA paper)",
+    "notes": "Built on ATOMIC knowledge graph events. Question types include \"What will X do next?\", \"Why did X do that?\", etc. It tests understanding of social dynamics and emotions. Models need to infer beyond the literal text. It\u2019s commonly used to evaluate commonsense reasoning in language models.",
+    "tags": [
+        "crowd-sourced",
+        "QA",
+        "atomic",
+        "question:crowd-sourced",
+        "answer:crowd-sourced",
+        "domain:nlp"
+    ]
+}

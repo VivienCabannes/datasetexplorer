@@ -1,1 +1,17 @@
-{"name": "TriviaQA", "summary": "A large-scale open-domain QA dataset with trivia questions and answers. It contains ~950K question-answer pairs gathered from trivia websites and Wikipedia, with evidence documents for each question&#8203;:contentReference[oaicite:4]{index=4}. Questions are realistic and often require multi-sentence reasoning.", "size": "~95,000 question instances (filtered set), or 650K question-evidence-answer triples&#8203;:contentReference[oaicite:5]{index=5}; original unfiltered has 950K Q-A pairs across 662K documents&#8203;:contentReference[oaicite:6]{index=6}.", "download": "http://nlp.cs.washington.edu/triviaqa/ (contains Wikipedia and Web domain splits); also on HuggingFace `trivia_qa`", "companion": "https://arxiv.org/abs/1705.03551 (Joshi et al. 2017, TriviaQA paper)", "notes": "Includes \"unfiltered\" raw set and a \"filtered\" subset where answers appear in the provided text. Each question has a human-authored answer and a set of supporting documents (web pages or Wiki). Often used for open QA and reading comprehension with retrieval.", "tags": ["human", "QA", "compilation", "answer:verifiable", "question:human", "answer:human", "domain:nlp"]}
+{
+    "name": "TriviaQA",
+    "summary": "A large-scale open-domain QA dataset with trivia questions and answers. It contains ~950K question-answer pairs gathered from trivia websites and Wikipedia, with evidence documents for each question&#8203;:contentReference[oaicite:4]{index=4}. Questions are realistic and often require multi-sentence reasoning.",
+    "size": "~95,000 question instances (filtered set), or 650K question-evidence-answer triples&#8203;:contentReference[oaicite:5]{index=5}; original unfiltered has 950K Q-A pairs across 662K documents&#8203;:contentReference[oaicite:6]{index=6}.",
+    "download": "http://nlp.cs.washington.edu/triviaqa/ (contains Wikipedia and Web domain splits); also on HuggingFace `trivia_qa`",
+    "companion": "https://arxiv.org/abs/1705.03551 (Joshi et al. 2017, TriviaQA paper)",
+    "notes": "Includes \"unfiltered\" raw set and a \"filtered\" subset where answers appear in the provided text. Each question has a human-authored answer and a set of supporting documents (web pages or Wiki). Often used for open QA and reading comprehension with retrieval.",
+    "tags": [
+        "human",
+        "QA",
+        "compilation",
+        "answer:verifiable",
+        "question:human",
+        "answer:human",
+        "domain:nlp"
+    ]
+}

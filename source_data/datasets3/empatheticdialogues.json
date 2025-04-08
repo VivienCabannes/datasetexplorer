@@ -1,1 +1,14 @@
-{"name": "EmpatheticDialogues", "summary": "A dataset of 24,850 one-on-one open-domain conversations grounded in emotional situations&#8203;:contentReference[oaicite:94]{index=94}. Each conversation starts with a speaker describing a personal situation that evokes a specific emotion, then the conversation continues with an empathetic listener. The goal is to teach models to respond with empathy.", "size": "24,850 dialogues, ~50k utterances (each dialogue has 2 speakers and about 2 turns each on average). 32 emotion labels overall.", "download": "Facebook AI released it; available via ParlAI and on HuggingFace `empathetic_dialogues`.", "companion": "https://arxiv.org/abs/1811.00207 (Rashkin et al. 2019, EmpatheticDialogues paper)", "notes": "Each dialog is relatively short (one person shares, the other responds, maybe a few back-and-forths). The dataset includes the emotion label (e.g., sad, angry) for the situation and the conversation. It\u2019s used to train chatbots that better recognize and respond to user emotions. Not QA; model quality is measured by how well it aligns with human empathetic responses.", "tags": ["crowd-sourced", "dialog", "atomic", "domain:nlp"]}
+{
+    "name": "EmpatheticDialogues",
+    "summary": "A dataset of 24,850 one-on-one open-domain conversations grounded in emotional situations&#8203;:contentReference[oaicite:94]{index=94}. Each conversation starts with a speaker describing a personal situation that evokes a specific emotion, then the conversation continues with an empathetic listener. The goal is to teach models to respond with empathy.",
+    "size": "24,850 dialogues, ~50k utterances (each dialogue has 2 speakers and about 2 turns each on average). 32 emotion labels overall.",
+    "download": "Facebook AI released it; available via ParlAI and on HuggingFace `empathetic_dialogues`.",
+    "companion": "https://arxiv.org/abs/1811.00207 (Rashkin et al. 2019, EmpatheticDialogues paper)",
+    "notes": "Each dialog is relatively short (one person shares, the other responds, maybe a few back-and-forths). The dataset includes the emotion label (e.g., sad, angry) for the situation and the conversation. It\u2019s used to train chatbots that better recognize and respond to user emotions. Not QA; model quality is measured by how well it aligns with human empathetic responses.",
+    "tags": [
+        "crowd-sourced",
+        "dialog",
+        "atomic",
+        "domain:nlp"
+    ]
+}

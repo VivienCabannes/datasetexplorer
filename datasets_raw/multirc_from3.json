@@ -1,1 +1,17 @@
-{"name": "MultiRC", "summary": "Multi-Sentence Reading Comprehension is a dataset of short paragraphs and multi-sentence questions that require reasoning across sentences for the answer&#8203;:contentReference[oaicite:48]{index=48}. Each question has several candidate answer options, and one or more can be correct (not only one)&#8203;:contentReference[oaicite:49]{index=49}. It challenges models to evaluate each option independently.", "size": "~6,000 questions on ~870 paragraphs&#8203;:contentReference[oaicite:50]{index=50}; 4,848 question-answer pairs in train (with 10,000+ candidate evals), 7 domains. Each question averages ~4 answer options.", "download": "Released via AI2 (CogComp) and part of the ERASER benchmark. HuggingFace: `multi_rc` (as part of SuperGLUE).", "companion": "https://cogcomp.seas.upenn.edu/multirc/ (dataset info) and http://aclweb.org/anthology/N18-1023 (Khashabi et al. 2018, MultiRC paper)", "notes": "In MultiRC, a question can have multiple correct choices (each is marked true/false). Evaluation uses metrics like F1 and Exact Match over the set of correct options. Also part of the SuperGLUE benchmark. It encourages compositional reasoning across sentence boundaries and reducing guesswork from answer count.", "tags": ["crowd-sourced", "QA", "atomic", "answer:verifiable", "question:crowd-sourced", "answer:crowd-sourced", "domain:nlp"]}
+{
+    "name": "MultiRC",
+    "summary": "Multi-Sentence Reading Comprehension is a dataset of short paragraphs and multi-sentence questions that require reasoning across sentences for the answer&#8203;:contentReference[oaicite:48]{index=48}. Each question has several candidate answer options, and one or more can be correct (not only one)&#8203;:contentReference[oaicite:49]{index=49}. It challenges models to evaluate each option independently.",
+    "size": "~6,000 questions on ~870 paragraphs&#8203;:contentReference[oaicite:50]{index=50}; 4,848 question-answer pairs in train (with 10,000+ candidate evals), 7 domains. Each question averages ~4 answer options.",
+    "download": "Released via AI2 (CogComp) and part of the ERASER benchmark. HuggingFace: `multi_rc` (as part of SuperGLUE).",
+    "companion": "https://cogcomp.seas.upenn.edu/multirc/ (dataset info) and http://aclweb.org/anthology/N18-1023 (Khashabi et al. 2018, MultiRC paper)",
+    "notes": "In MultiRC, a question can have multiple correct choices (each is marked true/false). Evaluation uses metrics like F1 and Exact Match over the set of correct options. Also part of the SuperGLUE benchmark. It encourages compositional reasoning across sentence boundaries and reducing guesswork from answer count.",
+    "tags": [
+        "crowd-sourced",
+        "QA",
+        "atomic",
+        "answer:verifiable",
+        "question:crowd-sourced",
+        "answer:crowd-sourced",
+        "domain:nlp"
+    ]
+}

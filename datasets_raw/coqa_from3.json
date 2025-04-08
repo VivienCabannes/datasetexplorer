@@ -1,1 +1,19 @@
-{"name": "CoQA", "summary": "Conversational Question Answering challenge with 127k questions across 8k dialogues spanning multiple domains&#8203;:contentReference[oaicite:29]{index=29}. Each question is answered in free-form text (often a short phrase) along with an evidence span from the passage as rationale.", "size": "8,000 conversations, 127,000+ Q&A pairs&#8203;:contentReference[oaicite:30]{index=30}. (Train ~108k Q, Dev 7.2k Q, Test ~7.3k Q).", "download": "Stanford CS224N GitHub (coqa-train-v1.0.json, coqa-dev-v1.0.json) or HuggingFace `coqa`.", "companion": "https://arxiv.org/abs/1808.07042 (Reddy et al. 2019, CoQA paper)", "notes": "Domains include children\u2019s stories, literature, middle/high school textbooks, etc. Answers can be yes/no or free text, not necessarily extractive. A highlighted evidence text is provided for each answer. CoQA evaluates F1 of answer text and a conversational Exact Match.", "tags": ["crowd-sourced", "dialog", "atomic", "with rationale", "answer:verifiable", "question:crowd-sourced", "answer:crowd-sourced", "rationale:human", "domain:nlp"]}
+{
+    "name": "CoQA",
+    "summary": "Conversational Question Answering challenge with 127k questions across 8k dialogues spanning multiple domains&#8203;:contentReference[oaicite:29]{index=29}. Each question is answered in free-form text (often a short phrase) along with an evidence span from the passage as rationale.",
+    "size": "8,000 conversations, 127,000+ Q&A pairs&#8203;:contentReference[oaicite:30]{index=30}. (Train ~108k Q, Dev 7.2k Q, Test ~7.3k Q).",
+    "download": "Stanford CS224N GitHub (coqa-train-v1.0.json, coqa-dev-v1.0.json) or HuggingFace `coqa`.",
+    "companion": "https://arxiv.org/abs/1808.07042 (Reddy et al. 2019, CoQA paper)",
+    "notes": "Domains include children\u2019s stories, literature, middle/high school textbooks, etc. Answers can be yes/no or free text, not necessarily extractive. A highlighted evidence text is provided for each answer. CoQA evaluates F1 of answer text and a conversational Exact Match.",
+    "tags": [
+        "crowd-sourced",
+        "dialog",
+        "atomic",
+        "with rationale",
+        "answer:verifiable",
+        "question:crowd-sourced",
+        "answer:crowd-sourced",
+        "rationale:human",
+        "domain:nlp"
+    ]
+}

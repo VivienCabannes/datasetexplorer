@@ -1,5 +1,3 @@
-#### Prompt to build dataset cards
-
 I'm building a dataset explorer with a structured tag system. I’ve already collected several datasets, but many are missing key details. For each dataset, I want to complete a card containing the following fields:
 
 - **name**: the name of the dataset  

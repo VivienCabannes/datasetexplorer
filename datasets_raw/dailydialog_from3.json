@@ -1,1 +1,14 @@
-{"name": "DailyDialog", "summary": "A high-quality multi-turn dialogue dataset of 13,118 conversations about everyday topics (not knowledge-grounded) in English. It was written by Chinese learners of English. The conversations average 7.9 turns (102k utterances total) and cover topics like relationships, ordinary life, etc., annotated with emotion and act labels.", "size": "13,118 dialogues, 87,170 utterances (average ~7 turns per dialog).", "download": "Available via the DailyDialog project (through GitHub or websites) and on HuggingFace `daily_dialog`.", "companion": "https://aclanthology.org/I17-1099 (Li et al. 2017, DailyDialog paper)", "notes": "The dialogues tend to be short and focused on a single scenario. It's often used for training/evaluating chit-chat dialogue models. Each utterance also has emotion and dialogue act annotations, which can facilitate research in those areas. The data is relatively formal and clean, given it\u2019s written by learners and then corrected.", "tags": ["human", "dialog", "atomic", "domain:nlp"]}
+{
+    "name": "DailyDialog",
+    "summary": "A high-quality multi-turn dialogue dataset of 13,118 conversations about everyday topics (not knowledge-grounded) in English. It was written by Chinese learners of English. The conversations average 7.9 turns (102k utterances total) and cover topics like relationships, ordinary life, etc., annotated with emotion and act labels.",
+    "size": "13,118 dialogues, 87,170 utterances (average ~7 turns per dialog).",
+    "download": "Available via the DailyDialog project (through GitHub or websites) and on HuggingFace `daily_dialog`.",
+    "companion": "https://aclanthology.org/I17-1099 (Li et al. 2017, DailyDialog paper)",
+    "notes": "The dialogues tend to be short and focused on a single scenario. It's often used for training/evaluating chit-chat dialogue models. Each utterance also has emotion and dialogue act annotations, which can facilitate research in those areas. The data is relatively formal and clean, given it\u2019s written by learners and then corrected.",
+    "tags": [
+        "human",
+        "dialog",
+        "atomic",
+        "domain:nlp"
+    ]
+}

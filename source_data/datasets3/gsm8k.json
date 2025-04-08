@@ -1,1 +1,18 @@
-{"name": "GSM8K", "summary": "Grade School Math 8K is a dataset of 8.5k diverse grade-school level math word problems, created by human writers&#8203;:contentReference[oaicite:79]{index=79}. Each problem comes with a detailed step-by-step solution and the final numerical answer. The problems emphasize linguistic variety and often require multi-step arithmetic reasoning.", "size": "8,500 problems (train 7,473, test 1,319)&#8203;:contentReference[oaicite:80]{index=80}; each with a chain-of-thought solution and an answer.", "download": "OpenAI\u2019s GitHub (Grade School Math 8K data) or HuggingFace `gsm8k`.", "companion": "https://arxiv.org/abs/2110.14168 (Cobbe et al. 2021, training verifiers on GSM8K paper)", "notes": "The dataset was introduced to facilitate research into chain-of-thought prompting. It\u2019s now a standard test for math word problem solving by language models. Evaluated by exact match on the final numeric answer. Many solutions require several steps of reasoning, which are provided as ground truth rationales.", "tags": ["crowd-sourced", "QA", "atomic", "with rationale", "question:crowd-sourced", "answer:crowd-sourced", "rationale:human", "domain:mathematics"]}
+{
+    "name": "GSM8K",
+    "summary": "Grade School Math 8K is a dataset of 8.5k diverse grade-school level math word problems, created by human writers&#8203;:contentReference[oaicite:79]{index=79}. Each problem comes with a detailed step-by-step solution and the final numerical answer. The problems emphasize linguistic variety and often require multi-step arithmetic reasoning.",
+    "size": "8,500 problems (train 7,473, test 1,319)&#8203;:contentReference[oaicite:80]{index=80}; each with a chain-of-thought solution and an answer.",
+    "download": "OpenAI\u2019s GitHub (Grade School Math 8K data) or HuggingFace `gsm8k`.",
+    "companion": "https://arxiv.org/abs/2110.14168 (Cobbe et al. 2021, training verifiers on GSM8K paper)",
+    "notes": "The dataset was introduced to facilitate research into chain-of-thought prompting. It\u2019s now a standard test for math word problem solving by language models. Evaluated by exact match on the final numeric answer. Many solutions require several steps of reasoning, which are provided as ground truth rationales.",
+    "tags": [
+        "crowd-sourced",
+        "QA",
+        "atomic",
+        "with rationale",
+        "question:crowd-sourced",
+        "answer:crowd-sourced",
+        "rationale:human",
+        "domain:mathematics"
+    ]
+}

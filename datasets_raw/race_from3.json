@@ -1,1 +1,17 @@
-{"name": "RACE", "summary": "A large-scale reading comprehension dataset of English exam passages for Chinese students. It consists of 27,933 passages and 97,687 questions (4-option multiple choice) from middle school and high school exams&#8203;:contentReference[oaicite:34]{index=34}. Designed to test comprehensive understanding and reasoning.", "size": "97,687 questions on 27,933 passages&#8203;:contentReference[oaicite:35]{index=35} (split: RACE-Middle ~28k Q, RACE-High ~69k Q).", "download": "Available at http://www.cs.cmu.edu/~glai1/data/race/ or via HuggingFace (`race`).", "companion": "https://arxiv.org/abs/1704.04683 (Lai et al. 2017, RACE paper)", "notes": "Each question has 4 choices with one correct answer. Topics range from science to social studies. The dataset is challenging for models due to the need for inference and sometimes world knowledge. It became part of the SuperGLUE benchmark (RACE-H as task).", "tags": ["human", "QA", "compilation", "answer:verifiable", "question:human", "answer:human", "domain:nlp"]}
+{
+    "name": "RACE",
+    "summary": "A large-scale reading comprehension dataset of English exam passages for Chinese students. It consists of 27,933 passages and 97,687 questions (4-option multiple choice) from middle school and high school exams&#8203;:contentReference[oaicite:34]{index=34}. Designed to test comprehensive understanding and reasoning.",
+    "size": "97,687 questions on 27,933 passages&#8203;:contentReference[oaicite:35]{index=35} (split: RACE-Middle ~28k Q, RACE-High ~69k Q).",
+    "download": "Available at http://www.cs.cmu.edu/~glai1/data/race/ or via HuggingFace (`race`).",
+    "companion": "https://arxiv.org/abs/1704.04683 (Lai et al. 2017, RACE paper)",
+    "notes": "Each question has 4 choices with one correct answer. Topics range from science to social studies. The dataset is challenging for models due to the need for inference and sometimes world knowledge. It became part of the SuperGLUE benchmark (RACE-H as task).",
+    "tags": [
+        "human",
+        "QA",
+        "compilation",
+        "answer:verifiable",
+        "question:human",
+        "answer:human",
+        "domain:nlp"
+    ]
+}

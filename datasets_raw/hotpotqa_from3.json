@@ -1,1 +1,19 @@
-{"name": "HotpotQA", "summary": "A multi-hop QA dataset with 113k crowd-written questions that require reasoning over multiple Wikipedia paragraphs&#8203;:contentReference[oaicite:25]{index=25}. It provides supporting facts annotations to explain the reasoning path, enabling evaluation of explainability.", "size": "~112,000 train questions, 5k dev, 5k test&#8203;:contentReference[oaicite:26]{index=26}. Each question comes with 2 gold paragraphs and supporting sentence labels. ~1.3 GB including context text.", "download": "Official website https://hotpotqa.github.io with JSON files; also on HuggingFace (`hotpot_qa`).", "companion": "https://arxiv.org/abs/1809.09600 (Yang et al. 2018, HotpotQA paper)", "notes": "Includes two settings: (1) Distractor: relevant paragraphs mixed with 8 distractors, (2) Fullwiki: requiring a full Wikipedia search. Supports evaluation of multi-hop reasoning and evidence retrieval. Annotated with sentence-level supporting facts (rationale: human).", "tags": ["crowd-sourced", "QA", "atomic", "with rationale", "answer:verifiable", "question:crowd-sourced", "answer:human", "rationale:human", "domain:nlp"]}
+{
+    "name": "HotpotQA",
+    "summary": "A multi-hop QA dataset with 113k crowd-written questions that require reasoning over multiple Wikipedia paragraphs&#8203;:contentReference[oaicite:25]{index=25}. It provides supporting facts annotations to explain the reasoning path, enabling evaluation of explainability.",
+    "size": "~112,000 train questions, 5k dev, 5k test&#8203;:contentReference[oaicite:26]{index=26}. Each question comes with 2 gold paragraphs and supporting sentence labels. ~1.3 GB including context text.",
+    "download": "Official website https://hotpotqa.github.io with JSON files; also on HuggingFace (`hotpot_qa`).",
+    "companion": "https://arxiv.org/abs/1809.09600 (Yang et al. 2018, HotpotQA paper)",
+    "notes": "Includes two settings: (1) Distractor: relevant paragraphs mixed with 8 distractors, (2) Fullwiki: requiring a full Wikipedia search. Supports evaluation of multi-hop reasoning and evidence retrieval. Annotated with sentence-level supporting facts (rationale: human).",
+    "tags": [
+        "crowd-sourced",
+        "QA",
+        "atomic",
+        "with rationale",
+        "answer:verifiable",
+        "question:crowd-sourced",
+        "answer:human",
+        "rationale:human",
+        "domain:nlp"
+    ]
+}

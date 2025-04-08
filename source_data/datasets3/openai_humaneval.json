@@ -1,1 +1,17 @@
-{"name": "OpenAI HumanEval", "summary": "A benchmark of 164 handcrafted coding problems for evaluating code generation by language models&#8203;:contentReference[oaicite:83]{index=83}. Each problem includes a function signature, a docstring describing the task, and some hidden tests. The model must produce a correct implementation in Python. It's used to measure functional correctness of generated code.", "size": "164 programming problems with associated unit tests&#8203;:contentReference[oaicite:84]{index=84}. (No train/test split; all are for evaluation.)", "download": "OpenAI\u2019s HumanEval is included in the openai/human-eval GitHub. Also on HuggingFace `openai_humaneval`.", "companion": "https://arxiv.org/abs/2107.03374 (Chen et al. 2021, Evaluating Large LM Code Generation - introduces HumanEval)", "notes": "Each task is relatively short (write a function to do X) but non-trivial. The primary metric is the percentage of problems passed (all tests pass). It has become a standard metric in code modeling research (often referenced as \"HumanEval score\"). Solutions require reasoning about algorithms, and sometimes simple math or string manipulation.", "tags": ["human", "QA", "benchmark", "tool use", "question:human", "answer:human", "domain:programming"]}
+{
+    "name": "OpenAI HumanEval",
+    "summary": "A benchmark of 164 handcrafted coding problems for evaluating code generation by language models&#8203;:contentReference[oaicite:83]{index=83}. Each problem includes a function signature, a docstring describing the task, and some hidden tests. The model must produce a correct implementation in Python. It's used to measure functional correctness of generated code.",
+    "size": "164 programming problems with associated unit tests&#8203;:contentReference[oaicite:84]{index=84}. (No train/test split; all are for evaluation.)",
+    "download": "OpenAI\u2019s HumanEval is included in the openai/human-eval GitHub. Also on HuggingFace `openai_humaneval`.",
+    "companion": "https://arxiv.org/abs/2107.03374 (Chen et al. 2021, Evaluating Large LM Code Generation - introduces HumanEval)",
+    "notes": "Each task is relatively short (write a function to do X) but non-trivial. The primary metric is the percentage of problems passed (all tests pass). It has become a standard metric in code modeling research (often referenced as \"HumanEval score\"). Solutions require reasoning about algorithms, and sometimes simple math or string manipulation.",
+    "tags": [
+        "human",
+        "QA",
+        "benchmark",
+        "tool use",
+        "question:human",
+        "answer:human",
+        "domain:programming"
+    ]
+}

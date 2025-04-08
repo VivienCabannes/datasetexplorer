@@ -1,1 +1,19 @@
-{"name": "WebGPT QA dataset", "summary": "A dataset of question-answer pairs with supporting evidence, derived from the WebGPT project (OpenAI, 2021). Questions are taken from Reddit (ELI5 and others) and answered by human demonstrators who use a web browser to find information. Each answer is a paragraph with references (extracted quotes). This was used to train WebGPT and as a testbed for truthful QA with sources.", "size": "Approximately 4,398 Q&A with references (WebGPT\u2019s high-quality human reference answers for validation). The exact number includes 1,473 train, 419 test questions from ELI5 and similar distributions.", "download": "OpenAI has not fully open-sourced it, but a portion is available via the WebGPT paper\u2019s data release (or OpenAI Evals). Not on HuggingFace officially due to web content licenses.", "companion": "https://arxiv.org/abs/2112.09332 (WebGPT paper by Nakano et al. 2021)", "notes": "Questions are long-form and often open-ended. The provided answers include citations to specific web articles, aiming to be factually grounded. The dataset\u2019s goal is to encourage truthful, evidence-backed answers. It\u2019s used in evaluating how models can browse and cite. Since the data is limited, it\u2019s primarily an evaluation set for research.", "tags": ["human", "QA", "tool use", "with rationale", "answer:verifiable", "question:human", "answer:human", "rationale:human", "domain:nlp"]}
+{
+    "name": "WebGPT QA dataset",
+    "summary": "A dataset of question-answer pairs with supporting evidence, derived from the WebGPT project (OpenAI, 2021). Questions are taken from Reddit (ELI5 and others) and answered by human demonstrators who use a web browser to find information. Each answer is a paragraph with references (extracted quotes). This was used to train WebGPT and as a testbed for truthful QA with sources.",
+    "size": "Approximately 4,398 Q&A with references (WebGPT\u2019s high-quality human reference answers for validation). The exact number includes 1,473 train, 419 test questions from ELI5 and similar distributions.",
+    "download": "OpenAI has not fully open-sourced it, but a portion is available via the WebGPT paper\u2019s data release (or OpenAI Evals). Not on HuggingFace officially due to web content licenses.",
+    "companion": "https://arxiv.org/abs/2112.09332 (WebGPT paper by Nakano et al. 2021)",
+    "notes": "Questions are long-form and often open-ended. The provided answers include citations to specific web articles, aiming to be factually grounded. The dataset\u2019s goal is to encourage truthful, evidence-backed answers. It\u2019s used in evaluating how models can browse and cite. Since the data is limited, it\u2019s primarily an evaluation set for research.",
+    "tags": [
+        "human",
+        "QA",
+        "tool use",
+        "with rationale",
+        "answer:verifiable",
+        "question:human",
+        "answer:human",
+        "rationale:human",
+        "domain:nlp"
+    ]
+}

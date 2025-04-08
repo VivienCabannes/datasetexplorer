@@ -1,1 +1,18 @@
-{"name": "ReCoRD", "summary": "Reading Comprehension with Commonsense Reasoning Dataset is a cloze-style MRC task with over 120k queries from ~70k news articles&#8203;:contentReference[oaicite:51]{index=51}. Each query is formed by masking out a noun phrase in a sentence from the article, and the model must select the correct entity from the passage to fill in, using both the passage and broader commonsense.", "size": "120,000+ queries from ~70,000 news articles&#8203;:contentReference[oaicite:52]{index=52}. (Train ~101k, Dev 10k, Test 10k). Each query has a small set of answer candidates (entities from the passage).", "download": "Part of the SuperGLUE benchmark (super.gluebenchmark.com). Also on HuggingFace `record`.", "companion": "https://arxiv.org/abs/1810.12885 (Zhang et al. 2018, ReCoRD paper)", "notes": "It\u2019s formatted as a blank in a sentence (cloze). The correct answer is an entity from the passage that makes the statement true. Many questions require using commonsense or implied relationships, not just text matching. Scoring is by token-level F1 and Exact Match. Derived from CNN/DailyMail articles but focuses on commonsense connections.", "tags": ["human", "QA", "filtration", "with rationale", "answer:verifiable", "question:synthetic", "answer:human", "domain:nlp"]}
+{
+    "name": "ReCoRD",
+    "summary": "Reading Comprehension with Commonsense Reasoning Dataset is a cloze-style MRC task with over 120k queries from ~70k news articles&#8203;:contentReference[oaicite:51]{index=51}. Each query is formed by masking out a noun phrase in a sentence from the article, and the model must select the correct entity from the passage to fill in, using both the passage and broader commonsense.",
+    "size": "120,000+ queries from ~70,000 news articles&#8203;:contentReference[oaicite:52]{index=52}. (Train ~101k, Dev 10k, Test 10k). Each query has a small set of answer candidates (entities from the passage).",
+    "download": "Part of the SuperGLUE benchmark (super.gluebenchmark.com). Also on HuggingFace `record`.",
+    "companion": "https://arxiv.org/abs/1810.12885 (Zhang et al. 2018, ReCoRD paper)",
+    "notes": "It\u2019s formatted as a blank in a sentence (cloze). The correct answer is an entity from the passage that makes the statement true. Many questions require using commonsense or implied relationships, not just text matching. Scoring is by token-level F1 and Exact Match. Derived from CNN/DailyMail articles but focuses on commonsense connections.",
+    "tags": [
+        "human",
+        "QA",
+        "filtration",
+        "with rationale",
+        "answer:verifiable",
+        "question:synthetic",
+        "answer:human",
+        "domain:nlp"
+    ]
+}

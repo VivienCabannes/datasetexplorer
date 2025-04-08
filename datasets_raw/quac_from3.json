@@ -1,1 +1,17 @@
-{"name": "QuAC", "summary": "Question Answering in Context is a dialogue-style QA dataset with 14k information-seeking Q&A dialogs (100k questions total) about Wikipedia articles&#8203;:contentReference[oaicite:27]{index=27}. A student asks a series of questions and a teacher provides extractive answers from the text, or a special \"CANNOTANSWER\" if unanswerable.", "size": "13,594 dialogs with 98,407 QA pairs&#8203;:contentReference[oaicite:28]{index=28}. (~83k train questions, 7k dev, 7k test).", "download": "https://quac.ai/ (provides train/dev data JSON). Also on HuggingFace as `quac`.", "companion": "https://arxiv.org/abs/1808.07036 (Choi et al. 2018, QuAC paper)", "notes": "QuAC involves context retention across turns (each question comes with dialog history). Answers are spans from passages and often require the context of previous Q&A. It also includes teacher\u2019s dialogue acts and answer summaries for some turns.", "tags": ["crowd-sourced", "dialog", "atomic", "answer:verifiable", "question:crowd-sourced", "answer:human", "domain:nlp"]}
+{
+    "name": "QuAC",
+    "summary": "Question Answering in Context is a dialogue-style QA dataset with 14k information-seeking Q&A dialogs (100k questions total) about Wikipedia articles&#8203;:contentReference[oaicite:27]{index=27}. A student asks a series of questions and a teacher provides extractive answers from the text, or a special \"CANNOTANSWER\" if unanswerable.",
+    "size": "13,594 dialogs with 98,407 QA pairs&#8203;:contentReference[oaicite:28]{index=28}. (~83k train questions, 7k dev, 7k test).",
+    "download": "https://quac.ai/ (provides train/dev data JSON). Also on HuggingFace as `quac`.",
+    "companion": "https://arxiv.org/abs/1808.07036 (Choi et al. 2018, QuAC paper)",
+    "notes": "QuAC involves context retention across turns (each question comes with dialog history). Answers are spans from passages and often require the context of previous Q&A. It also includes teacher\u2019s dialogue acts and answer summaries for some turns.",
+    "tags": [
+        "crowd-sourced",
+        "dialog",
+        "atomic",
+        "answer:verifiable",
+        "question:crowd-sourced",
+        "answer:human",
+        "domain:nlp"
+    ]
+}

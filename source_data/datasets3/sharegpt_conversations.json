@@ -1,1 +1,16 @@
-{"name": "ShareGPT Conversations", "summary": "A crowdsourced collection of dialogues between users and ChatGPT, contributed by users via ShareGPT. It contains tens of thousands of multi-turn chat transcripts covering various topics and user queries (from casual conversation to complex questions and tasks). This dataset is used to fine-tune chat models to better mimic ChatGPT\u2019s style and capabilities.", "size": "~90,000 conversations (after cleaning), with an average of ~10-15 turns each (some much longer). The dataset size is roughly 100MB+ of text.", "download": "Unofficial community dumps on HuggingFace (`sharegpt-90k` as JSON). OpenAI policy restricts official distribution, but data was shared publicly by users.", "companion": "(No single paper; context from community projects like Vicuna: https://arxiv.org/abs/2304.08994 cites using ShareGPT data)", "notes": "Conversations include user prompts and ChatGPT responses. The source is real usage, so content is diverse. The quality of assistant responses is generally high (from ChatGPT), though there are inaccuracies. This data has been pivotal in training open-source chat assistants like Vicuna. Legal/ToS aspects are a gray area since the data comes from user-submitted logs.", "tags": ["human", "dialog", "compilation", "question:human", "answer:synthetic", "domain:nlp"]}
+{
+    "name": "ShareGPT Conversations",
+    "summary": "A crowdsourced collection of dialogues between users and ChatGPT, contributed by users via ShareGPT. It contains tens of thousands of multi-turn chat transcripts covering various topics and user queries (from casual conversation to complex questions and tasks). This dataset is used to fine-tune chat models to better mimic ChatGPT\u2019s style and capabilities.",
+    "size": "~90,000 conversations (after cleaning), with an average of ~10-15 turns each (some much longer). The dataset size is roughly 100MB+ of text.",
+    "download": "Unofficial community dumps on HuggingFace (`sharegpt-90k` as JSON). OpenAI policy restricts official distribution, but data was shared publicly by users.",
+    "companion": "(No single paper; context from community projects like Vicuna: https://arxiv.org/abs/2304.08994 cites using ShareGPT data)",
+    "notes": "Conversations include user prompts and ChatGPT responses. The source is real usage, so content is diverse. The quality of assistant responses is generally high (from ChatGPT), though there are inaccuracies. This data has been pivotal in training open-source chat assistants like Vicuna. Legal/ToS aspects are a gray area since the data comes from user-submitted logs.",
+    "tags": [
+        "human",
+        "dialog",
+        "compilation",
+        "question:human",
+        "answer:synthetic",
+        "domain:nlp"
+    ]
+}

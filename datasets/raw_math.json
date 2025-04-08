@@ -1,0 +1,21 @@
+{
+    "name": "MATH (Mathematics Aptitude Test of Heuristics)",
+    "summary": "A dataset of 12,500 challenging high school competition math problems with step-by-step solutions.",
+    "size": "12,500 problems with solutions.",
+    "date": "2021-03-05",
+    "download": "https://github.com/hendrycks/math",
+    "companion": "https://arxiv.org/abs/2103.03874",
+    "notes": "Problems are sourced from competitions like AMC 10, AMC 12, and AIME, covering topics such as algebra, geometry, number theory, and calculus. Each problem includes a detailed solution, facilitating training and evaluation of mathematical reasoning models.",
+    "tags": [
+      "human",
+      "QA",
+      "benchmark",
+      "answer:verifiable",
+      "with rationale",
+      "question:human",
+      "answer:human",
+      "rationale:human",
+      "mathematics"
+    ]
+  }
+  

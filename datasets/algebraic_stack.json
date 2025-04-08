@@ -1,10 +1,11 @@
 {
   "name": "Algebraic Stack",
-  "summary": "Code data coming from filtering the Stack, as well as extracting formal proofs from Lean mathlib and Isabelle Archive of Formal Proofs. It is dominated by Python (65%), Isabelle (10%), and C++ (9%).",
+  "summary": "Code data coming from filtering the Stack, as well as extracting formal proofs.",
   "size": "Approximately 11 billion tokens (~40 MB).",
   "date": "2023-10-16",
   "download": "Available as part of the [Proof-Pile-2 mix](https://huggingface.co/datasets/EleutherAI/proof-pile-2).",
   "companion": "Introduced in the data mix to the train Llema: https://arxiv.org/abs/2310.10631",
+  "notes": "The dataset is dominated by Python (65%), Isabelle (10%), and C++ (9%). Among others, the formal proofs are extracted from Lean mathlib library and Isabelle Archive of Formal Proofs.",
   "tags": [
     "human",
     "monolithic",

@@ -1,1 +1,17 @@
-{"name": "SQuAD1.1", "summary": "The Stanford Question Answering Dataset v1.1 is a reading comprehension benchmark of 100,000+ crowd-sourced questions on 536 Wikipedia articles, where each answer is a text span from the corresponding passage&#8203;:contentReference[oaicite:0]{index=0}. It tests extractive QA under closed-book conditions.", "size": "107,785 question-answer pairs on 536 articles&#8203;:contentReference[oaicite:1]{index=1} (train: ~87k, dev: ~10k, test: ~10k); 43 MB JSON", "download": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json (training data) and dev-v1.1.json/dev set; also on HuggingFace `squad`", "companion": "https://arxiv.org/abs/1606.05250 (Rajpurkar et al. 2016, SQuAD v1.1 paper)", "notes": "Answers are spans from the passage. Primarily used for extractive QA evaluation with exact-match and F1 scoring. No unanswerable questions in v1.1.", "tags": ["crowd-sourced", "QA", "atomic", "answer:verifiable", "question:crowd-sourced", "answer:human", "domain:nlp"]}
+{
+    "name": "SQuAD1.1",
+    "summary": "The Stanford Question Answering Dataset v1.1 is a reading comprehension benchmark of 100,000+ crowd-sourced questions on 536 Wikipedia articles, where each answer is a text span from the corresponding passage&#8203;:contentReference[oaicite:0]{index=0}. It tests extractive QA under closed-book conditions.",
+    "size": "107,785 question-answer pairs on 536 articles&#8203;:contentReference[oaicite:1]{index=1} (train: ~87k, dev: ~10k, test: ~10k); 43 MB JSON",
+    "download": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v1.1.json (training data) and dev-v1.1.json/dev set; also on HuggingFace `squad`",
+    "companion": "https://arxiv.org/abs/1606.05250 (Rajpurkar et al. 2016, SQuAD v1.1 paper)",
+    "notes": "Answers are spans from the passage. Primarily used for extractive QA evaluation with exact-match and F1 scoring. No unanswerable questions in v1.1.",
+    "tags": [
+        "crowd-sourced",
+        "QA",
+        "atomic",
+        "answer:verifiable",
+        "question:crowd-sourced",
+        "answer:human",
+        "domain:nlp"
+    ]
+}

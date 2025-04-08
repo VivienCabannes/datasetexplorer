@@ -1,1 +1,16 @@
-{"name": "COPA", "summary": "Choice of Plausible Alternatives is a focused evaluation of commonsense causal reasoning. 1,000 questions are presented as premises with two possible continuations: either a likely cause or effect of the premise, and the model chooses the more plausible one&#8203;:contentReference[oaicite:66]{index=66}. For example: \"The man broke his toe. What was the cause? (A) He got a hole in his sock. (B) He dropped a hammer on his foot.\"", "size": "1,000 questions (500 development, 500 test)&#8203;:contentReference[oaicite:67]{index=67}; each has 2 answer options (cause or effect).", "download": "Part of the SuperGLUE benchmark (available via SuperGLUE datasets). Also on HuggingFace `copa`.", "companion": "https://people.ict.usc.edu/~gordon/publications/Chambers-etal-IJCAI2011.pdf (COPA original paper, 2011)", "notes": "Each COPA item is either asking for a cause or an effect (question is like \"What was the CAUSE?\" or \"What happened as a RESULT?\"). This was a popular small test for commonsense and was included in SuperGLUE. Human performance is ~100%. The dataset is balanced to avoid superficial cues.", "tags": ["human", "QA", "atomic", "question:human", "answer:human", "domain:nlp"]}
+{
+    "name": "COPA",
+    "summary": "Choice of Plausible Alternatives is a focused evaluation of commonsense causal reasoning. 1,000 questions are presented as premises with two possible continuations: either a likely cause or effect of the premise, and the model chooses the more plausible one&#8203;:contentReference[oaicite:66]{index=66}. For example: \"The man broke his toe. What was the cause? (A) He got a hole in his sock. (B) He dropped a hammer on his foot.\"",
+    "size": "1,000 questions (500 development, 500 test)&#8203;:contentReference[oaicite:67]{index=67}; each has 2 answer options (cause or effect).",
+    "download": "Part of the SuperGLUE benchmark (available via SuperGLUE datasets). Also on HuggingFace `copa`.",
+    "companion": "https://people.ict.usc.edu/~gordon/publications/Chambers-etal-IJCAI2011.pdf (COPA original paper, 2011)",
+    "notes": "Each COPA item is either asking for a cause or an effect (question is like \"What was the CAUSE?\" or \"What happened as a RESULT?\"). This was a popular small test for commonsense and was included in SuperGLUE. Human performance is ~100%. The dataset is balanced to avoid superficial cues.",
+    "tags": [
+        "human",
+        "QA",
+        "atomic",
+        "question:human",
+        "answer:human",
+        "domain:nlp"
+    ]
+}
