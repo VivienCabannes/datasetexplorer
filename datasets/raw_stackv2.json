@@ -1,0 +1,15 @@
+{
+  "name": "The Stack v2",
+  "summary": "_⚠ Use card with caution_ <br>A comprehensive dataset of over 3 billion source code files across 600+ programming languages, compiled from the Software Heritage archive as of September 2023.",
+  "size": "Approximately 5.5 billion samples, totaling around 67.5 terabytes.",
+  "date": "2024-02-29",
+  "download": "https://huggingface.co/datasets/bigcode/the-stack-v2",
+  "companion": "https://arxiv.org/abs/2402.19173",
+  "notes": "Developed by the BigCode project in collaboration with Software Heritage, this dataset serves as a substantial resource for training and evaluating large language models for code generation and understanding. Access requires an agreement with Software Heritage and INRIA; contact datasets@softwareheritage.org for more information.",
+  "tags": [
+    "human",
+    "monolithic",
+    "compilation",
+    "programming"
+  ]
+}

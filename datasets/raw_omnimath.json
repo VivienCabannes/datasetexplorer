@@ -1,10 +1,11 @@
 {
   "name": "Omni-MATH",
-  "summary": "_⚠ Use card with caution_ <br>A benchmark for assessing LLMs' mathematical reasoning using Olympiad-level problems from regional to international competitions.",
-  "size": "4,428 problems (~7 MB).",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 4,428 Olympiad-level math problems for evaluating LLMs' mathematical reasoning.",
+  "size": "4,428 problems, approximately 7 MB.",
+  "date": "2024-10-15",
   "download": "https://huggingface.co/datasets/KbsdJames/Omni-MATH",
   "companion": "https://arxiv.org/abs/2410.07985",
-  "notes": "The dataset spans over 33 mathematical sub-domains and includes problems of varying difficulty. It was designed to challenge advanced LLMs in mathematical reasoning.",
+  "notes": "Sourced from regional to international Olympiads via the Art of Problem Solving platform, covering over 33 sub-domains with varying difficulty levels.",
   "tags": [
     "human",
     "QA",

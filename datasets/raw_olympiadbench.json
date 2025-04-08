@@ -1,10 +1,11 @@
 {
   "name": "OlympiadBench",
-  "summary": "_⚠ Use card with caution_ <br>A comprehensive benchmark for evaluating LLMs and LMMs using Olympiad-level mathematics and physics problems, with visual elements and expert-level solutions.",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 8,476 Olympiad-level math and physics problems for evaluating reasoning in large models.",
   "size": "8,476 problems.",
+  "date": "2024-02-21",
   "download": "https://huggingface.co/datasets/Hothan/OlympiadBench",
   "companion": "https://arxiv.org/abs/2402.14008",
-  "notes": "The dataset includes bilingual (Chinese and English) problems, with 57% featuring visual elements. It spans multiple difficulty levels, including both Chinese College Entrance Exam and competition levels.",
+  "notes": "Problems are sourced from international and regional Olympiad competitions, including the Chinese College Entrance Exam (Gaokao). Each problem includes expert-level, step-by-step solutions. Notably, 57% of the problems contain visual elements, making it a multimodal benchmark. The dataset is bilingual, featuring problems in both Chinese and English, and spans a range of difficulties.",
   "tags": [
     "human",
     "QA",

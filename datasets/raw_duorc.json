@@ -1,10 +1,11 @@
 {
   "name": "DuoRC",
-  "summary": "_⚠ Use card with caution_ <br>A reading comprehension dataset with 186,089 QA pairs from parallel movie plot summaries.",
+  "summary": "_⚠ Use card with caution_ <br>A reading comprehension dataset with ~186k QA pairs from parallel movie plot summaries.",
   "size": "186,089 unique QA pairs over 7,680 pairs of movie plots.",
-  "download": "https://duorc.github.io/",
-  "companion": "https://arxiv.org/abs/1804.07927",
-  "notes": "The dataset comprises two subsets: SelfRC, with questions and answers from the same plot summary, and ParaphraseRC, where questions from one plot are answered using the other, testing cross-document reasoning and paraphrase understanding.",
+  "date": "2018-04-21",
+  "download": "https://github.com/duorc/duorc",
+  "companion": "https://aclanthology.org/P18-1156",
+  "notes": "Comprises two subsets: SelfRC (~96k Q) where questions are answerable from a single plot, and ParaphraseRC (~90k Q) where questions require cross-document reasoning. Answers are free-form text, often phrases from the target plot.",
   "tags": [
     "crowd-sourced",
     "QA",

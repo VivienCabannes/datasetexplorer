@@ -1,17 +1,18 @@
 {
-  "name": "SQuAD2.0",
-  "summary": "_⚠ Use card with caution_ <br>An expanded version of SQuAD featuring over 150k questions, combining SQuAD1.1’s queries with 50k new unanswerable questions written adversarially by crowdworkers.",
+  "name": "SQuAD 2.0",
+  "summary": "_⚠ Use card with caution_ <br>An expanded version of SQuAD featuring over 150k questions, including 50k unanswerable ones crafted to resemble answerable questions.",
   "size": "Approximately 152,500 Q&A pairs (including unanswerable); ~54 MB JSON.",
+  "date": "2018-06-11",
   "download": "https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json",
   "companion": "https://arxiv.org/abs/1806.03822",
-  "notes": "Includes unanswerable questions requiring models to predict a special null response. Leaderboard evaluates combined accuracy on answerable and rejection of unanswerable questions.",
+  "notes": "Includes unanswerable questions requiring models to predict a special null response. The leaderboard evaluates combined accuracy on answerable and unanswerable questions.",
   "tags": [
-      "crowd-sourced",
-      "QA",
-      "atomic",
-      "answer:verifiable",
-      "question:crowd-sourced",
-      "answer:human",
-      "nlp"
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:human",
+    "nlp"
   ]
 }

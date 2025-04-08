@@ -1,6 +1,7 @@
 {
   "name": "WinoGrande",
   "summary": "_⚠ Use card with caution_ <br>A large-scale dataset of 44,000 pronoun resolution problems designed to test commonsense reasoning.",
+  "size": "44,000 problems (train: 40k, dev: 1.2k, test: 1.8k).",
   "date": "2020-04-03",
   "download": "https://huggingface.co/datasets/allenai/winogrande",
   "companion": "https://aaai.org/ojs/index.php/AAAI/article/view/6399",

@@ -1,0 +1,16 @@
+{
+  "name": "EmpatheticDialogues",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 24,850 crowd-sourced one-on-one dialogues grounded in emotional situations, designed to train empathetic conversational models.",
+  "size": "24,850 dialogues with 32 distinct emotion labels.",
+  "date": "2019-06-01",
+  "download": "https://github.com/facebookresearch/EmpatheticDialogues",
+  "companion": "https://aclanthology.org/P19-1534/",
+  "notes": "Each dialogue features a speaker describing a personal emotional experience, paired with an empathetic response from a listener. The dataset spans 32 emotion categories and supports training and evaluation of models on emotional understanding and response generation.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "atomic",
+    "benchmark",
+    "nlp"
+  ]
+}

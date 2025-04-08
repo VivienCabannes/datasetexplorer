@@ -42,6 +42,13 @@ It will also prompt you to optionally push your changes to GitHub, which will au
 python scripts/deploy.py
 ```
 
+## Improvements
+
+Some cards display a warning sign️, indicating information gathered from a quick internet search without deep verification.
+Feel free to verify the cards and remove the warning sign as you go (edit the datasets/`<card>`.json).
+
+Many datasets are not listed in the explorer, feel free to add datasets that are missing (add a datasets/`<card_name>`.json) or, at least, to report omission in `datasets/missing.txt`.
+
 ## Editor tools
 
 This repository includes several utility scripts to help manage and update your datasets and tags.
