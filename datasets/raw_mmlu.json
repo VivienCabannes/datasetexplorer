@@ -5,7 +5,7 @@
   "date": "2020-09-07",
   "download": "https://github.com/hendrycks/test",
   "companion": "https://arxiv.org/abs/2009.03300",
-  "notes": "Designed for zero-shot and few-shot evaluation, MMLU assesses both world knowledge and problem-solving abilities of language models. Subjects range from elementary mathematics to professional law and medicine.",
+  "notes": "Designed for zero-shot and few-shot evaluation, MMLU assesses both world knowledge and problem-solving abilities of language models. Subjects range from elementary mathematics to professional law and medicine. Some questions come from https://www.crackap.com/index.html",
   "tags": [
     "human",
     "QA",
