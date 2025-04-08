@@ -1,7 +1,0 @@
-{
-    "name": "AQuA (Algebra Question Answering)",
-    "size": "98,000 samples; 52 MB",
-    "download": "https://huggingface.co/datasets/deepmind/aqua_rat",
-    "companion": "https://arxiv.org/pdf/1705.04146",
-    "summary": "DeepMind Dataset built by extracting 34,000 questions from undergrad, and grad student admission test (GMAT and GRE), with answer and rational scrapped on the web. Plus crowdsourcing to provide similar questions."
-}

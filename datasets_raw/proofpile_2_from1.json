@@ -1,7 +1,0 @@
-{
-    "name": "Proof-Pile-2",
-    "size": "60B tokens,",
-    "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
-    "companion": "https://arxiv.org/abs/2310.10631",
-    "summary": "Massive pretraining corpus of formal mathematics and related documents (Lean, Coq, math papers)."
-}

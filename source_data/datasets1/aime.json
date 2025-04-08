@@ -1,8 +1,0 @@
-{
-    "name": "AIME",
-    "size": "15 questions per year",
-    "download": "Various formatted datasets based on historical AIME questions are available, e.g., [on HuggingFace](https://huggingface.co/datasets/di-zhang-fdu/AIME_1983_2024)",
-    "notes": "Since AIME is an annual examination, new data becomes available each year. However, designers may select questions already present on the internet, which could be included in pretraining corpora.",
-    "summary": "US high-school competition, American Invitational Mathematics Examination.",
-    "tags": ["atomic", "benchmark", "QA", "question:human", "answer:human"]
-}

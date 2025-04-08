@@ -1,6 +1,0 @@
-{
-    "name": "FineWeb",
-    "download": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
-    "companion": "https://arxiv.org/abs/2406.17557",
-    "summary": "Filtered from CommonCrawl by HuggingFace, seems to be slightly worse than DCLM."
-}

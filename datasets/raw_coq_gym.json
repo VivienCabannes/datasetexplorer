@@ -1,0 +1,15 @@
+{
+  "name": "CoqGym",
+  "summary": "_⚠ Use card with caution_ <br>A dataset and learning environment comprising over 70,000 human-written Coq proofs from 123 projects.",
+  "size": "70,856 proofs from 123 Coq projects.",
+  "date": "2019-05-21",
+  "download": "https://github.com/princeton-vl/CoqGym",
+  "companion": "https://arxiv.org/abs/1905.09381",
+  "notes": "CoqGym includes proofs from diverse domains such as mathematics, computer hardware, and programming languages. It provides structural information like abstract syntax trees (ASTs) and detailed proof trees, supporting the development of machine learning models for tactic prediction and proof generation. Additionally, it offers synthetic proofs generated from intermediate proof steps to augment training data.",
+  "tags": [
+    "human",
+    "monolithic",
+    "compilation",
+    "programming"
+  ]
+}

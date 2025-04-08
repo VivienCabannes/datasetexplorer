@@ -1,7 +1,0 @@
-{
-    "name": "CoqGym",
-    "size": "70,000 proof steps",
-    "download": "https://github.com/princeton-vl/CoqGym",
-    "companion": "https://arxiv.org/abs/1905.09381",
-    "summary": "Large-scale dataset compiled from various 71,000 Coq projects."
-}

@@ -1,7 +1,0 @@
-{
-    "name": "ArXiv",
-    "size": "29B tokens",
-    "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2 contains data scrapped from the ArXiv website, according to a snapshot taken in 2023 by RedPajama.",
-    "notes": "The dataset is valuable for training models on advanced mathematical concepts and research-level problems.",
-    "summary": ""
-}

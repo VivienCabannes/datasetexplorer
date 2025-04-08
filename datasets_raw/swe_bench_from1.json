@@ -1,7 +1,0 @@
-{
-    "name": "SWE-bench",
-    "size": "2,300 samples",
-    "download": "https://github.com/swe-bench/SWE-bench",
-    "companion": "https://arxiv.org/abs/2310.06770",
-    "summary": "Datasets of codebase, issues and unit tests. The goal is to fix the codebase that currently yield the issue resulting in failing unit tests. The data was collected from popular Github repository."
-}

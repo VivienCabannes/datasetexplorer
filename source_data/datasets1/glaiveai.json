@@ -1,7 +1,0 @@
-{
-    "name": "GlaiveAI",
-    "size": "20 million examples, 87 GB",
-    "download": "https://huggingface.co/datasets/glaiveai/reasoning-v1-20m",
-    "notes": "Comes with no verification of correctness",
-    "summary": "Traces from DeepSeek R1"
-}
