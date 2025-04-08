@@ -2,7 +2,7 @@
   "name": "NewsQA",
   "summary": "_⚠ Use card with caution_ <br>A crowd-sourced dataset of questions and answers based on CNN news articles, designed to evaluate machine comprehension.",
   "size": "119,633 question–answer pairs across 12,744 articles.",
-  "date": "2017-08",
+  "date": "2016-11-26",
   "download": "https://github.com/Maluuba/newsqa",
   "companion": "https://arxiv.org/abs/1611.09830",
   "notes": "Questions were created by crowdworkers who only had access to article summaries, encouraging curiosity-driven inquiries. Answers are spans of text within the full articles, requiring models to perform reasoning beyond simple word matching. Some questions are unanswerable, adding complexity to the dataset.",
