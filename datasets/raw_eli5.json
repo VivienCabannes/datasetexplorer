@@ -1,0 +1,16 @@
+{
+  "name": "ELI5 (Explain Like I'm Five)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of long-form QA pairs from the Reddit ELI5 forum, containing complex open-ended questions and multi-paragraph human-written answers.",
+  "size": "Approximately 270,000 QA pairs; a high-quality subset includes ~30,000.",
+  "date": "2019-07-22",
+  "download": "https://huggingface.co/datasets/eli5",
+  "companion": "https://arxiv.org/abs/1907.09190",
+  "notes": "Collected from Reddit's ELI5 forum, the dataset focuses on open-ended, explanatory questions (often 'Why' or 'How') and long-form human answers. It supports research in generative QA and has been integrated into benchmarks like KILT. Answers are not extractive, and multiple human answers may exist per question.",
+  "tags": [
+    "human",
+    "QA",
+    "atomic",
+    "answer:human",
+    "nlp"
+  ]
+}

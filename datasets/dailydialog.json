@@ -1,0 +1,15 @@
+{
+  "name": "DailyDialog",
+  "summary": "A high-quality multi-turn dialogue dataset of 13,118 conversations covering various everyday topics.",
+  "size": "13,118 dialogues, totaling 87,170 utterances (approximately 7 turns per dialogue).",
+  "date": "2017-10-11",
+  "download": "http://yanran.li/dailydialog",
+  "companion": "https://arxiv.org/abs/1710.03957",
+  "notes": "The dialogues are human-written, focusing on daily communication topics such as relationships and ordinary life. Each utterance is annotated with emotion and dialogue act labels, facilitating research in emotion recognition and dialogue act classification. The dataset is often used for training and evaluating chit-chat dialogue models.",
+  "tags": [
+    "human",
+    "dialog",
+    "atomic",
+    "nlp"
+  ]
+}

@@ -1,9 +1,0 @@
-{
-  "name": "HumanEval+",
-  "summary": "An enhanced version of the original HumanEval dataset, HumanEval+ significantly increases test coverage to provide a more rigorous evaluation framework for code generation models.",
-  "size": "164 programming problems with over 1.3 million test cases",
-  "download": "https://github.com/evalplus/evalplus",
-  "companion": "https://arxiv.org/abs/2305.01210",
-  "notes": "HumanEval+ addresses the limitations of the original HumanEval dataset by augmenting the number of test cases approximately 80-fold. This enhancement aims to reduce the occurrence of false positives in model evaluations, offering a more stringent assessment of functional correctness in generated code.",
-  "tags": ["code generation", "benchmark", "functional correctness", "test augmentation", "model evaluation"]
-}

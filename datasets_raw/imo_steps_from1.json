@@ -1,7 +1,0 @@
-{
-    "name": "IMO-Steps",
-    "size": "20 samples, 6 kB",
-    "download": "https://huggingface.co/datasets/roozbeh-yz/IMO-Steps",
-    "companion": "https://arxiv.org/abs/2411.18872",
-    "summary": "DOWNLOADED IN `/checkpoint/amaia/explore/datasets/reasoning/raw` 20 Lean proofs of IMO problems"
-}

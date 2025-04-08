@@ -1,0 +1,16 @@
+{
+  "name": "GlaiveAI Reasoning v1-20M",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 20 million reasoning traces across various domains, distilled from the DeepSeek-R1 model.",
+  "size": "Approximately 87 GB.",
+  "date": "2025-03-18",
+  "download": "https://huggingface.co/datasets/glaiveai/reasoning-v1-20m",
+  "notes": "The dataset includes reasoning traces from DeepSeek-R1 across domains such as mathematics, coding, and science. Notably, it does not include verification of correctness for the reasoning traces, which may impact its applicability in certain contexts.",
+  "tags": [
+    "synthetic",
+    "monolithic",
+    "compilation",
+    "mathematics",
+    "programming",
+    "science"
+  ]
+}

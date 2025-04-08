@@ -1,0 +1,15 @@
+{
+  "name": "ArXiv Subset of Proof-Pile-2",
+  "summary": "_⚠ Use card with caution_ <br>A 29B-token subset of scientific and mathematical documents from arXiv, used in Proof-Pile-2 for training language models on formal and technical content.",
+  "size": "Approximately 29 billion tokens.",
+  "date": "2023-10-16",
+  "download": "https://huggingface.co/datasets/EleutherAI/proof-pile-2",
+  "companion": "https://arxiv.org/abs/2310.10631",
+  "notes": "The ArXiv subset was filtered and compiled from a 2023 snapshot by RedPajama. It supports training on research-level reasoning and was used in the development of the Llemma models for mathematical tasks.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "mathematics"
+  ]
+}

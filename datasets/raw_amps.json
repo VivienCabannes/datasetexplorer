@@ -1,0 +1,22 @@
+{
+    "name": "AMPS (Auxiliary Mathematics Problems and Solutions)",
+    "summary": "_⚠ Use card with caution_ <br>A comprehensive dataset of over 100,000 Khan Academy problems and approximately 5 million Mathematica-generated problems, each with step-by-step solutions.",
+    "size": "Over 5 million problems with solutions.",
+    "date": "2021-03-05",
+    "download": "https://github.com/hendrycks/math",
+    "companion": "https://arxiv.org/abs/2103.03874",
+    "notes": "Developed to support mathematical problem-solving model training, AMPS includes problems from Khan Academy covering topics from basic addition to multivariable calculus, and Mathematica-generated problems based on 100 hand-designed modules across various mathematical subjects.",
+    "tags": [
+      "crowd-sourced",
+      "synthetic",
+      "monolithic",
+      "compilation",
+      "with rationale",
+      "question:crowd-sourced",
+      "question:synthetic",
+      "answer:synthetic",
+      "rationale:synthetic",
+      "mathematics"
+    ]
+  }
+  

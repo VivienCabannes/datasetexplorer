@@ -1,0 +1,18 @@
+{
+  "name": "MBPP (Mostly Basic Python Problems)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 974 crowd-sourced Python programming problems designed for entry-level programmers, each with a task description, code solution, and three test cases.",
+  "size": "974 problems.",
+  "date": "2021-08-16",
+  "download": "https://github.com/google-research/google-research/tree/master/mbpp",
+  "companion": "https://arxiv.org/abs/2108.07732",
+  "notes": "Problems cover programming fundamentals and standard library functionalities. The dataset is structured for both few-shot and fine-tuning evaluations, with specific task ID splits for training, validation, and testing.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:human",
+    "programming"
+  ]
+}

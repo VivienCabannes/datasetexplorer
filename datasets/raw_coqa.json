@@ -1,0 +1,20 @@
+{
+  "name": "CoQA (Conversational Question Answering Challenge)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset with 127k+ conversational Q&A pairs across 8k+ dialogues spanning multiple domains.",
+  "size": "8,000+ conversations, 127,000+ Q&A pairs (Train: ~108k; Dev: 7.2k; Test: ~7.3k).",
+  "date": "2018-08-21",
+  "download": "https://stanfordnlp.github.io/coqa/",
+  "companion": "https://arxiv.org/abs/1808.07042",
+  "notes": "Domains include children's stories, literature, and middle/high school textbooks. Answers can be yes/no or free text, not necessarily extractive. Each answer is accompanied by a highlighted evidence span from the passage. CoQA evaluates F1 of answer text and a conversational Exact Match.",
+  "tags": [
+    "crowd-sourced",
+    "dialog",
+    "atomic",
+    "with rationale",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "rationale:human",
+    "nlp"
+  ]
+}

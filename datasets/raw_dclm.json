@@ -1,0 +1,16 @@
+{
+  "name": "DCLM (DataComp-LM)",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark for controlled dataset experiments aimed at improving language models, featuring a standardized corpus of 240 trillion tokens from Common Crawl.",
+  "size": "240 trillion tokens.",
+  "date": "2024-06-17",
+  "download": "https://huggingface.co/datasets/mlfoundations/dclm-baseline-1.0",
+  "companion": "https://arxiv.org/abs/2406.11794",
+  "notes": "DCLM allows researchers to experiment with data curation strategies such as deduplication, filtering, and data mixing across model scales ranging from 412 million to 7 billion parameters. The benchmark includes effective pretraining recipes based on the OpenLM framework and a suite of 53 downstream evaluations.",
+  "tags": [
+    "synthetic",
+    "monolithic",
+    "compilation",
+    "benchmark",
+    "nlp"
+  ]
+}

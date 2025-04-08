@@ -1,0 +1,14 @@
+{
+  "name": "Lean-Workbook",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of approximately 57,000 mathematical problems formalized in Lean 4.",
+  "size": "Approximately 57,000 problems.",
+  "date": "2024-06-06",
+  "download": "https://huggingface.co/datasets/internlm/Lean-Workbook",
+  "companion": "https://arxiv.org/abs/2406.03847",
+  "notes": "Developed using an iterative autoformalization pipeline, translating natural language problems into Lean 4 statements. The dataset includes formal-informal question pairs and new IMO questions.",
+  "tags": [
+    "human",
+    "compilation",
+    "mathematics"
+  ]
+}

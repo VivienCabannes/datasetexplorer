@@ -1,0 +1,17 @@
+{
+  "name": "LeetCode (greengerong version)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of approximately 2,000 programming problems sourced from LeetCode, lacking unit tests and with unspecified collection methods.",
+  "size": "Approximately 2,000 samples (~7 MB).",
+  "date": "2023-08-06",
+  "download": "https://huggingface.co/datasets/greengerong/leetcode",
+  "notes": "The dataset includes problem statements and example solutions but lacks unit tests. The data collection methodology is not specified, and the dataset may not cover the full range of LeetCode problems.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "programming"
+  ]
+}

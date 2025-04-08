@@ -1,0 +1,14 @@
+{
+  "name": "FineWeb",
+  "summary": "_⚠ Use card with caution_ <br>A 15-trillion-token dataset of cleaned and deduplicated English web data from 96 Common Crawl snapshots.",
+  "size": "Approximately 15 trillion tokens (~44 TB).",
+  "date": "2024-06-25",
+  "download": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
+  "companion": "https://arxiv.org/abs/2406.17557",
+  "notes": "FineWeb was developed by Hugging Face to optimize large language model training. While it has shown improved performance over datasets like RefinedWeb, subsequent datasets such as DCLM have reported further enhancements.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration"
+  ]
+}

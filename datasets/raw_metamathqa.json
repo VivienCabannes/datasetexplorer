@@ -1,0 +1,18 @@
+{
+  "name": "MetaMathQA",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of approximately 395,000 mathematical problems with detailed solutions, generated through question bootstrapping from GSM8K and MATH training sets.",
+  "size": "Approximately 395,000 samples, totaling around 200 MB.",
+  "date": "2023-09-21",
+  "download": "https://huggingface.co/datasets/meta-math/MetaMathQA",
+  "companion": "https://arxiv.org/abs/2309.12284",
+  "notes": "Developed to enhance the mathematical reasoning capabilities of large language models, MetaMathQA has been utilized to fine-tune models like MetaMath-7B, which demonstrated significant performance improvements on benchmarks such as GSM8K and MATH.",
+  "tags": [
+    "synthetic",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:synthetic",
+    "mathematics"
+  ]
+}

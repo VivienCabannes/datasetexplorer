@@ -1,0 +1,17 @@
+{
+  "name": "CommonsenseQA",
+  "summary": "_⚠ Use card with caution_ <br>A crowd-sourced multiple-choice question set targeting commonsense knowledge.",
+  "size": "12,247 questions, each with 5 answer choices (Train: 9,741; Dev: 1,221; Test: 1,285).",
+  "date": "2018-11-02",
+  "download": "https://www.tau-nlp.org/commonsenseqa",
+  "companion": "https://arxiv.org/abs/1811.00937",
+  "notes": "Workers were given a concept from ConceptNet and asked to formulate a question involving that concept in a commonsense way, providing a correct answer and tricky distractors. Questions often require implicit everyday knowledge or reasoning about likely events. It's part of the GLUE-style leaderboards for commonsense reasoning.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

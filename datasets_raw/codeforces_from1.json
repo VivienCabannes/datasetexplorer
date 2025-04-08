@@ -1,7 +1,0 @@
-{
-    "name": "CodeForces",
-    "size": "700,000 samples, 1.7 GB",
-    "download": "https://huggingface.co/datasets/MatrixStudio/Codeforces-Python-Submissions",
-    "notes": "Quite extensive datasets with unit test",
-    "summary": "Website with competitive programming puzzles."
-}

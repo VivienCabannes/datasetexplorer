@@ -1,0 +1,18 @@
+{
+  "name": "LiveCodeBench",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 400 coding problems from LeetCode, AtCoder, and CodeForces, designed to evaluate large language models' coding capabilities.",
+  "size": "400 coding problems.",
+  "date": "2024-03-12",
+  "download": "https://github.com/LiveCodeBench/LiveCodeBench",
+  "companion": "https://arxiv.org/abs/2403.07974",
+  "notes": "Continuously updated to prevent test set contamination, assessing capabilities beyond code generation, including self-repair, code execution, and test output prediction.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "programming"
+  ]
+}

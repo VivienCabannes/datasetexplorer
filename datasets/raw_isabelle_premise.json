@@ -1,0 +1,14 @@
+{
+  "name": "Isabelle Premise Selection",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of over 4 million proof context and premise pairs from Isabelle's Archive of Formal Proofs.",
+  "size": "Over 4 million samples.",
+  "date": "2023-03-08",
+  "download": "https://huggingface.co/datasets/Simontwice/premise_selection_in_isabelle",
+  "companion": "https://arxiv.org/abs/2303.04488",
+  "notes": "Includes premises from original proofs and those generated using Isabelle's Sledgehammer tool, enhancing diversity for training models in premise selection tasks.",
+  "tags": [
+    "human",
+    "compilation",
+    "programming"
+  ]
+}

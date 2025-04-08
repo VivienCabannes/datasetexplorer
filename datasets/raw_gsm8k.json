@@ -1,0 +1,20 @@
+{
+  "name": "GSM8K (Grade School Math 8K)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 8,500 linguistically diverse grade-school math word problems requiring multi-step reasoning.",
+  "size": "8,500 problems (7,500 training, 1,000 test).",
+  "date": "2021-10-27",
+  "download": "https://github.com/openai/grade-school-math",
+  "companion": "https://arxiv.org/abs/2110.14168",
+  "notes": "GSM8K was developed by OpenAI and Surge AI to evaluate and enhance the mathematical reasoning abilities of language models. Problems involve 2 to 8 steps, focusing on basic arithmetic operations. Solutions are provided in natural language with step-by-step reasoning.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "with rationale",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "rationale:human",
+    "mathematics"
+  ]
+}

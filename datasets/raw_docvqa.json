@@ -1,0 +1,18 @@
+{
+  "name": "DocVQA",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 50,000 questions on 12,767 document images, designed to evaluate Visual Question Answering models' ability to understand and extract information from various document types.",
+  "size": "50,000 questions on 12,767 document images.",
+  "date": "2020-07-01",
+  "download": "https://rrc.cvc.uab.es/?ch=17&com=downloads",
+  "companion": "https://arxiv.org/abs/2007.00398",
+  "notes": "The dataset includes diverse document types such as forms, tables, and figures, requiring models to interpret text within complex layouts. A significant performance gap exists between current models and human accuracy, underscoring the need for improved document understanding in VQA systems.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

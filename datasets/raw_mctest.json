@@ -1,0 +1,18 @@
+{
+  "name": "MCTest",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 660 crowd-sourced fictional stories with 2,640 multiple-choice questions designed to evaluate machine comprehension.",
+  "size": "660 stories, 2,640 questions.",
+  "date": "2013-10-18",
+  "download": "http://research.microsoft.com/mctest",
+  "companion": "https://aclanthology.org/D13-1020/",
+  "notes": "Each story is accompanied by four multiple-choice questions, each with four answer options. The dataset targets elementary-level text understanding and reasoning, with content suitable for readers aged 7. It was influential as a controlled reading comprehension test with broad research usage.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "atomic",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "nlp"
+  ]
+}

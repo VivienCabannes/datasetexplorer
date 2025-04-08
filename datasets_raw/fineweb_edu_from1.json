@@ -1,6 +1,0 @@
-{
-    "name": "FineWeb-Edu",
-    "download": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu",
-    "companion": "https://arxiv.org/abs/2406.17557",
-    "summary": "Filtered from FineWeb to focus on sample with educational value"
-}

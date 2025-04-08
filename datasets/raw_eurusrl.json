@@ -1,0 +1,16 @@
+{
+  "name": "Eurus-RL",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of mathematics and coding problems with verifiable outcomes for reinforcement learning training.",
+  "size": "Approximately 480,537 samples (~2 GB).",
+  "date": "2025-02-03",
+  "download": "https://huggingface.co/datasets/PRIME-RL/Eurus-2-RL-Data",
+  "companion": "https://arxiv.org/abs/2502.01456",
+  "notes": "Eurus-RL aggregates problems from sources like NuminaMath-CoT, APPS, CodeContests, TACO, and Codeforces. The dataset underwent rigorous filtering to ensure problem solvability and answer correctness, including reformatting multiple-choice questions to open-ended formats and removing duplicates. It supports research in reinforcement learning for complex reasoning tasks.",
+  "tags": [
+    "human",
+    "compilation",
+    "filtration",
+    "mathematics",
+    "programming"
+  ]
+}

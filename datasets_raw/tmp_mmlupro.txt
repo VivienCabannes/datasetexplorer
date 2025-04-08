@@ -1,0 +1,33 @@
+Draft 1:
+```json
+
+```
+
+Draft 2:
+```json
+
+```
+
+Draft 3:
+```json
+{
+  "name": "MMLU-Pro",
+  "summary": "MMLU-Pro is an enhanced version of the Massive Multitask Language Understanding (MMLU) benchmark, designed to more rigorously evaluate large language models' comprehension and reasoning abilities across diverse subjects by incorporating more complex, reasoning-focused questions and increasing the number of answer choices from four to ten.",
+  "size": "Approximately 12,000 multiple-choice questions across 14 disciplines",
+  "download": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro",
+  "companion": "https://arxiv.org/abs/2406.01574",
+  "notes": "MMLU-Pro introduces more challenging questions requiring deeper reasoning, expanding the answer choices per question to ten to reduce the likelihood of random guessing. This enhancement aims to provide a more discriminative benchmark, with evaluations showing a significant drop in accuracy compared to the original MMLU, thereby offering a more rigorous assessment of language models' capabilities.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics",
+    "physics",
+    "programming",
+    "nlp"
+  ]
+}
+```

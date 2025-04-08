@@ -1,0 +1,17 @@
+{
+  "name": "COPA (Choice of Plausible Alternatives)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset for evaluating commonsense causal reasoning through multiple-choice questions.",
+  "size": "1,000 questions (500 development, 500 test); each with 2 answer options.",
+  "date": "2011-03-01",
+  "download": "https://people.ict.usc.edu/~gordon/copa.html",
+  "companion": "https://people.ict.usc.edu/~gordon/publications/Chambers-etal-IJCAI2011.pdf",
+  "notes": "Each COPA item presents a premise and asks for either a cause or an effect, with two plausible alternatives. The dataset is balanced to avoid superficial cues and has been included in the SuperGLUE benchmark. Human performance is approximately 100%.",
+  "tags": [
+    "human",
+    "QA",
+    "atomic",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}

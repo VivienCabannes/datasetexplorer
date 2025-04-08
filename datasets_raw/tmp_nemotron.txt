@@ -1,0 +1,41 @@
+Draft 1:
+```json
+{
+    "name": "Nemotron Post-Training Dataset v1",
+    "size": "15,000,000 samples, 6 GB.",
+    "download": "https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1",
+    "companion": "https://arxiv.org/abs/2502.00203",
+    "notes": "Developed to fine-tune models for improved accuracy and reliability.",
+    "summary": "We do not have too many details on this datasets, it seems to have been curated from Llama, Qwen and DeepSeek answers."
+}
+```
+
+Draft 2:
+```json
+{
+  "name": "Llama-Nemotron-Post-Training-Dataset-v1",
+  "summary": "Llama-Nemotron-Post-Training-Dataset-v1 is a comprehensive dataset developed by NVIDIA to enhance the post-training of large language models (LLMs). It comprises approximately 15 million samples across various domains, including code, mathematics, science, chat, and safety. The dataset is designed to improve the accuracy and reliability of LLMs by providing diverse and high-quality training data.",
+  "size": "Approximately 15 million samples, totaling around 6 GB.",
+  "download": "The dataset is available for download at [https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1](https://huggingface.co/datasets/nvidia/Llama-Nemotron-Post-Training-Dataset-v1).",
+  "companion": "The dataset is associated with NVIDIA's Llama Nemotron Collection, detailed at [https://huggingface.co/collections/nvidia/llama-nemotron-67d92346030a2691293f200b](https://huggingface.co/collections/nvidia/llama-nemotron-67d92346030a2691293f200b). ",
+  "notes": "The dataset encompasses multiple subsets categorized into five main splits:",
+  "code": "Approximately 1.56 million samples.",
+  "math": "Approximately 13.1 million samples.",
+  "science": "Approximately 484,000 samples.",
+  "chat": "Approximately 39,800 samples.",
+  "safety": "Approximately 31,400 samples.",
+  "tags": [
+    "synthetic",
+    "compilation",
+    "programming",
+    "mathematics",
+    "physics",
+    "nlp"
+  ]
+}
+```
+
+Draft 3:
+```json
+
+```

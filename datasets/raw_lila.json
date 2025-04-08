@@ -1,0 +1,18 @@
+{
+  "name": "Līla",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of over 140,000 natural language math questions annotated with Python programs and instructions.",
+  "size": "Over 140,000 questions across 23 tasks.",
+  "date": "2022-10-31",
+  "download": "https://huggingface.co/datasets/allenai/lila",
+  "companion": "https://arxiv.org/abs/2210.17517",
+  "notes": "Includes splits: Līla-IID (in-distribution), Līla-OOD (out-of-distribution), and Līla-Robust (linguistic variants).",
+  "tags": [
+    "compilation",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics"
+  ]
+}

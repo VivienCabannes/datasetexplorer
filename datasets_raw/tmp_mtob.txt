@@ -1,0 +1,30 @@
+Draft 1:
+```json
+
+```
+
+Draft 2:
+```json
+
+```
+
+Draft 3:
+```json
+{
+  "name": "MTOB",
+  "summary": "MTOB (Machine Translation from One Book) is a benchmark designed to evaluate the ability of language models to learn translation between English and Kalamang—a language with fewer than 200 speakers—using only a single grammar book as the primary resource.",
+  "size": "573-page grammar book, 2,531-word bilingual word list, and 500 parallel sentence pairs",
+  "download": "https://github.com/lukemelas/mtob",
+  "companion": "https://arxiv.org/abs/2309.16575",
+  "notes": "MTOB presents a novel challenge by requiring models to learn translation capabilities from limited resources, mimicking scenarios encountered with low-resource languages. The benchmark includes a comprehensive grammar book detailing Kalamang's linguistic features, a bilingual word list, and a small set of parallel sentences. Evaluations have shown that while current language models demonstrate promising results, they still fall short of human performance, highlighting the difficulty of the task and the need for further advancements in low-resource language processing.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "nlp"
+  ]
+}
+```

@@ -1,0 +1,15 @@
+{
+  "name": "FineMath",
+  "summary": "_⚠ Use card with caution_ <br>Curated mathematical content filtered from CommonCrawl for training language models.",
+  "size": "Approximately 34B tokens (FineMath-3+) and 9.6B tokens (FineMath-4+).",
+  "date": "2025-02-12",
+  "download": "https://huggingface.co/datasets/HuggingFaceTB/finemath",
+  "companion": "https://arxiv.org/abs/2502.02737",
+  "notes": "Developed using a Llama-3.1-70B-Instruct based classifier to retain educational math content with clear explanations and step-by-step solutions.",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "mathematics"
+  ]
+}

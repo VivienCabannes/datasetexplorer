@@ -1,0 +1,15 @@
+{
+  "name": "AutoMathText",
+  "summary": "_⚠ Use card with caution_ <br>A 200 GB dataset of mathematical texts curated autonomously to enhance language models' mathematical reasoning.",
+  "size": "Approximately 200 GB.",
+  "date": "2024-02-12",
+  "download": "https://huggingface.co/datasets/math-ai/AutoMathText",
+  "companion": "https://arxiv.org/abs/2402.07625",
+  "notes": "AutoMathText was developed using Autonomous Data Selection (AutoDS), employing language models as zero-shot verifiers to autonomously curate high-quality mathematical content. Empirical evaluations demonstrated that language models continually pretrained on AutoMathText achieved substantial improvements on mathematical benchmarks, underscoring the dataset's efficacy in enhancing mathematical reasoning capabilities.",
+  "tags": [
+    "human",
+    "monolithic",
+    "compilation",
+    "mathematics"
+  ]
+}

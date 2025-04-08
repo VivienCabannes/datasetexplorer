@@ -1,7 +1,0 @@
-{
-    "name": "Lila",
-    "download": "https://huggingface.co/datasets/allenai/lila",
-    "companion": "https://arxiv.org/abs/2210.17517",
-    "notes": "The datasets were collected for evaluation, it seems small and outdated.",
-    "summary": "Compilation of many datasets including addsub, amps, apps, asdiv, conala, mathematics, dolphin, draw, gsm8k, math, mathqa, mbpp, mctaco, multiarith, numersense, numglus, simuleq, singleop, singleq, svamp."
-}

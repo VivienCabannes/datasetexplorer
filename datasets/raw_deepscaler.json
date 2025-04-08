@@ -1,0 +1,15 @@
+{
+  "name": "DeepScaleR",
+  "summary": "_⚠ Use card with caution_ <br>A dataset comprising approximately 40,000 unique mathematical problem-answer pairs from AIME, AMC, Omni-MATH, and Still datasets.",
+  "size": "Approximately 40,000 problem-answer pairs.",
+  "date": "2025-02-10",
+  "download": "https://huggingface.co/datasets/agentica-org/DeepScaleR-Preview-Dataset",
+  "companion": "https://medium.com/data-science-in-your-pocket/deepseek-r1-5b-new-deepseek-r1-model-tops-openai-o1-in-math-18dacfd04f1f",
+  "notes": "The dataset aggregates problems from AIME (1984–2023), AMC (prior to 2023), Omni-MATH, and Still datasets. It was utilized in training the DeepScaleR-1.5B-Preview model, which achieved notable performance improvements in mathematical reasoning tasks.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "mathematics"
+  ]
+}

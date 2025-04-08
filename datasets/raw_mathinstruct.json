@@ -1,0 +1,18 @@
+{
+  "name": "MathInstruct",
+  "summary": "_⚠ Use card with caution_ <br>A curated instruction tuning dataset of 262,039 mathematical problems with chain-of-thought and program-of-thought rationales.",
+  "size": "262,039 samples (~200 MB).",
+  "date": "2023-09-11",
+  "download": "https://huggingface.co/datasets/TIGER-Lab/MathInstruct",
+  "companion": "https://arxiv.org/abs/2309.05653",
+  "notes": "Compiled from 13 datasets, including GSM8K, AQuA, and Camel-Math, to train the MAmmoTH models for enhanced mathematical reasoning.",
+  "tags": [
+    "synthetic",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:synthetic",
+    "mathematics"
+  ]
+}

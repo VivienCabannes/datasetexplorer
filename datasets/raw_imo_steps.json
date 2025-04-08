@@ -1,0 +1,18 @@
+{
+  "name": "IMO-Steps",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of formal proofs for International Mathematical Olympiad (IMO) problems, formalized in Lean 4.",
+  "size": "Approximately 17 formalized IMO problems, totaling around 5,880 lines of Lean code.",
+  "date": "2024-11-28",
+  "download": "https://huggingface.co/datasets/roozbeh-yz/IMO-Steps",
+  "companion": "https://arxiv.org/abs/2411.18872",
+  "notes": "Includes formal proofs for 14 IMO problems from the miniF2F benchmark and 3 additional problems from IMO 2022 and 2023. The dataset also provides a decomposition into 1,329 lemmas, totaling over 40,000 lines of Lean code, serving as building blocks for the formal proofs.",
+  "tags": [
+    "human",
+    "atomic",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "mathematics"
+  ]
+}

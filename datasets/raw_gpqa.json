@@ -1,0 +1,20 @@
+{
+  "name": "GPQA (Graduate-Level Google-Proof Q&A)",
+  "summary": "_⚠ Use card with caution_ <br>A benchmark of 448 expert-crafted, graduate-level multiple-choice questions in biology, physics, and chemistry.",
+  "size": "448 multiple-choice questions.",
+  "date": "2023-11-20",
+  "download": "https://github.com/idavidrein/gpqa",
+  "companion": "https://arxiv.org/abs/2311.12022",
+  "notes": "GPQA's questions are designed to be exceptionally challenging and 'Google-proof,' with experts achieving 65% accuracy and highly skilled non-experts only 34%, despite unrestricted web access and extensive time per question. As of March 2024, Claude 3 Opus achieved approximately 60% accuracy on this benchmark, highlighting rapid advancements in AI capabilities.",
+  "tags": [
+    "human",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:human",
+    "answer:human",
+    "biology",
+    "physics",
+    "chemistry"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "DeepSeek Math Corpus",
+  "summary": "_⚠ Use card with caution_ <br>A 120B-token dataset of mathematical content filtered from Common Crawl using a fastText classifier trained on OpenWebMath.",
+  "size": "Approximately 120 billion tokens.",
+  "date": "2024-04-27",
+  "download": "Not publicly available.",
+  "companion": "https://arxiv.org/abs/2402.03300",
+  "notes": "The dataset was filtered using a classifier trained on OpenWebMath, with manual annotation and heuristic refinement. It was used to train DeepSeekMath 7B, which scored 51.7% on the MATH benchmark without external tools. The data includes math problems in multiple languages from Common Crawl.",
+  "tags": [
+    "synthetic",
+    "monolithic",
+    "filtration",
+    "mathematics"
+  ]
+}

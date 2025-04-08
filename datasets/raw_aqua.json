@@ -1,0 +1,19 @@
+{
+  "name": "AQuA (Algebra Question Answering with Rationales)",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of approximately 100,000 algebraic word problems, each with multiple-choice answers and detailed rationales.",
+  "size": "Approximately 100,000 problems.",
+  "date": "2017-05-11",
+  "download": "https://huggingface.co/datasets/deepmind/aqua_rat",
+  "companion": "https://arxiv.org/abs/1705.04146",
+  "notes": "Developed by DeepMind, the dataset includes problems sourced from exams like GMAT and GRE, supplemented with crowdsourced questions. Each problem features a question, five answer choices, and a detailed rationale explaining the solution.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "with rationale",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "rationale:crowd-sourced",
+    "mathematics"
+  ]
+}

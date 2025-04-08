@@ -1,0 +1,20 @@
+{
+  "name": "HotpotQA",
+  "summary": "_⚠ Use card with caution_ <br>A dataset of 113k crowd-sourced questions requiring multi-hop reasoning over multiple Wikipedia paragraphs.",
+  "size": "113,000 question-answer pairs.",
+  "date": "2018-09-25",
+  "download": "https://hotpotqa.github.io",
+  "companion": "https://arxiv.org/abs/1809.09600",
+  "notes": "HotpotQA includes sentence-level supporting facts annotations, enabling evaluation of explainability. It features two settings: (1) Distractor: relevant paragraphs mixed with 8 distractors, (2) Fullwiki: requiring a full Wikipedia search. The dataset supports evaluation of multi-hop reasoning and evidence retrieval.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "with rationale",
+    "question:crowd-sourced",
+    "answer:human",
+    "rationale:human",
+    "nlp"
+  ]
+}

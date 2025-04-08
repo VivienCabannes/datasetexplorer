@@ -1,6 +1,6 @@
 {
     "name": "MATH (Mathematics Aptitude Test of Heuristics)",
-    "summary": "A dataset of 12,500 challenging high school competition math problems with step-by-step solutions.",
+    "summary": "_⚠ Use card with caution_ <br>A dataset of 12,500 challenging high school competition math problems with step-by-step solutions.",
     "size": "12,500 problems with solutions.",
     "date": "2021-03-05",
     "download": "https://github.com/hendrycks/math",

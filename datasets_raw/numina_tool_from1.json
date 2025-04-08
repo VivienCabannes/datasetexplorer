@@ -1,7 +1,0 @@
-{
-    "name": "Numina-Tool",
-    "size": "70,000 samples, 150 MB",
-    "download": "https://huggingface.co/datasets/AI-MO/NuminaMath-TIR",
-    "companion": "https://arxiv.org/pdf/2309.17452",
-    "summary": "Subset numina problems solved with tool-use."
-}
