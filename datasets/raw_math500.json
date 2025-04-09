@@ -1,6 +1,6 @@
 {
   "name": "MATH-500",
-  "summary": "_⚠ Use card with caution_ <br>A curated subset of 500 problems from the MATH benchmark, designed to evaluate mathematical problem-solving abilities of language models.",
+  "summary": "A curated subset of 500 problems from the MATH benchmark, designed to evaluate mathematical problem-solving abilities of language models.",
   "size": "500 problems.",
   "date": "2023-11-15",
   "download": "https://huggingface.co/datasets/HuggingFaceH4/MATH-500",
@@ -9,10 +9,12 @@
   "tags": [
     "human",
     "QA",
-    "benchmark",
+    "compilation",
     "answer:verifiable",
+    "with rationale",
     "question:human",
     "answer:human",
+    "rationale:human",
     "mathematics"
   ]
 }
