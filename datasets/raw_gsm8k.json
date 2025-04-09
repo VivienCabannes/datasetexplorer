@@ -1,6 +1,6 @@
 {
   "name": "GSM8K (Grade School Math 8K)",
-  "summary": "_⚠ Use card with caution_ <br>A dataset of 8,500 linguistically diverse grade-school math word problems requiring multi-step reasoning.",
+  "summary": "A dataset of 8,500 linguistically diverse grade-school math word problems requiring multi-step reasoning.",
   "size": "8,500 problems (7,500 training, 1,000 test).",
   "date": "2021-10-27",
   "download": "https://github.com/openai/grade-school-math",
@@ -14,7 +14,7 @@
     "with rationale",
     "question:crowd-sourced",
     "answer:crowd-sourced",
-    "rationale:human",
+    "rationale:crowd-sourced",
     "mathematics"
   ]
 }
