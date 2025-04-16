@@ -1,6 +1,6 @@
 {
   "name": "Various Code Competition",
-  "summary": "Many code competition exists online, providing many programming challenges, with automatic ways to check for correctness.",
+  "summary": "Many code competitions exist online, providing many programming challenges, with automatic ways to check for correctness.",
   "size": "Probably around 100,000 problems can be found online.",
   "notes": "Existing platforms include SPOJ, Codewars, Codeforces, UVa Online Judge, Kattis, CodeChef, TopCoder, LeetCode, HackerRank, GeeksforGeeks, AtCoder, TechGig, HackerEarth, LiveCodeBench, Project Euler, Advent of Code, CodinGame, CodeCombat, Google Contests, Kaggle, CheckiO",
   "tags": [
