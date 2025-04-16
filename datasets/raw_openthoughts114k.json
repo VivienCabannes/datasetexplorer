@@ -1,6 +1,6 @@
 {
   "name": "OpenThoughts-114k",
-  "summary": "_⚠ Use card with caution_ <br>An open-source synthetic reasoning dataset with 114,000 examples across domains like mathematics, science, coding, and puzzles.",
+  "summary": "_⚠ Use card with caution_ <br>Finetuning datasets compiled from NuminaMath, Taco and other sources.",
   "size": "114,000 examples (~3.55 GB).",
   "date": "2025-01-28",
   "download": "https://huggingface.co/datasets/open-thoughts/OpenThoughts-114k",
@@ -14,6 +14,7 @@
     "with rationale",
     "question:synthetic",
     "answer:synthetic",
+    "answer:verifiable",
     "rationale:synthetic",
     "mathematics",
     "physics",

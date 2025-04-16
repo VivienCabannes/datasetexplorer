@@ -1,0 +1,20 @@
+{
+  "name": "NuminaMath 1.5",
+  "summary": "Math problems with Chain of Thought (CoT) solutions.",
+  "size": "900,000 samples, 530 MB.",
+  "date": "2025-02",
+  "download": "https://huggingface.co/datasets/AI-MO/NuminaMath-1.5",
+  "companion": "https://github.com/project-numina/aimo-progress-prize/blob/main/report/numina_dataset.pdf",
+  "notes": "The problems are compiled from Chinese high-school math problems (30%), Olympiads (22%) Orca-Math (17%, itself a compilation), synthetic data (16%), AoPS, AMC, AIME, GSM8k, MATH... Some problems requires a correct proof, other a numerical or symbolic expression.",
+  "tags": [
+    "human",
+    "QA",
+    "compilation",
+    "answer:verifiable",
+    "with rationale",
+    "question:human",
+    "answer:human",
+    "rationale:human",
+    "mathematics"
+  ]
+}

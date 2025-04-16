@@ -1,0 +1,16 @@
+{
+  "name": "MegaMath",
+  "summary": "Large pretraining dataset focused on math, based on web filtering and LLM postprocessing.",
+  "size": "215,000,000 samples, 371,000,000,000 tokens.",
+  "date": "2025-04-03",
+  "download": "https://huggingface.co/datasets/LLM360/MegaMath",
+  "companion": "https://arxiv.org/abs/2504.02807",
+  "notes": "The data curation process involves filtering Common Crawl using a FastText classifier trained to recognize math-related content, as well as using Stack-v2 to extract programs written in C, Python, Rust, and other languages. An LLM is also used to post-process the data—for example, to format question–answer (QA) pairs, simplify answers, or translate programs to Python. Since the QA component lacks a clear answer verification scheme, this dataset may not be ideal for reinforcement learning (RL), but it is well-suited for supervised fine-tuning (SFT).",
+  "tags": [
+    "human",
+    "monolithic",
+    "filtration",
+    "mathematics",
+    "programming"
+  ]
+}
