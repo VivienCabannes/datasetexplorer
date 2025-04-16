@@ -1,0 +1,17 @@
+{
+  "name": "MegaMath-QA",
+  "summary": "QA subset of MegaMath, found by filtering MegaMath for QA formatable data, and LLM postprocessing.",
+  "size": "22,600,000 samples, 20 GB",
+  "date": "2025-04-03",
+  "download": "https://huggingface.co/datasets/LLM360/MegaMath/tree/main/megamath-qa",
+  "companion": "https://arxiv.org/abs/2504.02807",
+  "tags": [
+    "synthetic",
+    "dialog",
+    "QA",
+    "filtration",
+    "question:synthetic",
+    "answer:synthetic",
+    "mathematics"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+    "name": "DAPO (Decoupled Clip and Dynamic sAmpling Policy Optimization)",
+    "summary": "Dataset curated from AoPS with numerical answer, in the style of MATH",
+    "size": "17,000 samples, 12.5 MB",
+    "date": "2025-03-18",
+    "download": "https://huggingface.co/datasets/open-r1/DAPO-Math-17k-Processed",
+    "companion": "https://arxiv.org/abs/2503.14476",
+    "notes": "Part of the papers following the DeepSeek-R1 trend",
+    "tags": [
+      "human",
+      "dialog",
+      "QA",
+      "atomic",
+      "question:human",
+      "answer:human",
+      "answer:verifiable",
+      "mathematics"
+    ]
+  }
+  
