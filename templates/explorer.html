@@ -1,0 +1,699 @@
+{# templates/explorer.html #}
+{% extends "base.html" %}
+{% block title %}Assets Explorer{% endblock %}
+
+{# Default view mode for explorer page #}
+{% block body_attrs %}data-default-view="list"{% endblock %}
+
+{# Use separate localStorage key for explorer page view mode #}
+{% block view_key %}
+const viewKey = 'viewModeExplorer';
+{% endblock %}
+
+{% block extra_css %}
+  <!-- KaTeX for mathematical notation rendering -->
+  <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" 
+        integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" 
+        crossorigin="anonymous">
+{% endblock %}
+
+{% block help_text %}
+  <p class="text-gray-700 dark:text-gray-300">
+    <strong class="text-gray-900 dark:text-white">Speed Up your Assets Browsing Experience!</strong><br/>
+    Use the filters to narrow your asset choices, type in the search bar to find assets by name or summary, and sort them as needed.
+    Click on a card to view full details.<br/>
+    <em>Tag Filtering:</em> Click a tag (blue) to include only assets with that tag. Double-click a tag (red) to exclude assets with that tag.<br/>
+    ⚠ Some cards display a warning sign, indicating info gathered via quick internet search without deep verification.
+  </p>
+{% endblock %}
+
+{% block content %}
+  <!-- Tag filters section -->
+  <div id="tags-container" class="mb-6"></div>
+
+  <!-- Search and sort controls -->
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <!-- Search input -->
+    <div class="md:col-span-3">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+        </div>
+        <input type="text" 
+               id="search-input" 
+               class="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 
+                      rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                      bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+               placeholder="Search assets…">
+      </div>
+    </div>
+    
+    <!-- Sort dropdown -->
+    <div>
+      <select id="sort-select" 
+              class="block w-full py-2 px-3 border border-gray-300 dark:border-gray-600 
+                     rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                     bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+        <!-- Options will be populated dynamically -->
+      </select>
+    </div>
+  </div>
+
+  <!-- Dynamic assets container -->
+  <div id="assets-container"></div>
+
+  <!-- Modal for displaying asset details in grid view -->
+  <div id="modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+    <div class="flex items-center justify-center min-h-screen px-4">
+      <!-- Modal backdrop -->
+      <div class="fixed inset-0 bg-black opacity-50" id="modal-backdrop"></div>
+      
+      <!-- Modal content -->
+      <div class="relative bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <!-- Modal header -->
+        <div class="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-600">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Asset Details</h3>
+          <button id="modal-close" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="p-6" id="modal-body"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+  <!-- KaTeX & markdown-it -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" 
+          integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" 
+          crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" 
+          integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" 
+          crossorigin="anonymous" 
+          onload="renderMathInElement(document.body);"></script>
+  <script src="{{ url_for('static', filename='markdownit.js') }}"></script>
+  <script type="application/json" id="data">{{ assets | tojson }}</script>
+  <script type="application/json" id="tags-data">{{ tags | tojson | safe }}</script>
+  <script type="application/json" id="category-info">{{ category_info | tojson | safe }}</script>
+
+  <script>
+    // ==================== INITIALIZATION ====================
+    
+    // Initialize markdown parser and load data from server
+    const md = new markdownit({ linkify: true, html: true });
+    const assets = JSON.parse(document.getElementById('data').textContent);
+    const tagData = JSON.parse(document.getElementById('tags-data').textContent);
+    const categoryInfo = JSON.parse(document.getElementById('category-info').textContent);
+    
+    // Get attribute configurations with defaults
+    const sortableAttributes = categoryInfo.attributes?.sortable || [
+      {key: 'name', label: 'Sort by Name (A-Z)', reverse_label: 'Sort by Name (Z-A)'}
+    ];
+    const summaryAttributes = categoryInfo.attributes?.summary || ['name', 'summary'];
+    const lightAttributes = categoryInfo.attributes?.light || ['size', 'date'];
+    const fullAttributes = categoryInfo.attributes?.full || ['download', 'companion', 'notes', 'tags'];
+    
+    // Application state management
+    let searchTerm = '';
+    let selectedTags = [];
+    let excludedTags = [];
+    let expandedStates = {};
+    let viewMode = localStorage.getItem('viewModeExplorer') || document.body.dataset.defaultView;
+
+    // Modal elements for asset details
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    const modalClose = document.getElementById('modal-close');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+
+    // ==================== UTILITY FUNCTIONS ====================
+    
+    /**
+     * Populate sort dropdown with sortable attributes
+     */
+    function populateSortOptions() {
+      const sortSelect = document.getElementById('sort-select');
+      sortSelect.innerHTML = '';
+      
+      sortableAttributes.forEach(attr => {
+        if (typeof attr === 'string') {
+          // Simple string attribute - use default labels
+          const option = document.createElement('option');
+          option.value = attr;
+          option.textContent = `Sort by ${attr.charAt(0).toUpperCase() + attr.slice(1)} (A-Z)`;
+          sortSelect.appendChild(option);
+        } else {
+          // Object with custom labels
+          const option = document.createElement('option');
+          option.value = attr.key;
+          option.textContent = attr.label;
+          sortSelect.appendChild(option);
+          
+          // Add reverse option if available
+          if (attr.reverse_label) {
+            const reverseOption = document.createElement('option');
+            reverseOption.value = `${attr.key}_reverse`;
+            reverseOption.textContent = attr.reverse_label;
+            sortSelect.appendChild(reverseOption);
+          }
+        }
+      });
+    }
+    
+    /**
+     * Refresh Lucide icons after DOM changes
+     */
+    function refreshIcons() {
+      lucide.createIcons();
+    }
+
+    /**
+     * Show modal with asset details
+     */
+    function showModal() {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    /**
+     * Hide modal and restore scrolling
+     */
+    function hideModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    // ==================== EVENT HANDLERS ====================
+    
+    // Modal close events
+    modalClose.addEventListener('click', hideModal);
+    modalBackdrop.addEventListener('click', hideModal);
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        hideModal();
+      }
+    });
+
+    // ==================== TAG FUNCTIONALITY ====================
+    
+    /**
+     * Attach tooltip functionality to elements with data-tooltip attribute
+     * @param {HTMLElement} container - Container to search for tooltip elements
+     */
+    function attachTagTooltips(container) {
+      container.querySelectorAll('[data-tooltip]').forEach(element => {
+        let tooltip, timer;
+        
+        element.addEventListener('mouseenter', () => {
+          const tip = element.dataset.tooltip;
+          if (!tip) return;
+          
+          timer = setTimeout(() => {
+            tooltip = document.createElement('div');
+            tooltip.className = 'fixed z-50 bg-gray-900 text-white text-sm rounded px-2 py-1 max-w-xs break-words pointer-events-none';
+            tooltip.textContent = tip;
+            document.body.appendChild(tooltip);
+            
+            // Position tooltip
+            const rect = element.getBoundingClientRect();
+            const tooltipRect = tooltip.getBoundingClientRect();
+            
+            let top = rect.bottom + window.scrollY + 5;
+            let left = rect.left + window.scrollX + (rect.width - tooltipRect.width) / 2;
+            
+            // Keep tooltip within viewport
+            if (left < 5) left = 5;
+            if (left + tooltipRect.width > window.innerWidth - 5) {
+              left = window.innerWidth - tooltipRect.width - 5;
+            }
+            if (top + tooltipRect.height > window.innerHeight + window.scrollY) {
+              top = rect.top + window.scrollY - tooltipRect.height - 5;
+            }
+            
+            tooltip.style.top = `${top}px`;
+            tooltip.style.left = `${left}px`;
+          }, 500);
+        });
+        
+        element.addEventListener('mouseleave', () => {
+          clearTimeout(timer);
+          if (tooltip) {
+            tooltip.remove();
+            tooltip = null;
+          }
+        });
+      });
+    }
+
+    /**
+     * Render attributes for summary view with three different styling categories
+     * @param {Object} asset - Asset object
+     * @returns {string} HTML string for summary attributes
+     */
+    function renderSummaryAttributes(asset) {
+      let result = '';
+      
+      // Render summary attributes (main content - text-gray-700 dark:text-gray-300 mb-3)
+      summaryAttributes.forEach(attr => {
+        if (attr === 'name') {
+          // Skip name as it's handled separately as the title
+          return;
+        }
+        
+        const value = asset[attr];
+        if (value) {
+          const rendered = md.renderInline(value);
+          result += `<p class="text-gray-700 dark:text-gray-300 mb-3">${rendered}</p>`;
+        }
+      });
+      
+      // Render light attributes (metadata - text-sm text-gray-500 dark:text-gray-400)
+      const lightParts = [];
+      lightAttributes.forEach(attr => {
+        const value = asset[attr];
+        if (value) {
+          const rendered = md.renderInline(value);
+          const label = attr.charAt(0).toUpperCase() + attr.slice(1);
+          lightParts.push(`<strong>${label}:</strong> ${rendered}`);
+        }
+      });
+      
+      if (lightParts.length > 0) {
+        result += `<div class="text-sm text-gray-500 dark:text-gray-400">${lightParts.join(' | ')}</div>`;
+      }
+      
+      return result;
+    }
+    function renderAssetTags(tags) {
+      if (!tags || !Array.isArray(tags)) return '';
+      
+      return tags.map(tag => {
+        let tooltip = '';
+        // Find tooltip for tag from tag data
+        for (const group of tagData) {
+          if (group.tags[tag]) {
+            tooltip = group.tags[tag];
+            break;
+          }
+        }
+        return `<span class="inline-block bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 
+                              text-xs px-2 py-1 rounded mr-1 mb-1" data-tooltip="${tooltip}">${tag}</span>`;
+      }).join('');
+    }
+
+    // ==================== ASSET RENDERING ====================
+    
+    /**
+     * Render assets in either grid or list view
+     * @param {Object[]} assetList - Array of asset objects to render
+     */
+    function renderAssets(assetList) {
+      const container = document.getElementById('assets-container');
+      container.innerHTML = '';
+      
+      if (viewMode === 'grid') {
+        renderGridView(container, assetList);
+      } else {
+        renderListView(container, assetList);
+      }
+      
+      // Configure external links to open in new tab
+      container.querySelectorAll('a').forEach(link => {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.addEventListener('click', e => e.stopPropagation());
+      });
+      
+      attachTagTooltips(container);
+      refreshIcons();
+    }
+
+    /**
+     * Render assets in grid view (compact cards)
+     * @param {HTMLElement} container - Container element
+     * @param {Object[]} assetList - Array of assets
+     */
+    function renderGridView(container, assetList) {
+      container.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6';
+      
+      assetList.forEach(asset => {
+        const card = document.createElement('div');
+        card.className = `bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg 
+                         border border-gray-200 dark:border-gray-700 cursor-pointer 
+                         transition-all duration-200 hover:scale-105`;
+        
+        card.innerHTML = `
+          <div class="p-6 flex items-center justify-center h-32">
+            <h3 class="text-lg font-semibold text-center text-gray-900 dark:text-white">
+              ${asset.name}
+            </h3>
+          </div>
+        `;
+        
+        card.addEventListener('click', () => showAssetModal(asset));
+        container.appendChild(card);
+      });
+    }
+
+    /**
+     * Render assets in list view (expandable cards)
+     * @param {HTMLElement} container - Container element
+     * @param {Object[]} assetList - Array of assets
+     */
+    function renderListView(container, assetList) {
+      container.className = 'space-y-4';
+      
+      assetList.forEach(asset => {
+        const card = document.createElement('div');
+        card.className = `bg-white dark:bg-gray-800 rounded-lg shadow-md 
+                         border border-gray-200 dark:border-gray-700 cursor-pointer 
+                         transition-shadow duration-200 hover:shadow-lg`;
+        
+        const isExpanded = expandedStates[asset.name];
+        
+        // Build additional content for expanded view using fullAttributes (mb-4 styling)
+        let additionalContent = '';
+        fullAttributes.forEach(attr => {
+          if (attr === 'tags') {
+            additionalContent += `
+              <div class="mb-4">
+                <strong class="text-gray-900 dark:text-white">Tags:</strong>
+                <span class="ml-2">${renderAssetTags(asset.tags)}</span>
+              </div>`;
+          } else if (asset[attr]) {
+            const value = md.renderInline(asset[attr]);
+            const label = attr.charAt(0).toUpperCase() + attr.slice(1);
+            additionalContent += `<div class="mb-4"><strong class="text-gray-900 dark:text-white">${label}:</strong> ${value}</div>`;
+          }
+        });
+        
+        card.innerHTML = `
+          <div class="p-6">
+            <div class="asset-minimal">
+              <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                ${asset.name}
+              </h3>
+              ${renderSummaryAttributes(asset)}
+            </div>
+            <div class="asset-full mt-4 ${isExpanded ? '' : 'hidden'}">
+              ${additionalContent}
+            </div>
+          </div>
+        `;
+        
+        card.addEventListener('click', () => toggleAssetExpansion(asset, card));
+        container.appendChild(card);
+      });
+    }
+
+    // ==================== MODAL FUNCTIONALITY ====================
+    
+    /**
+     * Show asset details in modal (for grid view)
+     * @param {Object} asset - Asset object to display
+     */
+    function showAssetModal(asset) {
+      // Update modal title with asset name
+      document.querySelector('#modal h3').textContent = asset.name;
+      
+      let content = '';
+      
+      // Render summary attributes (text-gray-700 dark:text-gray-300 mb-4)
+      summaryAttributes.forEach(attr => {
+        if (attr !== 'name' && asset[attr]) {
+          const value = md.renderInline(asset[attr]);
+          content += `<p class="text-gray-700 dark:text-gray-300 mb-4">${value}</p>`;
+        }
+      });
+      
+      // Render light attributes (text-gray-700 dark:text-gray-300 with label, mb-4)
+      lightAttributes.forEach(attr => {
+        if (asset[attr]) {
+          const value = md.renderInline(asset[attr]);
+          const label = attr.charAt(0).toUpperCase() + attr.slice(1);
+          content += `<p class="mb-4"><strong class="text-gray-900 dark:text-white">${label}:</strong> 
+                     <span class="text-gray-700 dark:text-gray-300">${value}</span></p>`;
+        }
+      });
+      
+      // Render full attributes (mb-4 styling)
+      fullAttributes.forEach(attr => {
+        if (attr === 'tags') {
+          content += `
+            <div class="mb-4">
+              <strong class="text-gray-900 dark:text-white">Tags:</strong>
+              <span class="ml-2">${renderAssetTags(asset.tags)}</span>
+            </div>`;
+        } else if (asset[attr]) {
+          const value = md.renderInline(asset[attr]);
+          const label = attr.charAt(0).toUpperCase() + attr.slice(1);
+          content += `<p class="mb-4"><strong class="text-gray-900 dark:text-white">${label}:</strong> 
+                     <span class="text-gray-700 dark:text-gray-300">${value}</span></p>`;
+        }
+      });
+      
+      modalBody.innerHTML = content;
+      
+      // Configure external links to open in new tab
+      modalBody.querySelectorAll('a').forEach(link => {
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.addEventListener('click', e => e.stopPropagation());
+      });
+      
+      attachTagTooltips(modalBody);
+      showModal();
+    }
+
+    /**
+     * Toggle asset expansion in list view
+     * @param {Object} asset - Asset object
+     * @param {HTMLElement} cardElement - Card DOM element
+     */
+    function toggleAssetExpansion(asset, cardElement) {
+      const isExpanded = expandedStates[asset.name];
+      expandedStates[asset.name] = !isExpanded;
+      
+      const fullContent = cardElement.querySelector('.asset-full');
+      if (expandedStates[asset.name]) {
+        fullContent.classList.remove('hidden');
+      } else {
+        fullContent.classList.add('hidden');
+      }
+    }
+
+    // ==================== FILTERING AND SORTING ====================
+    
+    /**
+     * Filter assets based on search term and selected tags
+     */
+    function updateView() {
+      const filtered = assets.filter(asset => {
+        // Search in name, summary, and notes
+        const searchMatch = !searchTerm || 
+          [asset.name, asset.summary, asset.notes]
+            .some(field => field && field.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        // Check if all selected tags are present
+        const tagMatch = !selectedTags.length || 
+          (Array.isArray(asset.tags) && selectedTags.every(tag => asset.tags.includes(tag)));
+        
+        // Check if asset doesn't contain any excluded tags
+        const excludeMatch = !excludedTags.length || 
+          !Array.isArray(asset.tags) || 
+          !excludedTags.some(tag => asset.tags.includes(tag));
+        
+        return searchMatch && tagMatch && excludeMatch;
+      });
+      
+      renderAssets(filtered);
+    }
+
+    /**
+     * Sort assets and update view
+     */
+    function updateOrder() {
+      const sortOption = document.getElementById('sort-select').value;
+      const isReverse = sortOption.endsWith('_reverse');
+      const sortKey = isReverse ? sortOption.slice(0, -8) : sortOption;
+      
+      assets.sort((a, b) => {
+        if (sortKey === 'name') {
+          const result = a.name.localeCompare(b.name);
+          return isReverse ? -result : result;
+        } else if (sortKey === 'date') {
+          const dateA = new Date(a.date || '1970-01-01');
+          const dateB = new Date(b.date || '1970-01-01');
+          const result = dateA - dateB;
+          // For dates, check if it's explicitly asking for latest (reverse) or earliest (normal)
+          return isReverse ? result : -result; // Default is latest first (-result), reverse is earliest first (result)
+        } else if (sortKey === 'size') {
+          const sizeA = a.size_numerical || 0;
+          const sizeB = b.size_numerical || 0;
+          const result = sizeA - sizeB;
+          return isReverse ? result : -result; // For size, default is largest first
+        } else {
+          // Generic sorting for other attributes
+          const valueA = a[sortKey] || '';
+          const valueB = b[sortKey] || '';
+          const result = valueA.toString().localeCompare(valueB.toString());
+          return isReverse ? -result : result;
+        }
+      });
+      
+      updateView();
+    }
+
+    // ==================== TAG FILTER RENDERING ====================
+    
+    /**
+     * Render tag filter buttons organized by groups
+     */
+    function renderTagFilters() {
+      const container = document.getElementById('tags-container');
+      container.innerHTML = '';  // clear any existing content
+
+      tagData.forEach(group => {
+        // Create one flex container per group
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'mb-4 flex flex-wrap items-center gap-2';
+
+        // Title as inline span
+        const title = document.createElement('span');
+        title.className = 'text-lg font-semibold text-gray-700 dark:text-gray-300';
+        title.textContent = group.group + ':';
+        groupDiv.appendChild(title);
+
+        // Append each tag button directly
+        Object.entries(group.tags).forEach(([tag, tooltip]) => {
+          const btn = document.createElement('button');
+          btn.className = `
+            px-3 py-1 rounded-full text-sm font-medium transition-colors
+            bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300
+            hover:bg-gray-300 dark:hover:bg-gray-600
+            focus:outline-none focus:ring-2 focus:ring-blue-500
+          `.trim().replace(/\s+/g,' ');
+          btn.textContent = tag;
+          btn.dataset.tooltip = tooltip;
+
+          // Track click timing for double-click detection
+          let clickTimer = null;
+          let clickCount = 0;
+
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            clickCount++;
+            
+            if (clickCount === 1) {
+              // Single click - wait to see if there's a double click
+              clickTimer = setTimeout(() => {
+                handleSingleClick(tag, btn);
+                clickCount = 0;
+              }, 300);
+            } else if (clickCount === 2) {
+              // Double click - clear the single click timer and handle double click
+              clearTimeout(clickTimer);
+              handleDoubleClick(tag, btn);
+              clickCount = 0;
+            }
+          });
+
+          function handleSingleClick(tag, btn) {
+            // Remove from excluded tags if present
+            if (excludedTags.includes(tag)) {
+              excludedTags = excludedTags.filter(t => t !== tag);
+            }
+            
+            const isSelected = selectedTags.includes(tag);
+            if (isSelected) {
+              selectedTags = selectedTags.filter(t => t !== tag);
+              // Reset to unselected state (gray for both light and dark modes)
+              btn.className = `
+                px-3 py-1 rounded-full text-sm font-medium transition-colors
+                bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300
+                hover:bg-gray-300 dark:hover:bg-gray-600
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+              `.trim().replace(/\s+/g,' ');
+            } else {
+              selectedTags.push(tag);
+              // Set to selected state (blue for both light and dark modes)
+              btn.className = `
+                px-3 py-1 rounded-full text-sm font-medium transition-colors
+                bg-blue-500 dark:bg-blue-800 text-white dark:text-white
+                hover:bg-blue-600 dark:hover:bg-blue-700
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+              `.trim().replace(/\s+/g,' ');
+            }
+            updateView();
+          }
+
+          function handleDoubleClick(tag, btn) {
+            // Remove from selected tags if present
+            if (selectedTags.includes(tag)) {
+              selectedTags = selectedTags.filter(t => t !== tag);
+            }
+            
+            const isExcluded = excludedTags.includes(tag);
+            if (isExcluded) {
+              excludedTags = excludedTags.filter(t => t !== tag);
+              // Reset to unselected state (gray for both light and dark modes)
+              btn.className = `
+                px-3 py-1 rounded-full text-sm font-medium transition-colors
+                bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300
+                hover:bg-gray-300 dark:hover:bg-gray-600
+                focus:outline-none focus:ring-2 focus:ring-blue-500
+              `.trim().replace(/\s+/g,' ');
+            } else {
+              excludedTags.push(tag);
+              // Set to excluded state (red for both light and dark modes)
+              btn.className = `
+                px-3 py-1 rounded-full text-sm font-medium transition-colors
+                bg-red-500 dark:bg-red-800 text-white dark:text-white
+                hover:bg-red-600 dark:hover:bg-red-700
+                focus:outline-none focus:ring-2 focus:ring-red-500
+              `.trim().replace(/\s+/g,' ');
+            }
+            updateView();
+          }
+
+          groupDiv.appendChild(btn);
+        });
+
+        container.appendChild(groupDiv);
+      });
+
+      attachTagTooltips(container);
+    }
+
+    // ==================== EVENT LISTENERS ====================
+    
+    // Search input
+    document.getElementById('search-input').addEventListener('input', e => {
+      searchTerm = e.target.value;
+      updateView();
+    });
+
+    // Sort dropdown
+    document.getElementById('sort-select').addEventListener('change', updateOrder);
+
+    // View mode changes from header toggle
+    window.addEventListener('viewModeChanged', () => {
+      viewMode = localStorage.getItem('viewModeExplorer') || document.body.dataset.defaultView;
+      updateOrder();
+    });
+
+    // ==================== INITIALIZATION ====================
+    
+    // Initialize the application
+    populateSortOptions();
+    renderTagFilters();
+    updateOrder();
+    refreshIcons();
+  </script>
+{% endblock %}

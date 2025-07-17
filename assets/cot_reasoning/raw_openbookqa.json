@@ -1,0 +1,18 @@
+{
+  "name": "OpenBookQA",
+  "summary": "_⚠ Use card with caution_ <br>A multiple-choice QA dataset of elementary science questions requiring reasoning with core science facts and common knowledge.",
+  "size": "5,957 questions (4,957 train, 500 dev, 500 test); each with 4 answer choices.",
+  "date": "2018-09-08",
+  "download": "https://leaderboard.allenai.org/open_book_qa/submissions/get-started",
+  "companion": "https://arxiv.org/abs/1809.02789",
+  "notes": "Includes an 'open book' of 1,326 science facts from elementary textbooks. Answering requires combining these facts with additional commonsense knowledge, testing multi-hop reasoning. Part of the ARC/OpenBookQA leaderboard challenges.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "physics"
+  ],
+  "size_numerical": 5957
+}

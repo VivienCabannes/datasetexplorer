@@ -1,0 +1,19 @@
+{
+  "name": "HellaSwag",
+  "summary": "A dataset of ~60,000 adversarially filtered multiple-choice questions for evaluating commonsense natural language inference.",
+  "size": "Approximately 60,000 multiple-choice questions.",
+  "date": "2019-05-19",
+  "download": "https://github.com/rowanz/hellaswag",
+  "companion": "https://arxiv.org/abs/1905.07830",
+  "notes": "HellaSwag's questions are trivial for humans (>95% accuracy) but comparatively harder for models. The dataset employs Adversarial Filtering to generate plausible but incorrect answer choices, making it a robust benchmark for commonsense reasoning.",
+  "tags": [
+    "synthetic",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:synthetic",
+    "answer:human",
+    "nlp"
+  ],
+  "size_numerical": 60000
+}

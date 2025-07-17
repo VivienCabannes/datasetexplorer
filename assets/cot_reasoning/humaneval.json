@@ -1,0 +1,19 @@
+{
+  "name": "HumanEval",
+  "summary": "A dataset of 164 hand-crafted Python programming problems designed to evaluate functional correctness in code generation models.",
+  "size": "164 programming problems.",
+  "date": "2021-07-07",
+  "download": "https://github.com/openai/human-eval",
+  "companion": "https://arxiv.org/abs/2107.03374",
+  "notes": "Each problem includes a function signature, docstring, and unit tests to assess functional correctness. The dataset emphasizes functional correctness over syntactic accuracy, providing a robust benchmark for code generation models.",
+  "tags": [
+    "crowd-sourced",
+    "QA",
+    "benchmark",
+    "answer:verifiable",
+    "question:crowd-sourced",
+    "answer:crowd-sourced",
+    "programming"
+  ],
+  "size_numerical": 164
+}

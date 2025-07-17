@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Assets Explorer{% endblock %}</title>
+  
+  <!-- Immediately set theme to avoid FOUC -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300" {% block body_attrs %}{% endblock %}>
+  <div class="container mx-auto px-4">
+    <!-- Header with navigation and controls -->
+    <header class="flex justify-between items-center py-6 mb-8 border-b border-gray-200 dark:border-gray-700">
+      <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Assets Explorer</h1>
+      
+      <!-- Header controls -->
+      <div class="flex gap-2">
+        <!-- Home button -->
+        <a href="/" 
+           class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
+                  flex items-center justify-center transition-colors" 
+           title="Home">
+          <i data-lucide="home" class="w-5 h-5"></i>
+        </a>
+        
+        <!-- Help button -->
+        <button id="help-button" 
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
+                       flex items-center justify-center transition-colors" 
+                title="Help">
+          <i data-lucide="help-circle" class="w-5 h-5"></i>
+        </button>
+        
+        <!-- Theme toggle button -->
+        <button id="theme-toggle-button" 
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
+                       flex items-center justify-center transition-colors" 
+                title="Toggle theme">
+          <!-- Icon injected dynamically -->
+        </button>
+        
+        <!-- View mode toggle button -->
+        <button id="view-toggle-button" 
+                class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 
+                       flex items-center justify-center transition-colors" 
+                title="Toggle view">
+          <!-- Icon injected dynamically -->
+        </button>
+        
+        {% block header_buttons %}{% endblock %}
+      </div>
+    </header>
+
+    <!-- Help text (hidden by default) -->
+    <div id="help-text" class="bg-blue-50 dark:bg-blue-900 border border-blue-200 dark:border-blue-700 rounded-lg p-4 mb-6 hidden">
+      {% block help_text %}{% endblock %}
+    </div>
+
+    <!-- Main content area -->
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+
+  <!-- Lucide Icons for modern, clean icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <script>
+    // Wait for both DOM and Lucide to be ready
+    function initializeApp() {
+      // Check if Lucide is available
+      if (typeof lucide === 'undefined') {
+        console.error('Lucide icons library not loaded');
+        return;
+      }
+
+      // ==================== THEME MANAGEMENT ====================
+      const themeKey = 'theme';
+      const themeBtn = document.getElementById('theme-toggle-button');
+      if (!themeBtn) {
+        console.error('Theme toggle button not found');
+        return;
+      }
+      
+      // Apply initial theme
+      let theme = localStorage.getItem(themeKey) || 'light';
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      
+      // Function to update the theme icon
+      const updateThemeIcon = () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        const iconName = isDark ? 'sun' : 'moon';
+        themeBtn.innerHTML = `<i data-lucide="${iconName}" class="w-5 h-5"></i>`;
+        lucide.createIcons();
+      };
+      
+      // Theme toggle event listener
+      themeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        localStorage.setItem(themeKey, isDark ? 'dark' : 'light');
+        updateThemeIcon();
+      });
+      
+      // Initialize theme icon
+      updateThemeIcon();
+
+      // ==================== HELP TOGGLE ====================
+      const helpButton = document.getElementById('help-button');
+      if (helpButton) {
+        helpButton.addEventListener('click', () => {
+          const helpText = document.getElementById('help-text');
+          if (helpText) {
+            helpText.classList.toggle('hidden');
+          }
+        });
+      } else {
+        console.error('Help button not found');
+      }
+
+      // ==================== VIEW MODE TOGGLE ====================
+      // Allow pages to override the view key for separate storage
+      {% block view_key %}const viewKey = 'viewMode';{% endblock %}
+      
+      const viewBtn = document.getElementById('view-toggle-button');
+      if (!viewBtn) {
+        console.error('View toggle button not found');
+        return;
+      }
+      
+      const defaultView = document.body.dataset.defaultView || 'list';
+      let viewMode = localStorage.getItem(viewKey) || defaultView;
+
+      // Apply view classes and update icon
+      function applyViewClasses() {
+        document.body.classList.toggle('grid-mode', viewMode === 'grid');
+        document.body.classList.toggle('list-mode', viewMode === 'list');
+        
+        const iconName = viewMode === 'grid' ? 'list' : 'grid-3x3';
+        viewBtn.innerHTML = `<i data-lucide="${iconName}" class="w-5 h-5"></i>`;
+        lucide.createIcons();
+
+        // Apply view classes to content containers
+        document.querySelectorAll('.card-grid, #assets-container').forEach(container => {
+          container.classList.toggle('grid', viewMode === 'grid');
+          container.classList.toggle('list', viewMode === 'list');
+        });
+      }
+
+      // View toggle event listener
+      viewBtn.addEventListener('click', () => {
+        viewMode = viewMode === 'grid' ? 'list' : 'grid';
+        localStorage.setItem(viewKey, viewMode);
+        applyViewClasses();
+        window.dispatchEvent(new Event('viewModeChanged'));
+      });
+
+      // Initialize view mode
+      applyViewClasses();
+    }
+
+    // Initialize when DOM is ready and after a small delay to ensure Lucide is loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(initializeApp, 100);
+      });
+    } else {
+      setTimeout(initializeApp, 100);
+    }
+  </script>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

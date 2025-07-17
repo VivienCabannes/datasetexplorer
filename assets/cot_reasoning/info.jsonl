@@ -1,0 +1,14 @@
+{
+  "title": "Chain-of-Thought Reasoning Datasets",
+  "description": "Datasets focused on chain-of-thought reasoning and problem-solving approaches",
+  "attributes": {
+    "sortable": [
+      {"key": "name", "label": "Sort by Name (A-Z)"},
+      {"key": "date", "label": "Sort by Date (Latest)", "reverse_label": "Sort by Date (Earliest)"},
+      {"key": "size", "label": "Sort by Size (Largest)", "reverse_label": "Sort by Size (Smallest)"}
+    ],
+    "summary": ["name", "summary"],
+    "light": ["size", "date"],
+    "full": ["notes", "download", "companion", "tags"]
+  }
+}
